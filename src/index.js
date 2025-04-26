@@ -98,6 +98,7 @@ async function analyzePostWithAI(post) {
         const result = JSON.parse(response.choices[0].message.content);
 
         console.log(result, "result");
+        console.log(post.url, "post.url");
 
         return {
             isQualified: result.isQualified,
@@ -116,7 +117,7 @@ async function analyzePostWithAI(post) {
 
 async function sendPersonalizedDM(username, post) {
     try {
-        const message = `Hi ${username},\n\nI noticed your post about "${post.title}" and thought you might be interested in our solution. We help with [specific problem] and could potentially address your needs. Would you like to learn more?\n\nBest regards,\n[Your Name]`;
+        const message = `Hi ${username},\n\n I am using Reddit to find leads and can help you with it. \n\n I found you here: ${post.url}`;
 
         console.log(message, "message");
 
@@ -140,7 +141,7 @@ async function processSubreddit(subredditName) {
     try {
         const processedPosts = await loadProcessedPosts();
         const subreddit = await reddit.getSubreddit(subredditName);
-        const newPosts = await subreddit.getNew({ limit: 10 });
+        const newPosts = await subreddit.getNew({ limit: 50 });
 
         for (const post of newPosts) {
             if (processedPosts.includes(post.id)) {
@@ -166,7 +167,7 @@ async function processSubreddit(subredditName) {
 // Schedule the job to run every hour
 cron.schedule('0 * * * *', async () => {
     logger.info('Starting scheduled Reddit analysis');
-    const subreddits = ['LeadGeneration', "smallbusiness", "GrowthHacking"]
+    const subreddits = ['LeadGeneration', "smallbusiness", "GrowthHacking"];
     
     for (const subreddit of subreddits) {
         await processSubreddit(subreddit.trim());
