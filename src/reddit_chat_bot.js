@@ -128,9 +128,17 @@ async function sendRedditChat() {
     return;
   }
 
-  // 5. Wait for login to complete (wait for the home page or user icon)
-  await page.waitForNavigation({ waitUntil: 'networkidle2' });
-  await new Promise(res => setTimeout(res, 5000)); // Give time for login to finish
+  console.log('Login button clicked. Taking screenshot...');
+  await page.screenshot({ path: 'after_login_click.png' });
+
+  // Wait for navigation, but also set a timeout and catch errors
+  try {
+    await page.waitForNavigation({ waitUntil: 'networkidle2', timeout: 15000 });
+    console.log('Navigation after login succeeded.');
+  } catch (e) {
+    console.log('Navigation after login failed or timed out.');
+    await page.screenshot({ path: 'login_timeout.png' });
+  }
 
   // 6. Go to target user's profile
   await page.goto(`https://www.reddit.com/user/${TARGET_USER}`, { waitUntil: 'networkidle2' });
