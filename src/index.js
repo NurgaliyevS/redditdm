@@ -5,6 +5,7 @@ const cron = require('node-cron');
 const winston = require('winston');
 const fs = require('fs').promises;
 const path = require('path');
+const TelegramBot = require('node-telegram-bot-api');
 
 // Initialize OpenAI
 const openai = new OpenAI({
@@ -19,6 +20,9 @@ const reddit = new Snoowrap({
     username: process.env.REDDIT_USERNAME,
     password: process.env.REDDIT_PASSWORD
 });
+
+// Initialize Telegram bot
+const telegramBot = new TelegramBot(process.env.TELEGRAM_BOT_TOKEN, { polling: false });
 
 // Configure logger
 const logger = winston.createLogger({
@@ -92,7 +96,8 @@ async function analyzePostWithAI(post) {
                 }
             ],
             temperature: 0.7,
-            max_tokens: 150
+            max_tokens: 150,
+            response_format: { type: "json_object" }
         });
 
         const result = JSON.parse(response.choices[0].message.content);
@@ -115,25 +120,20 @@ async function analyzePostWithAI(post) {
     }
 }
 
-async function sendPersonalizedDM(username, post) {
+async function sendTelegramNotification(post) {
     try {
-        const message = `Hi ${username},\n\n I am using Reddit to find leads and can help you with it. \n\n I found you here: ${post.url}`;
+        const message = `🎯 New Lead Found!\n\n` +
+            `👤 Username: ${post.author.name}\n` +
+            `📝 Post Title: ${post.title}\n` +
+            `🔗 Post URL: ${post.url}\n` +
+            `👤 Profile URL: https://www.reddit.com/user/${post.author.name}\n` +
+            `📊 Subreddit: r/${post.subreddit_name_prefixed}\n\n` +
+            `📝 Post Content:\n${post.selftext.substring(0, 500)}${post.selftext.length > 500 ? '...' : ''}`;
 
-        console.log(message, "message");
-
-        await reddit.composeMessage({
-            to: username,
-            subject: 'Regarding your recent post',
-            text: message
-        });
-
-        console.log("sent dm", "message");
-
-        logger.info(`Sent DM to ${username}`);
-        return true;
+        await telegramBot.sendMessage(process.env.TELEGRAM_CHAT_ID, message);
+        logger.info(`Sent Telegram notification for lead ${post.author.name}`);
     } catch (error) {
-        logger.error(`Error sending DM to ${username}:`, error);
-        return false;
+        logger.error('Error sending Telegram notification:', error);
     }
 }
 
@@ -150,11 +150,7 @@ async function processSubreddit(subredditName) {
 
             const analysis = await analyzePostWithAI(post);
             if (analysis.isQualified) {
-                const dmSent = await sendPersonalizedDM(post.author.name, post);
-                if (dmSent) {
-                    processedPosts.push(post.id);
-                    logger.info(`Processed post ${post.id} from ${post.author.name}`);
-                }
+                await sendTelegramNotification(post);
             }
         }
 
