@@ -16,8 +16,10 @@ async function sendRedditChat() {
   // Wait for the login form to render
   await new Promise(res => setTimeout(res, 5000));
 
-  // Use page.evaluate to fill username and password inside shadow DOM
-  await page.evaluate((username, password) => {
+  await page.screenshot({ path: 'login_page.png' });
+
+  console.log('Attempting to fill username and password fields...');
+  const fieldResult = await page.evaluate((username, password) => {
     function queryShadowRoots(selector) {
       const elements = [];
       function findIn(node) {
@@ -35,20 +37,63 @@ async function sendRedditChat() {
     const usernameInputs = queryShadowRoots('input[name="username"]');
     const passwordInputs = queryShadowRoots('input[name="password"]');
 
+    let usernameLog = '';
+    let passwordLog = '';
+
     if (usernameInputs.length > 0) {
       usernameInputs[0].focus();
       usernameInputs[0].value = username;
       usernameInputs[0].dispatchEvent(new Event('input', { bubbles: true }));
+      usernameInputs[0].dispatchEvent(new Event('change', { bubbles: true }));
+      usernameLog = usernameInputs[0].value;
     }
     if (passwordInputs.length > 0) {
       passwordInputs[0].focus();
       passwordInputs[0].value = password;
       passwordInputs[0].dispatchEvent(new Event('input', { bubbles: true }));
+      passwordInputs[0].dispatchEvent(new Event('change', { bubbles: true }));
+      passwordLog = passwordInputs[0].value;
     }
+
+    // Log button state
+    const submitButtons = queryShadowRoots('button[type="submit"]');
+    let buttonDisabled = null;
+    if (submitButtons.length > 0) {
+      buttonDisabled = submitButtons[0].disabled;
+    }
+
+    return {
+      usernameInputs: usernameInputs.length,
+      passwordInputs: passwordInputs.length,
+      usernameValue: usernameLog,
+      passwordValue: passwordLog ? '***' : null,
+      buttonDisabled
+    };
   }, REDDIT_USERNAME, REDDIT_PASSWORD);
+
+  console.log('Username fields found:', fieldResult.usernameInputs, 'Password fields found:', fieldResult.passwordInputs);
+  console.log('Username value set:', fieldResult.usernameValue, 'Password value set:', fieldResult.passwordValue ? '***' : null);
+  console.log('Submit button disabled:', fieldResult.buttonDisabled);
 
   // Debug: Screenshot after filling in credentials
   await page.screenshot({ path: 'login_filled.png' });
+
+  // If button is still disabled, try typing with Puppeteer as a fallback
+  if (fieldResult.buttonDisabled) {
+    console.log('Button still disabled, trying to type with Puppeteer...');
+    // Try to type into the first visible input fields
+    const usernameInput = await page.$('input[name="username"]');
+    const passwordInput = await page.$('input[name="password"]');
+    if (usernameInput && passwordInput) {
+      await usernameInput.click({ clickCount: 3 });
+      await usernameInput.press('Backspace');
+      await usernameInput.type(REDDIT_USERNAME, { delay: 50 });
+      await passwordInput.click({ clickCount: 3 });
+      await passwordInput.press('Backspace');
+      await passwordInput.type(REDDIT_PASSWORD, { delay: 50 });
+      await page.screenshot({ path: 'login_filled_typed.png' });
+    }
+  }
 
   // 4. Click the login button (try both normal and shadow DOM)
   let loginClicked = false;

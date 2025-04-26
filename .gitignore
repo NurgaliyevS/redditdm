@@ -13,3 +13,12 @@ logs/
 
 # Runtime data
 data/
+
+# Screenshots
+screenshots/
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.bmp
+*.tiff
