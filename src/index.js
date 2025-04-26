@@ -59,11 +59,32 @@ async function saveProcessedPosts(posts) {
 async function analyzePostWithAI(post) {
     try {
         const response = await openai.chat.completions.create({
-            model: "gpt-4",
+            model: "gpt-4o-mini",
             messages: [
                 {
                     role: "system",
-                    content: "You are a lead qualification assistant. Analyze the following Reddit post and determine if the author would be a good candidate for our product. Consider their needs, pain points, and whether our solution could help them."
+                    content: `You are a lead qualification assistant for Post Content, a Reddit post scheduling service. 
+                    Analyze the following Reddit post and determine if the author would be a good candidate for our service.
+                    Look for these signals:
+                    1. Users who are actively posting on Reddit
+                    2. Users who mention struggling with time management for social media
+                    3. Users who want to grow their business or personal brand
+                    4. Users who mention needing help with content scheduling
+                    5. Users who are looking for marketing solutions
+                    6. Users who mention spending too much time on social media management
+                    
+                    Our service helps users:
+                    - Schedule and automate Reddit posts
+                    - Save time on social media management
+                    - Grow their audience consistently
+                    - Cross-post to multiple subreddits
+                    
+                    Return a JSON response with:
+                    {
+                        "isQualified": boolean,
+                        "analysis": string,
+                        "reason": string
+                    }`
                 },
                 {
                     role: "user",
@@ -74,13 +95,22 @@ async function analyzePostWithAI(post) {
             max_tokens: 150
         });
 
+        const result = JSON.parse(response.choices[0].message.content);
+
+        console.log(result, "result");
+
         return {
-            isQualified: response.choices[0].message.content.toLowerCase().includes('yes'),
-            analysis: response.choices[0].message.content
+            isQualified: result.isQualified,
+            analysis: result.analysis,
+            reason: result.reason
         };
     } catch (error) {
         logger.error('Error analyzing post with AI:', error);
-        return { isQualified: false, analysis: 'Error during analysis' };
+        return { 
+            isQualified: false, 
+            analysis: 'Error during analysis',
+            reason: 'Technical error occurred'
+        };
     }
 }
 
@@ -88,11 +118,15 @@ async function sendPersonalizedDM(username, post) {
     try {
         const message = `Hi ${username},\n\nI noticed your post about "${post.title}" and thought you might be interested in our solution. We help with [specific problem] and could potentially address your needs. Would you like to learn more?\n\nBest regards,\n[Your Name]`;
 
+        console.log(message, "message");
+
         await reddit.composeMessage({
             to: username,
             subject: 'Regarding your recent post',
             text: message
         });
+
+        console.log("sent dm", "message");
 
         logger.info(`Sent DM to ${username}`);
         return true;
