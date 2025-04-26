@@ -132,7 +132,7 @@ async function processSubreddit(subredditName) {
 // Schedule the job to run every hour
 cron.schedule('0 * * * *', async () => {
     logger.info('Starting scheduled Reddit analysis');
-    const subreddits = process.env.TARGET_SUBREDDITS.split(',');
+    const subreddits = ['LeadGeneration', "smallbusiness", "GrowthHacking"]
     
     for (const subreddit of subreddits) {
         await processSubreddit(subreddit.trim());
