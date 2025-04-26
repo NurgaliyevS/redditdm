@@ -11,7 +11,6 @@
     "dotenv": "^16.0.3",
     "node-cron": "^3.0.2",
     "openai": "^4.0.0",
-    "puppeteer": "^24.7.2",
     "snoowrap": "^1.23.0",
     "winston": "^3.8.2"
   },
