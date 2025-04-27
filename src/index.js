@@ -152,6 +152,7 @@ async function processSubreddit(subredditName) {
       const analysis = await analyzePostWithAI(post);
       if (analysis.isQualified) {
         await sendTelegramNotification(post);
+        processedPosts.push(post.id);
       }
     }
 
@@ -175,8 +176,8 @@ const TARGET_SUBREDDITS = [
     "business"
 ];
 
-// Schedule the job to run every hour
-cron.schedule("0 * * * *", async () => {
+// Schedule the job to run every 6 hours
+cron.schedule("0 */6 * * *", async () => {
     logger.info("Starting scheduled Reddit analysis");
     
     for (const subreddit of TARGET_SUBREDDITS) {
