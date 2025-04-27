@@ -142,7 +142,33 @@ async function processSubreddit(subredditName) {
   try {
     const processedPosts = await loadProcessedPosts();
     const subreddit = await reddit.getSubreddit(subredditName);
-    const newPosts = await subreddit.getNew({ limit: 50 });
+
+    let newPosts;
+    let attempts = 0;
+    while (true) {
+      try {
+        newPosts = await subreddit.getNew({ limit: 50 });
+        break; // Success, exit the retry loop
+      } catch (err) {
+        console.log(err, "err");
+        console.log(err.statusCode, "err.statusCode");
+        console.log(err.message, "err.message");
+        if (
+          err.statusCode === 429 ||
+          (err.message && err.message.includes("rate limit"))
+        ) {
+          // 429 is the HTTP status for Too Many Requests
+          logger.info(
+            "Reddit API rate limit hit. Waiting 60 seconds before retrying..."
+          );
+          await new Promise((resolve) => setTimeout(resolve, 60 * 1000));
+          attempts++;
+          if (attempts > 5) throw new Error("Too many rate limit retries.");
+        } else {
+          throw err; // Not a rate limit error, rethrow
+        }
+      }
+    }
 
     for (const post of newPosts) {
       if (processedPosts.includes(post.id)) {
@@ -154,11 +180,13 @@ async function processSubreddit(subredditName) {
         await sendTelegramNotification(post);
         processedPosts.push(post.id);
       }
+      // Add a delay to avoid hitting OpenAI rate limits
+      await new Promise((resolve) => setTimeout(resolve, 1500)); // 1.5 seconds
     }
 
     await saveProcessedPosts(processedPosts);
     logger.info(
-      `Reddit API rate limit: ${reddit.ratelimitRemaining} requests remaining, resets in ${reddit.ratelimitExpiration} seconds.`
+      `Reddit API rate limit: ${reddit.ratelimitRemaining} requests remaining.`
     );
   } catch (error) {
     logger.error("Error processing subreddit:", error);
@@ -167,29 +195,38 @@ async function processSubreddit(subredditName) {
 
 // Target subreddits to monitor
 const TARGET_SUBREDDITS = [
-    "LeadGeneration",
-    "smallbusiness",
-    "GrowthHacking",
-    "Entrepreneur",
-    "startups",
-    "marketing",
-    "digitalmarketing",
-    "socialmedia",
-    "content_marketing",
-    "business"
+  "LeadGeneration",
+  "smallbusiness",
+  "GrowthHacking",
+  "Entrepreneur",
+  "startups",
+  "marketing",
+  "digitalmarketing",
+  "socialmedia",
+  "content_marketing",
+  "business",
 ];
 
 // Schedule the job to run every 6 hours
 cron.schedule("0 */6 * * *", async () => {
-    logger.info("Starting scheduled Reddit analysis");
+  logger.info("Starting scheduled Reddit analysis after 6 hours");
 
-    for (const subreddit of TARGET_SUBREDDITS) {
-        await processSubreddit(subreddit.trim());
-    }
+  for (const subreddit of TARGET_SUBREDDITS) {
+    await processSubreddit(subreddit.trim());
+  }
 
-    logger.info("Completed scheduled Reddit analysis");
+  logger.info("Completed scheduled Reddit analysis after 6 hours");
 });
 
 // Initial run
 logger.info("Reddit AI Analyzer started");
-processSubreddit(TARGET_SUBREDDITS[0].trim());
+
+async function main() {
+  for (const subreddit of TARGET_SUBREDDITS) {
+    await processSubreddit(subreddit.trim());
+  }
+
+  logger.info("Completed scheduled Reddit analysis after first run");
+}
+
+main();
