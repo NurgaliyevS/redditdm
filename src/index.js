@@ -161,18 +161,31 @@ async function processSubreddit(subredditName) {
   }
 }
 
+// Target subreddits to monitor
+const TARGET_SUBREDDITS = [
+    "LeadGeneration",
+    "smallbusiness",
+    "GrowthHacking",
+    "Entrepreneur",
+    "startups",
+    "marketing",
+    "digitalmarketing",
+    "socialmedia",
+    "content_marketing",
+    "business"
+];
+
 // Schedule the job to run every hour
 cron.schedule("0 * * * *", async () => {
-  logger.info("Starting scheduled Reddit analysis");
-  const subreddits = ["LeadGeneration", "smallbusiness", "GrowthHacking"];
-
-  for (const subreddit of subreddits) {
-    await processSubreddit(subreddit.trim());
-  }
-
-  logger.info("Completed scheduled Reddit analysis");
+    logger.info("Starting scheduled Reddit analysis");
+    
+    for (const subreddit of TARGET_SUBREDDITS) {
+        await processSubreddit(subreddit.trim());
+    }
+    
+    logger.info("Completed scheduled Reddit analysis");
 });
 
 // Initial run
 logger.info("Reddit AI Analyzer started");
-processSubreddit(process.env.TARGET_SUBREDDITS.split(",")[0].trim());
+processSubreddit(TARGET_SUBREDDITS[0].trim());
