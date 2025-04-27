@@ -176,8 +176,8 @@ const TARGET_SUBREDDITS = [
     "business"
 ];
 
-// Schedule the job to run every 6 hours
-cron.schedule("0 */6 * * *", async () => {
+// Schedule the job to run every 1 hour
+cron.schedule("0 * * * *", async () => {
     logger.info("Starting scheduled Reddit analysis");
     
     for (const subreddit of TARGET_SUBREDDITS) {
