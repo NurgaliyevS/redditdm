@@ -47,8 +47,9 @@ if (process.env.NODE_ENV !== "production") {
   );
 }
 
-// File to store processed post IDs
+// Files to store processed data
 const PROCESSED_POSTS_FILE = "data/processed_posts.json";
+const PROCESSED_USERS_FILE = "data/processed_users.json";
 
 async function loadProcessedPosts() {
   try {
@@ -59,9 +60,23 @@ async function loadProcessedPosts() {
   }
 }
 
+async function loadProcessedUsers() {
+  try {
+    const data = await fs.readFile(PROCESSED_USERS_FILE, "utf8");
+    return JSON.parse(data);
+  } catch (error) {
+    return [];
+  }
+}
+
 async function saveProcessedPosts(posts) {
   await fs.mkdir(path.dirname(PROCESSED_POSTS_FILE), { recursive: true });
   await fs.writeFile(PROCESSED_POSTS_FILE, JSON.stringify(posts, null, 2));
+}
+
+async function saveProcessedUsers(users) {
+  await fs.mkdir(path.dirname(PROCESSED_USERS_FILE), { recursive: true });
+  await fs.writeFile(PROCESSED_USERS_FILE, JSON.stringify(users, null, 2));
 }
 
 async function analyzePostWithAI(post) {
@@ -141,6 +156,7 @@ async function sendTelegramNotification(post) {
 async function processSubreddit(subredditName) {
   try {
     const processedPosts = await loadProcessedPosts();
+    const processedUsers = await loadProcessedUsers();
     const subreddit = await reddit.getSubreddit(subredditName);
 
     let newPosts;
@@ -148,7 +164,7 @@ async function processSubreddit(subredditName) {
     while (true) {
       try {
         newPosts = await subreddit.getNew({ limit: 50 });
-        break; // Success, exit the retry loop
+        break;
       } catch (err) {
         console.log(err, "err");
         console.log(err.statusCode, "err.statusCode");
@@ -157,7 +173,6 @@ async function processSubreddit(subredditName) {
           err.statusCode === 429 ||
           (err.message && err.message.includes("rate limit"))
         ) {
-          // 429 is the HTTP status for Too Many Requests
           logger.info(
             "Reddit API rate limit hit. Waiting 60 seconds before retrying..."
           );
@@ -165,7 +180,7 @@ async function processSubreddit(subredditName) {
           attempts++;
           if (attempts > 5) throw new Error("Too many rate limit retries.");
         } else {
-          throw err; // Not a rate limit error, rethrow
+          throw err;
         }
       }
     }
@@ -175,16 +190,21 @@ async function processSubreddit(subredditName) {
         continue;
       }
 
+      if (processedUsers.includes(post.author.name)) {
+        continue;
+      }
+
       const analysis = await analyzePostWithAI(post);
       if (analysis.isQualified) {
         await sendTelegramNotification(post);
         processedPosts.push(post.id);
+        processedUsers.push(post.author.name);
       }
-      // Add a delay to avoid hitting OpenAI rate limits
-      await new Promise((resolve) => setTimeout(resolve, 1500)); // 1.5 seconds
+      await new Promise((resolve) => setTimeout(resolve, 1500));
     }
 
     await saveProcessedPosts(processedPosts);
+    await saveProcessedUsers(processedUsers);
     logger.info(
       `Reddit API rate limit: ${reddit.ratelimitRemaining} requests remaining.`
     );
@@ -207,8 +227,8 @@ const TARGET_SUBREDDITS = [
   "business",
 ];
 
-// Schedule the job to run at 9 AM every day
-cron.schedule("0 9 * * *", async () => {
+// Schedule the job to run at 9 AM every day by Almaty time or 4 AM UTC
+cron.schedule("0 4 * * *", async () => {
   logger.info("Starting scheduled Reddit analysis at 9 AM");
 
   for (const subreddit of TARGET_SUBREDDITS) {
