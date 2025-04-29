@@ -207,26 +207,16 @@ const TARGET_SUBREDDITS = [
   "business",
 ];
 
-// Schedule the job to run every 6 hours
-cron.schedule("0 */6 * * *", async () => {
-  logger.info("Starting scheduled Reddit analysis after 6 hours");
+// Schedule the job to run at 9 AM every day
+cron.schedule("0 9 * * *", async () => {
+  logger.info("Starting scheduled Reddit analysis at 9 AM");
 
   for (const subreddit of TARGET_SUBREDDITS) {
     await processSubreddit(subreddit.trim());
   }
 
-  logger.info("Completed scheduled Reddit analysis after 6 hours");
+  logger.info("Completed scheduled Reddit analysis");
 });
 
-// Initial run
-logger.info("Reddit AI Analyzer started");
-
-async function main() {
-  for (const subreddit of TARGET_SUBREDDITS) {
-    await processSubreddit(subreddit.trim());
-  }
-
-  logger.info("Completed scheduled Reddit analysis after first run");
-}
-
-main();
+// Initial run - removed to prevent immediate execution
+logger.info("Reddit AI Analyzer started - Will run daily at 9 AM");
