@@ -163,7 +163,7 @@ async function processSubreddit(subredditName) {
     let attempts = 0;
     while (true) {
       try {
-        newPosts = await subreddit.getNew({ limit: 50 });
+        newPosts = await subreddit.getNew({ limit: 100 });
         break;
       } catch (err) {
         console.log(err, "err");
@@ -200,7 +200,7 @@ async function processSubreddit(subredditName) {
         processedPosts.push(post.id);
         processedUsers.push(post.author.name);
       }
-      await new Promise((resolve) => setTimeout(resolve, 1500));
+      await new Promise((resolve) => setTimeout(resolve, 2500));
     }
 
     await saveProcessedPosts(processedPosts);
