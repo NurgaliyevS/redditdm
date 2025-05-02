@@ -161,44 +161,28 @@ async function processSubreddit(subredditName) {
 
     let newPosts;
     let attempts = 0;
-    const maxAttempts = 5;
-    const baseDelay = 60 * 1000; // 1 minute base delay
-
-    while (attempts < maxAttempts) {
+    while (true) {
       try {
         newPosts = await subreddit.getNew({ limit: 100 });
         break;
       } catch (err) {
-        logger.error(`Error fetching posts from ${subredditName}:`, {
-          statusCode: err.statusCode,
-          message: err.message,
-          attempt: attempts + 1
-        });
-
-        if (err.statusCode === 403) {
-          logger.error("Access forbidden (403) - Possible IP ban or security block");
-          // Wait longer for 403 errors
-          const delay = baseDelay * (attempts + 1) * 2; // Exponential backoff
-          logger.info(`Waiting ${delay/1000} seconds before retrying...`);
-          await new Promise((resolve) => setTimeout(resolve, delay));
-        } else if (err.statusCode === 429 || (err.message && err.message.includes("rate limit"))) {
-          logger.info("Rate limit hit. Waiting before retrying...");
-          const delay = baseDelay * (attempts + 1);
-          await new Promise((resolve) => setTimeout(resolve, delay));
+        console.log(err, "err");
+        console.log(err.statusCode, "err.statusCode");
+        console.log(err.message, "err.message");
+        if (
+          err.statusCode === 429 ||
+          (err.message && err.message.includes("rate limit"))
+        ) {
+          logger.info(
+            "Reddit API rate limit hit. Waiting 60 seconds before retrying..."
+          );
+          await new Promise((resolve) => setTimeout(resolve, 60 * 1000));
+          attempts++;
+          if (attempts > 5) throw new Error("Too many rate limit retries.");
         } else {
           throw err;
         }
-        
-        attempts++;
-        if (attempts >= maxAttempts) {
-          throw new Error(`Failed after ${maxAttempts} attempts. Last error: ${err.message}`);
-        }
       }
-    }
-
-    if (!newPosts) {
-      logger.error(`Failed to fetch posts from ${subredditName} after ${maxAttempts} attempts`);
-      return;
     }
 
     for (const post of newPosts) {
