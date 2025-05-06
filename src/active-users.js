@@ -63,13 +63,14 @@ async function sendActiveUserNotification(user) {
   try {
     const profileUrl = `https://reddit.com/user/${user.username}`;
     const message = 
-      `🎯 Potential Lead Found!\n\n` +
+      `🎯 Top User Found!\n\n` +
       `👤 Username: ${user.username}\n` +
       `🔗 Profile: ${profileUrl}\n` +
       `📊 Activity:\n` +
       `   • Posts: ${user.posts}\n` +
       `   • Comments: ${user.comments}\n` +
       `   • Total Actions: ${user.totalActivity}\n` +
+      `   • Total Karma: ${user.karma}\n` +
       `🎯 Active in: ${user.subreddits.join(", ")}\n\n` +
       `💡 Consider reaching out manually about Post Content!`;
 
@@ -80,19 +81,23 @@ async function sendActiveUserNotification(user) {
   }
 }
 
-async function getMostActiveUsers(subreddits, limit = 50) {
+async function getMostActiveUsers(subreddits, limit = 200) {
   try {
+    logger.info(`Starting to fetch active users from ${subreddits.length} subreddits`);
     const userActivity = {};
     
     for (const subredditName of subreddits) {
+      logger.info(`Processing subreddit: ${subredditName}`);
       const subreddit = await reddit.getSubreddit(subredditName);
       let attempts = 0;
 
-      // Fetch recent posts
+      // Fetch top posts from the past year
       let posts;
       while (true) {
         try {
-          posts = await subreddit.getNew({ limit: 100 });
+          logger.info(`Fetching top posts from ${subredditName}`);
+          posts = await subreddit.getTop({ time: 'year', limit: 100 });
+          logger.info(`Successfully fetched ${posts.length} top posts from ${subredditName}`);
           break;
         } catch (err) {
           if (
@@ -107,17 +112,29 @@ async function getMostActiveUsers(subreddits, limit = 50) {
             if (attempts > 5)
               throw new Error("Too many rate limit retries for posts.");
           } else {
+            logger.error(`Error fetching posts from ${subredditName}:`, err);
             throw err;
           }
         }
       }
 
-      // Fetch recent comments
-      let comments;
+      // Fetch top comments from the past year
+      let comments = [];
       attempts = 0;
       while (true) {
         try {
-          comments = await subreddit.getNewComments({ limit: 100 });
+          logger.info(`Fetching comments from top posts in ${subredditName}`);
+          // Get top posts and then get their comments
+          const topPosts = await subreddit.getTop({ time: 'year', limit: 25 });
+          logger.info(`Found ${topPosts.length} top posts to fetch comments from`);
+          
+          for (const post of topPosts) {
+            logger.info(`Fetching comments for post: ${post.title}`);
+            const postComments = await post.comments.fetchAll();
+            logger.info(`Found ${postComments.length} comments for post: ${post.title}`);
+            comments = comments.concat(postComments);
+          }
+          logger.info(`Total comments fetched from ${subredditName}: ${comments.length}`);
           break;
         } catch (err) {
           if (
@@ -132,90 +149,111 @@ async function getMostActiveUsers(subreddits, limit = 50) {
             if (attempts > 5)
               throw new Error("Too many rate limit retries for comments.");
           } else {
+            logger.error(`Error fetching comments from ${subredditName}:`, err);
             throw err;
           }
         }
       }
 
-      // Count posts
+      // Count posts and karma
+      logger.info(`Processing ${posts.length} posts from ${subredditName}`);
       for (const post of posts) {
         const username = post.author.name;
-        if (username === "[deleted]")
-          continue;
+        if (username === "[deleted]") continue;
+        
         userActivity[username] = userActivity[username] || {
           posts: 0,
           comments: 0,
+          karma: 0,
           subreddits: new Set(),
         };
         userActivity[username].posts += 1;
+        userActivity[username].karma += post.score;
         userActivity[username].subreddits.add(subredditName);
       }
 
-      // Count comments
+      // Count comments and karma
+      logger.info(`Processing ${comments.length} comments from ${subredditName}`);
       for (const comment of comments) {
         const username = comment.author.name;
-        if (username === "[deleted]")
-          continue;
+        if (username === "[deleted]") continue;
+        
         userActivity[username] = userActivity[username] || {
           posts: 0,
           comments: 0,
+          karma: 0,
           subreddits: new Set(),
         };
         userActivity[username].comments += 1;
+        userActivity[username].karma += comment.score;
         userActivity[username].subreddits.add(subredditName);
       }
 
+      logger.info(`Completed processing ${subredditName}. Found ${Object.keys(userActivity).length} active users so far`);
       await new Promise((resolve) => setTimeout(resolve, 2500));
     }
 
     // Calculate activity score and sort users
+    logger.info(`Processing final results for ${Object.keys(userActivity).length} users`);
     const activeUsers = Object.entries(userActivity)
       .map(([username, data]) => ({
         username,
         posts: data.posts,
         comments: data.comments,
         totalActivity: data.posts + data.comments,
+        karma: data.karma,
         subreddits: Array.from(data.subreddits),
       }))
-      .sort((a, b) => b.totalActivity - a.totalActivity)
+      .sort((a, b) => b.karma - a.karma)
       .slice(0, limit);
 
     // Save results
     await saveActiveUsers(activeUsers);
     logger.info(
-      `Found ${activeUsers.length} active users across ${subreddits.length} subreddits`
+      `Found ${activeUsers.length} active users across ${subreddits.length} subreddits. Top user: ${activeUsers[0]?.username} with ${activeUsers[0]?.karma} karma`
     );
 
     return activeUsers;
   } catch (error) {
     logger.error("Error fetching active users:", error);
-    return [];
+    throw error; // Re-throw to see the full error in the console
   }
 }
 
 async function main() {
-  logger.info("Starting active users analysis");
-  
-  // Fetch most active users
-  const activeUsers = await getMostActiveUsers(TARGET_SUBREDDITS, 50);
-  if (activeUsers.length > 0) {
-    // Send individual notifications for top 5 most active users
-    for (const user of activeUsers.slice(0, 5)) {
-      await sendActiveUserNotification(user);
-      // Add delay between notifications
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-    }
+  try {
+    logger.info("Starting active users analysis");
+    
+    // Fetch most active users
+    const activeUsers = await getMostActiveUsers(TARGET_SUBREDDITS, 200);
+    if (activeUsers.length > 0) {
+      logger.info(`Found ${activeUsers.length} active users. Sending notifications...`);
+      
+      // Send individual notifications for top 5 most active users
+      for (const user of activeUsers.slice(0, 5)) {
+        await sendActiveUserNotification(user);
+        logger.info(`Sent notification for user: ${user.username}`);
+        // Add delay between notifications
+        await new Promise((resolve) => setTimeout(resolve, 1000));
+      }
 
-    // Send summary report
-    const summaryMessage =
-      `📊 Daily Active Users Summary\n\n` +
-      `Found ${activeUsers.length} active users across ${TARGET_SUBREDDITS.length} subreddits.\n` +
-      `Top 5 users have been sent as individual messages.\n` +
-      `Full report saved to ${ACTIVE_USERS_FILE}`;
-    await telegramBot.sendMessage(process.env.TELEGRAM_CHAT_ID, summaryMessage);
+      // Send summary report
+      const summaryMessage =
+        `📊 Top Users Summary\n\n` +
+        `Found ${activeUsers.length} active users across ${TARGET_SUBREDDITS.length} subreddits.\n` +
+        `Top 5 users have been sent as individual messages.\n` +
+        `Full report saved to ${ACTIVE_USERS_FILE}`;
+      await telegramBot.sendMessage(process.env.TELEGRAM_CHAT_ID, summaryMessage);
+      logger.info("Sent summary message to Telegram");
+    } else {
+      logger.warn("No active users found");
+    }
+    
+    logger.info("Completed active users analysis");
+  } catch (error) {
+    logger.error("Fatal error in main process:", error);
+    process.exit(1);
   }
-  
-  logger.info("Completed active users analysis");
 }
 
 main(); 
