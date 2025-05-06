@@ -145,13 +145,14 @@ async function getMostActiveUsers(subreddits, limit = 200) {
         karma: data.karma,
         subreddits: Array.from(data.subreddits),
       }))
+      .filter(user => user.posts >= 5)
       .sort((a, b) => b.karma - a.karma)
       .slice(0, limit);
 
     // Save results
     await saveActiveUsers(activeUsers);
     logger.info(
-      `Found ${activeUsers.length} active users across ${subreddits.length} subreddits. Top user: ${activeUsers[0]?.username} with ${activeUsers[0]?.karma} karma`
+      `Found ${activeUsers.length} active users (with 5+ posts) across ${subreddits.length} subreddits. Top user: ${activeUsers[0]?.username} with ${activeUsers[0]?.karma} karma`
     );
 
     return activeUsers;
