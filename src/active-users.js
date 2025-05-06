@@ -68,8 +68,6 @@ async function sendActiveUserNotification(user) {
       `🔗 Profile: ${profileUrl}\n` +
       `📊 Activity:\n` +
       `   • Posts: ${user.posts}\n` +
-      `   • Comments: ${user.comments}\n` +
-      `   • Total Actions: ${user.totalActivity}\n` +
       `   • Total Karma: ${user.karma}\n` +
       `🎯 Active in: ${user.subreddits.join(", ")}\n\n` +
       `💡 Consider reaching out manually about Post Content!`;
@@ -118,43 +116,6 @@ async function getMostActiveUsers(subreddits, limit = 200) {
         }
       }
 
-      // Fetch top comments from the past year
-      let comments = [];
-      attempts = 0;
-      while (true) {
-        try {
-          logger.info(`Fetching comments from top posts in ${subredditName}`);
-          // Get top posts and then get their comments
-          const topPosts = await subreddit.getTop({ time: 'year', limit: 25 });
-          logger.info(`Found ${topPosts.length} top posts to fetch comments from`);
-          
-          for (const post of topPosts) {
-            logger.info(`Fetching comments for post: ${post.title}`);
-            const postComments = await post.comments.fetchAll();
-            logger.info(`Found ${postComments.length} comments for post: ${post.title}`);
-            comments = comments.concat(postComments);
-          }
-          logger.info(`Total comments fetched from ${subredditName}: ${comments.length}`);
-          break;
-        } catch (err) {
-          if (
-            err.statusCode === 429 ||
-            (err.message && err.message.includes("rate limit"))
-          ) {
-            logger.info(
-              `Reddit API rate limit hit for comments in ${subredditName}. Waiting 60 seconds...`
-            );
-            await new Promise((resolve) => setTimeout(resolve, 60 * 1000));
-            attempts++;
-            if (attempts > 5)
-              throw new Error("Too many rate limit retries for comments.");
-          } else {
-            logger.error(`Error fetching comments from ${subredditName}:`, err);
-            throw err;
-          }
-        }
-      }
-
       // Count posts and karma
       logger.info(`Processing ${posts.length} posts from ${subredditName}`);
       for (const post of posts) {
@@ -163,29 +124,11 @@ async function getMostActiveUsers(subreddits, limit = 200) {
         
         userActivity[username] = userActivity[username] || {
           posts: 0,
-          comments: 0,
           karma: 0,
           subreddits: new Set(),
         };
         userActivity[username].posts += 1;
         userActivity[username].karma += post.score;
-        userActivity[username].subreddits.add(subredditName);
-      }
-
-      // Count comments and karma
-      logger.info(`Processing ${comments.length} comments from ${subredditName}`);
-      for (const comment of comments) {
-        const username = comment.author.name;
-        if (username === "[deleted]") continue;
-        
-        userActivity[username] = userActivity[username] || {
-          posts: 0,
-          comments: 0,
-          karma: 0,
-          subreddits: new Set(),
-        };
-        userActivity[username].comments += 1;
-        userActivity[username].karma += comment.score;
         userActivity[username].subreddits.add(subredditName);
       }
 
@@ -199,8 +142,6 @@ async function getMostActiveUsers(subreddits, limit = 200) {
       .map(([username, data]) => ({
         username,
         posts: data.posts,
-        comments: data.comments,
-        totalActivity: data.posts + data.comments,
         karma: data.karma,
         subreddits: Array.from(data.subreddits),
       }))
@@ -216,7 +157,7 @@ async function getMostActiveUsers(subreddits, limit = 200) {
     return activeUsers;
   } catch (error) {
     logger.error("Error fetching active users:", error);
-    throw error; // Re-throw to see the full error in the console
+    throw error;
   }
 }
 
@@ -229,11 +170,11 @@ async function main() {
     if (activeUsers.length > 0) {
       logger.info(`Found ${activeUsers.length} active users. Sending notifications...`);
       
-      // Send individual notifications for top 5 most active users
-      for (const user of activeUsers.slice(0, 5)) {
+      // Send notifications for all users
+      for (const user of activeUsers) {
         await sendActiveUserNotification(user);
         logger.info(`Sent notification for user: ${user.username}`);
-        // Add delay between notifications
+        // Add delay between notifications to avoid rate limits
         await new Promise((resolve) => setTimeout(resolve, 1000));
       }
 
@@ -241,7 +182,7 @@ async function main() {
       const summaryMessage =
         `📊 Top Users Summary\n\n` +
         `Found ${activeUsers.length} active users across ${TARGET_SUBREDDITS.length} subreddits.\n` +
-        `Top 5 users have been sent as individual messages.\n` +
+        `All users have been sent as individual messages.\n` +
         `Full report saved to ${ACTIVE_USERS_FILE}`;
       await telegramBot.sendMessage(process.env.TELEGRAM_CHAT_ID, summaryMessage);
       logger.info("Sent summary message to Telegram");
