@@ -79,7 +79,7 @@ async function sendActiveUserNotification(user) {
   }
 }
 
-async function getMostActiveUsers(subreddits, limit = 200) {
+async function getMostActiveUsers(subreddits) {
   try {
     logger.info(`Starting to fetch active users from ${subreddits.length} subreddits`);
     const userActivity = {};
@@ -94,7 +94,7 @@ async function getMostActiveUsers(subreddits, limit = 200) {
       while (true) {
         try {
           logger.info(`Fetching top posts from ${subredditName}`);
-          posts = await subreddit.getTop({ time: 'year', limit: 100 });
+          posts = await subreddit.getTop({ time: 'year', limit: 500 });
           logger.info(`Successfully fetched ${posts.length} top posts from ${subredditName}`);
           break;
         } catch (err) {
@@ -146,8 +146,7 @@ async function getMostActiveUsers(subreddits, limit = 200) {
         subreddits: Array.from(data.subreddits),
       }))
       .filter(user => user.posts >= 5)
-      .sort((a, b) => b.karma - a.karma)
-      .slice(0, limit);
+      .sort((a, b) => b.karma - a.karma);
 
     // Save results
     await saveActiveUsers(activeUsers);
@@ -167,7 +166,7 @@ async function main() {
     logger.info("Starting active users analysis");
     
     // Fetch most active users
-    const activeUsers = await getMostActiveUsers(TARGET_SUBREDDITS, 200);
+    const activeUsers = await getMostActiveUsers(TARGET_SUBREDDITS);
     if (activeUsers.length > 0) {
       logger.info(`Found ${activeUsers.length} active users. Sending notifications...`);
       
