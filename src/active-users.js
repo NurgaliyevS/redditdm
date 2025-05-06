@@ -79,6 +79,16 @@ async function sendActiveUserNotification(user) {
   }
 }
 
+async function getExistingUsers() {
+  try {
+    const data = await fs.readFile(ACTIVE_USERS_FILE, 'utf8');
+    return JSON.parse(data);
+  } catch (error) {
+    logger.info('No existing users file found, starting fresh');
+    return [];
+  }
+}
+
 async function getMostActiveUsers(subreddits) {
   try {
     logger.info(`Starting to fetch active users from ${subreddits.length} subreddits`);
@@ -165,27 +175,40 @@ async function main() {
   try {
     logger.info("Starting active users analysis");
     
+    // Get existing users
+    const existingUsers = await getExistingUsers();
+    const existingUsernames = new Set(existingUsers.map(user => user.username));
+    logger.info(`Found ${existingUsers.length} existing users in the database`);
+    
     // Fetch most active users
     const activeUsers = await getMostActiveUsers(TARGET_SUBREDDITS);
     if (activeUsers.length > 0) {
-      logger.info(`Found ${activeUsers.length} active users. Sending notifications...`);
+      // Filter out existing users
+      const newUsers = activeUsers.filter(user => !existingUsernames.has(user.username));
+      logger.info(`Found ${newUsers.length} new users out of ${activeUsers.length} total users`);
       
-      // Send notifications for all users
-      for (const user of activeUsers) {
-        await sendActiveUserNotification(user);
-        logger.info(`Sent notification for user: ${user.username}`);
-        // Add delay between notifications to avoid rate limits
-        await new Promise((resolve) => setTimeout(resolve, 1000));
-      }
+      if (newUsers.length > 0) {
+        logger.info(`Sending notifications for ${newUsers.length} new users...`);
+        
+        // Send notifications for new users only
+        for (const user of newUsers) {
+          await sendActiveUserNotification(user);
+          logger.info(`Sent notification for new user: ${user.username}`);
+          // Add delay between notifications to avoid rate limits
+          await new Promise((resolve) => setTimeout(resolve, 1000));
+        }
 
-      // Send summary report
-      const summaryMessage =
-        `📊 Top Users Summary\n\n` +
-        `Found ${activeUsers.length} active users across ${TARGET_SUBREDDITS.length} subreddits.\n` +
-        `All users have been sent as individual messages.\n` +
-        `Full report saved to ${ACTIVE_USERS_FILE}`;
-      await telegramBot.sendMessage(process.env.TELEGRAM_CHAT_ID, summaryMessage);
-      logger.info("Sent summary message to Telegram");
+        // Send summary report
+        const summaryMessage =
+          `📊 New Users Summary\n\n` +
+          `Found ${newUsers.length} new active users out of ${activeUsers.length} total users.\n` +
+          `All new users have been sent as individual messages.\n` +
+          `Full report saved to ${ACTIVE_USERS_FILE}`;
+        await telegramBot.sendMessage(process.env.TELEGRAM_CHAT_ID, summaryMessage);
+        logger.info("Sent summary message to Telegram");
+      } else {
+        logger.info("No new users found to notify");
+      }
     } else {
       logger.warn("No active users found");
     }
