@@ -104,7 +104,7 @@ async function getMostActiveUsers(subreddits) {
       while (true) {
         try {
           logger.info(`Fetching top posts from ${subredditName}`);
-          posts = await subreddit.getTop({ time: 'year', limit: 500 });
+          posts = await subreddit.getTop({ time: 'year', limit: 2000 });
           logger.info(`Successfully fetched ${posts.length} top posts from ${subredditName}`);
           break;
         } catch (err) {
@@ -156,6 +156,7 @@ async function getMostActiveUsers(subreddits) {
         subreddits: Array.from(data.subreddits),
       }))
       .filter(user => user.posts >= 5)
+      .filter(user => user.karma >= 1000)
       .sort((a, b) => b.karma - a.karma);
 
     // Save results
