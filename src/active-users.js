@@ -62,7 +62,7 @@ const TARGET_SUBREDDITS = [
   "networking",
 ];
 
-const TIME_PERIODS = ["year", "month", "week", "day"];
+const TIME_PERIODS = ["all", "year", "month", "week", "day"];
 const SORT_METHODS = ["top", "hot", "new", "controversial"];
 
 function getRandomTimeAndSort() {
@@ -82,7 +82,7 @@ async function sendActiveUserNotification(user) {
   try {
     const profileUrl = `https://reddit.com/user/${user.username}`;
     const message =
-      `🎯 Top User Found!\n\n` +
+      `🎯 New Active User Found!\n\n` +
       `👤 Username: ${user.username}\n` +
       `🔗 Profile: ${profileUrl}\n` +
       `📊 Activity:\n` +
@@ -92,7 +92,7 @@ async function sendActiveUserNotification(user) {
       `💡 Consider reaching out manually about Post Content!`;
 
     await telegramBot.sendMessage(process.env.TELEGRAM_CHAT_ID, message);
-    logger.info(`Sent Telegram notification for active user ${user.username}`);
+    logger.info(`Sent immediate Telegram notification for new user ${user.username}`);
   } catch (error) {
     logger.error("Error sending Telegram notification:", error);
   }
@@ -132,20 +132,20 @@ async function getMostActiveUsers(subreddits) {
           switch (sortMethod) {
             case "top":
               posts = await subreddit.getTop({
-                time: timePeriod,
-                limit: 50000,
+                time: timePeriod === "all" ? "all" : timePeriod,
+                limit: 100000,
               });
               break;
             case "hot":
-              posts = await subreddit.getHot({ limit: 10000 });
+              posts = await subreddit.getHot({ limit: 25000 });
               break;
             case "new":
-              posts = await subreddit.getNew({ limit: 10000 });
+              posts = await subreddit.getNew({ limit: 25000 });
               break;
             case "controversial":
               posts = await subreddit.getControversial({
-                time: timePeriod,
-                limit: 50000,
+                time: timePeriod === "all" ? "all" : timePeriod,
+                limit: 100000,
               });
               break;
           }
@@ -286,11 +286,13 @@ async function main() {
 
 // run every 10 minutes
 cron.schedule("*/10 * * * *", async () => {
-  logger.info("Starting scheduled Reddit active users analysis at 9 AM");
+  logger.info("Starting scheduled Reddit active users analysis every 10 minutes");
 
   await main();
 
   logger.info("Completed scheduled Reddit active users analysis");
 });
 
-logger.info("Reddit active users analysis - Will run daily at 9 AM");
+logger.info("Reddit active users analysis - Will run every 10 minutes");
+
+main();
