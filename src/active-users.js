@@ -188,6 +188,7 @@ async function getMostActiveUsers(subreddits) {
       for (const post of posts) {
         const username = post.author.name;
         if (username === "[deleted]") continue;
+        if (username === "AutoModerator") continue;
 
         userActivity[username] = userActivity[username] || {
           posts: 0,
