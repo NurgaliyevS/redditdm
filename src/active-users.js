@@ -284,8 +284,8 @@ async function main() {
   }
 }
 
-// Schedule the job to run at 9 AM every day by Almaty time or 4 AM UTC
-cron.schedule("0 4 * * *", async () => {
+// run every 10 minutes
+cron.schedule("*/10 * * * *", async () => {
   logger.info("Starting scheduled Reddit active users analysis at 9 AM");
 
   await main();
