@@ -53,6 +53,13 @@ const TARGET_SUBREDDITS = [
   "socialmedia",
   "content_marketing",
   "business",
+  "entrepreneurship",
+  "sales",
+  "b2b_sales",
+  "b2bmarketing",
+  "B2BForHire",
+  "B2BSaaS",
+  "networking",
 ];
 
 const TIME_PERIODS = ["year", "month", "week", "day"];
