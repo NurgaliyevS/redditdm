@@ -73,9 +73,53 @@ function getRandomTimeAndSort() {
   return { timePeriod, sortMethod };
 }
 
-async function saveActiveUsers(users) {
-  await fs.mkdir(path.dirname(ACTIVE_USERS_FILE), { recursive: true });
-  await fs.writeFile(ACTIVE_USERS_FILE, JSON.stringify(users, null, 2));
+async function saveActiveUsers(newUsers) {
+  try {
+    // Get existing users
+    let existingUsers = [];
+    try {
+      const data = await fs.readFile(ACTIVE_USERS_FILE, "utf8");
+      existingUsers = JSON.parse(data);
+    } catch (error) {
+      logger.info("No existing users file found, starting fresh");
+    }
+
+    // Create a map of existing users for easy lookup
+    const existingUsersMap = new Map(
+      existingUsers.map(user => [user.username, user])
+    );
+
+    // Merge new users with existing users
+    for (const newUser of newUsers) {
+      if (existingUsersMap.has(newUser.username)) {
+        // Update existing user with new data
+        const existingUser = existingUsersMap.get(newUser.username);
+        existingUser.posts = newUser.posts;
+        existingUser.karma = newUser.karma;
+        existingUser.subreddits = newUser.subreddits;
+        existingUser.crossSubredditActivity = newUser.crossSubredditActivity;
+        existingUser.crossSubredditScore = newUser.crossSubredditScore;
+        existingUser.lastUpdated = new Date().toISOString();
+      } else {
+        // Add new user
+        newUser.firstSeen = new Date().toISOString();
+        newUser.lastUpdated = new Date().toISOString();
+        existingUsers.push(newUser);
+      }
+    }
+
+    // Sort users by karma
+    existingUsers.sort((a, b) => b.karma - a.karma);
+
+    // Save the merged data
+    await fs.mkdir(path.dirname(ACTIVE_USERS_FILE), { recursive: true });
+    await fs.writeFile(ACTIVE_USERS_FILE, JSON.stringify(existingUsers, null, 2));
+    
+    logger.info(`Successfully saved ${existingUsers.length} users to ${ACTIVE_USERS_FILE}`);
+  } catch (error) {
+    logger.error("Error saving active users:", error);
+    throw error;
+  }
 }
 
 async function sendActiveUserNotification(user) {
@@ -257,13 +301,16 @@ async function main() {
     // Fetch most active users
     const activeUsers = await getMostActiveUsers(TARGET_SUBREDDITS);
     if (activeUsers.length > 0) {
-      // Filter out existing users
+      // Filter out existing users for notifications only
       const newUsers = activeUsers.filter(
         (user) => !existingUsernames.has(user.username)
       );
       logger.info(
         `Found ${newUsers.length} new users out of ${activeUsers.length} total users`
       );
+
+      // Save all active users (both new and existing)
+      await saveActiveUsers(activeUsers);
 
       if (newUsers.length > 0) {
         logger.info(
