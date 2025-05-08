@@ -63,7 +63,7 @@ const TARGET_SUBREDDITS = [
 ];
 
 const TIME_PERIODS = ["all", "year", "month", "week", "day"];
-const SORT_METHODS = ["top", "hot", "new", "controversial"];
+const SORT_METHODS = ["top", "hot", "new", "controversial", "rising"];
 
 function getRandomTimeAndSort() {
   const timePeriod =
@@ -81,6 +81,12 @@ async function saveActiveUsers(users) {
 async function sendActiveUserNotification(user) {
   try {
     const profileUrl = `https://reddit.com/user/${user.username}`;
+    
+    // Format cross-subreddit activity
+    const crossSubredditInfo = Object.entries(user.crossSubredditActivity)
+      .map(([subreddit, count]) => `${subreddit}: ${count} posts`)
+      .join('\n   • ');
+    
     const message =
       `🎯 New Active User Found!\n\n` +
       `👤 Username: ${user.username}\n` +
@@ -88,7 +94,9 @@ async function sendActiveUserNotification(user) {
       `📊 Activity:\n` +
       `   • Posts: ${user.posts}\n` +
       `   • Total Karma: ${user.karma}\n` +
-      `🎯 Active in: ${user.subreddits.join(", ")}\n\n` +
+      `   • Active in ${user.crossSubredditScore} subreddits\n` +
+      `🎯 Cross-Subreddit Activity:\n` +
+      `   • ${crossSubredditInfo}\n\n` +
       `💡 Consider reaching out manually about Post Content!`;
 
     await telegramBot.sendMessage(process.env.TELEGRAM_CHAT_ID, message);
@@ -148,6 +156,9 @@ async function getMostActiveUsers(subreddits) {
                 limit: 100000,
               });
               break;
+            case "rising":
+              posts = await subreddit.getRising({ limit: 25000 });
+              break;
           }
           logger.info(
             `Successfully fetched ${posts.length} ${sortMethod} posts from ${subredditName}`
@@ -182,10 +193,15 @@ async function getMostActiveUsers(subreddits) {
           posts: 0,
           karma: 0,
           subreddits: new Set(),
+          crossSubredditActivity: {},
         };
         userActivity[username].posts += 1;
         userActivity[username].karma += post.score;
         userActivity[username].subreddits.add(subredditName);
+        
+        // Track cross-subreddit activity
+        userActivity[username].crossSubredditActivity[subredditName] = 
+          (userActivity[username].crossSubredditActivity[subredditName] || 0) + 1;
       }
 
       logger.info(
@@ -206,6 +222,8 @@ async function getMostActiveUsers(subreddits) {
         posts: data.posts,
         karma: data.karma,
         subreddits: Array.from(data.subreddits),
+        crossSubredditActivity: data.crossSubredditActivity,
+        crossSubredditScore: Object.keys(data.crossSubredditActivity).length,
       }))
       .filter((user) => user.posts >= 5)
       .filter((user) => user.karma >= 1000)
