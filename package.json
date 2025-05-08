@@ -2,9 +2,9 @@
   "name": "reddit-ai-analyzer",
   "version": "1.0.0",
   "description": "Automated Reddit post analyzer and outreach tool",
-  "main": "src/index.js",
+  "main": "src/active-users.js",
   "scripts": {
-    "start": "node src/index.js",
+    "start": "node src/active-users.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {

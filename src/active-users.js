@@ -4,6 +4,7 @@ const winston = require("winston");
 const fs = require("fs").promises;
 const path = require("path");
 const TelegramBot = require("node-telegram-bot-api");
+const cron = require("node-cron");
 
 // Initialize Reddit client
 const reddit = new Snoowrap({
@@ -54,6 +55,17 @@ const TARGET_SUBREDDITS = [
   "business",
 ];
 
+const TIME_PERIODS = ["year", "month", "week", "day"];
+const SORT_METHODS = ["top", "hot", "new", "controversial"];
+
+function getRandomTimeAndSort() {
+  const timePeriod =
+    TIME_PERIODS[Math.floor(Math.random() * TIME_PERIODS.length)];
+  const sortMethod =
+    SORT_METHODS[Math.floor(Math.random() * SORT_METHODS.length)];
+  return { timePeriod, sortMethod };
+}
+
 async function saveActiveUsers(users) {
   await fs.mkdir(path.dirname(ACTIVE_USERS_FILE), { recursive: true });
   await fs.writeFile(ACTIVE_USERS_FILE, JSON.stringify(users, null, 2));
@@ -62,7 +74,7 @@ async function saveActiveUsers(users) {
 async function sendActiveUserNotification(user) {
   try {
     const profileUrl = `https://reddit.com/user/${user.username}`;
-    const message = 
+    const message =
       `🎯 Top User Found!\n\n` +
       `👤 Username: ${user.username}\n` +
       `🔗 Profile: ${profileUrl}\n` +
@@ -81,31 +93,58 @@ async function sendActiveUserNotification(user) {
 
 async function getExistingUsers() {
   try {
-    const data = await fs.readFile(ACTIVE_USERS_FILE, 'utf8');
+    const data = await fs.readFile(ACTIVE_USERS_FILE, "utf8");
     return JSON.parse(data);
   } catch (error) {
-    logger.info('No existing users file found, starting fresh');
+    logger.info("No existing users file found, starting fresh");
     return [];
   }
 }
 
 async function getMostActiveUsers(subreddits) {
   try {
-    logger.info(`Starting to fetch active users from ${subreddits.length} subreddits`);
+    logger.info(
+      `Starting to fetch active users from ${subreddits.length} subreddits`
+    );
     const userActivity = {};
-    
+    const { timePeriod, sortMethod } = getRandomTimeAndSort();
+    logger.info(`Using time period: ${timePeriod}, sort method: ${sortMethod}`);
+
     for (const subredditName of subreddits) {
       logger.info(`Processing subreddit: ${subredditName}`);
       const subreddit = await reddit.getSubreddit(subredditName);
       let attempts = 0;
 
-      // Fetch top posts from the past year
+      // Fetch posts based on random time period and sort method
       let posts;
       while (true) {
         try {
-          logger.info(`Fetching top posts from ${subredditName}`);
-          posts = await subreddit.getTop({ time: 'year', limit: 2000 });
-          logger.info(`Successfully fetched ${posts.length} top posts from ${subredditName}`);
+          logger.info(
+            `Fetching ${sortMethod} posts from ${subredditName} for the past ${timePeriod}`
+          );
+          switch (sortMethod) {
+            case "top":
+              posts = await subreddit.getTop({
+                time: timePeriod,
+                limit: 50000,
+              });
+              break;
+            case "hot":
+              posts = await subreddit.getHot({ limit: 10000 });
+              break;
+            case "new":
+              posts = await subreddit.getNew({ limit: 10000 });
+              break;
+            case "controversial":
+              posts = await subreddit.getControversial({
+                time: timePeriod,
+                limit: 50000,
+              });
+              break;
+          }
+          logger.info(
+            `Successfully fetched ${posts.length} ${sortMethod} posts from ${subredditName}`
+          );
           break;
         } catch (err) {
           if (
@@ -131,7 +170,7 @@ async function getMostActiveUsers(subreddits) {
       for (const post of posts) {
         const username = post.author.name;
         if (username === "[deleted]") continue;
-        
+
         userActivity[username] = userActivity[username] || {
           posts: 0,
           karma: 0,
@@ -142,12 +181,18 @@ async function getMostActiveUsers(subreddits) {
         userActivity[username].subreddits.add(subredditName);
       }
 
-      logger.info(`Completed processing ${subredditName}. Found ${Object.keys(userActivity).length} active users so far`);
+      logger.info(
+        `Completed processing ${subredditName}. Found ${
+          Object.keys(userActivity).length
+        } active users so far`
+      );
       await new Promise((resolve) => setTimeout(resolve, 2500));
     }
 
     // Calculate activity score and sort users
-    logger.info(`Processing final results for ${Object.keys(userActivity).length} users`);
+    logger.info(
+      `Processing final results for ${Object.keys(userActivity).length} users`
+    );
     const activeUsers = Object.entries(userActivity)
       .map(([username, data]) => ({
         username,
@@ -155,8 +200,8 @@ async function getMostActiveUsers(subreddits) {
         karma: data.karma,
         subreddits: Array.from(data.subreddits),
       }))
-      .filter(user => user.posts >= 5)
-      .filter(user => user.karma >= 1000)
+      .filter((user) => user.posts >= 5)
+      .filter((user) => user.karma >= 1000)
       .sort((a, b) => b.karma - a.karma);
 
     // Save results
@@ -175,22 +220,30 @@ async function getMostActiveUsers(subreddits) {
 async function main() {
   try {
     logger.info("Starting active users analysis");
-    
+
     // Get existing users
     const existingUsers = await getExistingUsers();
-    const existingUsernames = new Set(existingUsers.map(user => user.username));
+    const existingUsernames = new Set(
+      existingUsers.map((user) => user.username)
+    );
     logger.info(`Found ${existingUsers.length} existing users in the database`);
-    
+
     // Fetch most active users
     const activeUsers = await getMostActiveUsers(TARGET_SUBREDDITS);
     if (activeUsers.length > 0) {
       // Filter out existing users
-      const newUsers = activeUsers.filter(user => !existingUsernames.has(user.username));
-      logger.info(`Found ${newUsers.length} new users out of ${activeUsers.length} total users`);
-      
+      const newUsers = activeUsers.filter(
+        (user) => !existingUsernames.has(user.username)
+      );
+      logger.info(
+        `Found ${newUsers.length} new users out of ${activeUsers.length} total users`
+      );
+
       if (newUsers.length > 0) {
-        logger.info(`Sending notifications for ${newUsers.length} new users...`);
-        
+        logger.info(
+          `Sending notifications for ${newUsers.length} new users...`
+        );
+
         // Send notifications for new users only
         for (const user of newUsers) {
           await sendActiveUserNotification(user);
@@ -205,7 +258,10 @@ async function main() {
           `Found ${newUsers.length} new active users out of ${activeUsers.length} total users.\n` +
           `All new users have been sent as individual messages.\n` +
           `Full report saved to ${ACTIVE_USERS_FILE}`;
-        await telegramBot.sendMessage(process.env.TELEGRAM_CHAT_ID, summaryMessage);
+        await telegramBot.sendMessage(
+          process.env.TELEGRAM_CHAT_ID,
+          summaryMessage
+        );
         logger.info("Sent summary message to Telegram");
       } else {
         logger.info("No new users found to notify");
@@ -213,7 +269,7 @@ async function main() {
     } else {
       logger.warn("No active users found");
     }
-    
+
     logger.info("Completed active users analysis");
   } catch (error) {
     logger.error("Fatal error in main process:", error);
@@ -221,4 +277,13 @@ async function main() {
   }
 }
 
-main(); 
+// Schedule the job to run at 9 AM every day by Almaty time or 4 AM UTC
+cron.schedule("0 4 * * *", async () => {
+  logger.info("Starting scheduled Reddit active users analysis at 9 AM");
+
+  await main();
+
+  logger.info("Completed scheduled Reddit active users analysis");
+});
+
+logger.info("Reddit active users analysis - Will run daily at 9 AM");
