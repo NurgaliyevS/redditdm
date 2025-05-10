@@ -62,8 +62,15 @@ const TARGET_SUBREDDITS = [
   "networking",
 ];
 
-const TIME_PERIODS = ["all", "year", "month", "week", "day"];
-const SORT_METHODS = ["top", "hot", "new", "controversial", "rising"];
+// Configuration for post fetching
+const POST_FETCH_CONFIG = {
+  chunkSize: 100000, // Number of posts to fetch per chunk
+  maxChunks: 3,      // Maximum number of chunks to fetch (0 means unlimited)
+  delayBetweenChunks: 10000, // Delay between chunks in milliseconds
+};
+
+const TIME_PERIODS = ["all", "year"];
+const SORT_METHODS = ["top"];
 
 function getRandomTimeAndSort() {
   const timePeriod =
@@ -173,41 +180,71 @@ async function getMostActiveUsers(subreddits) {
       logger.info(`Processing subreddit: ${subredditName}`);
       const subreddit = await reddit.getSubreddit(subredditName);
       let attempts = 0;
+      let allPosts = [];
+      let currentChunk = 0;
 
-      // Fetch posts based on random time period and sort method
-      let posts;
+      // Fetch posts in chunks
       while (true) {
         try {
+          const offset = currentChunk * POST_FETCH_CONFIG.chunkSize;
           logger.info(
-            `Fetching ${sortMethod} posts from ${subredditName} for the past ${timePeriod}`
+            `Fetching ${sortMethod} posts from ${subredditName} for the past ${timePeriod} (chunk ${currentChunk + 1}, offset: ${offset})`
           );
+
+          let posts;
           switch (sortMethod) {
             case "top":
               posts = await subreddit.getTop({
                 time: timePeriod === "all" ? "all" : timePeriod,
-                limit: 100000,
+                limit: POST_FETCH_CONFIG.chunkSize,
+                after: offset > 0 ? allPosts[allPosts.length - 1]?.name : undefined,
               });
               break;
             case "hot":
-              posts = await subreddit.getHot({ limit: 25000 });
+              posts = await subreddit.getHot({ 
+                limit: POST_FETCH_CONFIG.chunkSize,
+                after: offset > 0 ? allPosts[allPosts.length - 1]?.name : undefined,
+              });
               break;
             case "new":
-              posts = await subreddit.getNew({ limit: 25000 });
+              posts = await subreddit.getNew({ 
+                limit: POST_FETCH_CONFIG.chunkSize,
+                after: offset > 0 ? allPosts[allPosts.length - 1]?.name : undefined,
+              });
               break;
             case "controversial":
               posts = await subreddit.getControversial({
                 time: timePeriod === "all" ? "all" : timePeriod,
-                limit: 100000,
+                limit: POST_FETCH_CONFIG.chunkSize,
+                after: offset > 0 ? allPosts[allPosts.length - 1]?.name : undefined,
               });
               break;
             case "rising":
-              posts = await subreddit.getRising({ limit: 25000 });
+              posts = await subreddit.getRising({ 
+                limit: POST_FETCH_CONFIG.chunkSize,
+                after: offset > 0 ? allPosts[allPosts.length - 1]?.name : undefined,
+              });
               break;
           }
+
+          if (posts.length === 0) {
+            logger.info(`No more posts found in ${subredditName} after chunk ${currentChunk + 1}`);
+            break;
+          }
+
+          allPosts = allPosts.concat(posts);
           logger.info(
-            `Successfully fetched ${posts.length} ${sortMethod} posts from ${subredditName}`
+            `Successfully fetched ${posts.length} ${sortMethod} posts from ${subredditName} (total: ${allPosts.length})`
           );
-          break;
+
+          currentChunk++;
+          if (POST_FETCH_CONFIG.maxChunks > 0 && currentChunk >= POST_FETCH_CONFIG.maxChunks) {
+            logger.info(`Reached maximum number of chunks (${POST_FETCH_CONFIG.maxChunks}) for ${subredditName}`);
+            break;
+          }
+
+          // Add delay between chunks
+          await new Promise((resolve) => setTimeout(resolve, POST_FETCH_CONFIG.delayBetweenChunks));
         } catch (err) {
           if (
             err.statusCode === 429 ||
@@ -228,8 +265,8 @@ async function getMostActiveUsers(subreddits) {
       }
 
       // Count posts and karma
-      logger.info(`Processing ${posts.length} posts from ${subredditName}`);
-      for (const post of posts) {
+      logger.info(`Processing ${allPosts.length} posts from ${subredditName}`);
+      for (const post of allPosts) {
         const username = post.author.name;
         if (username === "[deleted]") continue;
         if (username === "AutoModerator") continue;
