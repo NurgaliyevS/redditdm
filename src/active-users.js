@@ -8,11 +8,11 @@ const cron = require("node-cron");
 
 // Initialize Reddit client
 const reddit = new Snoowrap({
-  userAgent: process.env.REDDIT_USER_AGENT,
-  clientId: process.env.REDDIT_CLIENT_ID,
-  clientSecret: process.env.REDDIT_CLIENT_SECRET,
-  username: process.env.REDDIT_USERNAME,
-  password: process.env.REDDIT_PASSWORD,
+  userAgent: process.env.REDDIT_USER_AGENT_2,
+  clientId: process.env.REDDIT_CLIENT_ID_2,
+  clientSecret: process.env.REDDIT_CLIENT_SECRET_2,
+  username: process.env.REDDIT_USERNAME_2,
+  password: process.env.REDDIT_PASSWORD_2,
 });
 
 // Initialize Telegram bot
@@ -196,8 +196,7 @@ async function getMostActiveUsers(subreddits) {
             case "top":
               posts = await subreddit.getTop({
                 time: timePeriod === "all" ? "all" : timePeriod,
-                limit: 500000,
-                after: offset > 0 ? allPosts[allPosts.length - 1]?.name : undefined,
+                limit: 1000000,
               });
               break;
             case "hot":
