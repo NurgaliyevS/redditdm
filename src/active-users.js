@@ -196,7 +196,7 @@ async function getMostActiveUsers(subreddits) {
             case "top":
               posts = await subreddit.getTop({
                 time: timePeriod === "all" ? "all" : timePeriod,
-                limit: 1000000,
+                limit: 20000000,
               });
               break;
             case "hot":
