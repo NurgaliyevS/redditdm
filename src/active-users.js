@@ -43,23 +43,35 @@ if (process.env.NODE_ENV !== "production") {
 
 const ACTIVE_USERS_FILE = "data/active_users.json";
 const TARGET_SUBREDDITS = [
-  "LeadGeneration",
-  "smallbusiness",
-  "GrowthHacking",
-  "Entrepreneur",
-  "startups",
-  "marketing",
-  "digitalmarketing",
-  "socialmedia",
-  "content_marketing",
-  "business",
-  "entrepreneurship",
-  "sales",
-  "b2b_sales",
-  "b2bmarketing",
-  "B2BForHire",
-  "B2BSaaS",
-  "networking",
+  // "LeadGeneration",
+  // "smallbusiness",
+  // "GrowthHacking",
+  // "Entrepreneur",
+  // "startups",
+  // "marketing",
+  // "digitalmarketing",
+  // "socialmedia",
+  // "content_marketing",
+  // "business",
+  // "entrepreneurship",
+  // "sales",
+  // "b2b_sales",
+  // "b2bmarketing",
+  // "B2BForHire",
+  // "B2BSaaS",
+  // "networking",
+  "EntrepreneurRideAlong",
+  "SaaS",
+  "coldemail",
+  "microsaas",
+  "sideproject",
+  "saasmarketing",
+  "ecommerce",
+  "Entrepreneurs",
+  "ycombinator",
+  "digital_marketing",
+  "agency",
+  "askmarketing",
 ];
 
 // Configuration for post fetching
@@ -196,7 +208,7 @@ async function getMostActiveUsers(subreddits) {
             case "top":
               posts = await subreddit.getTop({
                 time: timePeriod === "all" ? "all" : timePeriod,
-                limit: 20000000,
+                limit: 2000000,
               });
               break;
             case "hot":
