@@ -38,9 +38,27 @@ async function loginToReddit() {
     logger.info("Going to Reddit login page");
     await page.goto('https://www.reddit.com/login');
 
+    // wait 3000s using SetTimeout
+    logger.info("Waiting 3000s");
+    await new Promise(resolve => setTimeout(resolve, 3000));
+    logger.info("3000s passed");
+
     // Wait for the login form to load
-    logger.info("Waiting for login form to load");
-    await page.waitForSelector('#login-username', { visible: true });
+    await page.waitForSelector('#login-username');
+    
+    // Get all input fields and their properties
+    const inputFields = await page.evaluate(() => {
+      const inputs = Array.from(document.querySelectorAll('input'));
+      return inputs.map(input => ({
+        id: input.id,
+        name: input.name,
+        type: input.type,
+        placeholder: input.placeholder
+      }));
+    });
+    
+    // Log all input fields
+    logger.info('Found input fields:', inputFields);
     
     // Fill in login credentials
     await page.type('#login-username', process.env.REDDIT_USERNAME);
