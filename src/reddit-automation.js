@@ -111,8 +111,6 @@ async function loginToReddit() {
     // Log all input fields
     logger.info(`Found ${inputFields.totalInputs} regular input elements`);
     logger.info(`Found ${inputFields.totalFaceplateInputs} faceplate input elements`);
-    logger.info('Regular inputs: ' + JSON.stringify(inputFields.regularInputs, null, 2));
-    logger.info('Faceplate inputs: ' + JSON.stringify(inputFields.faceplateInputs, null, 2));
     
     // Now try to fill the login fields
     try {
