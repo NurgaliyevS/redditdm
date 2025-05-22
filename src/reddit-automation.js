@@ -2,7 +2,6 @@ require("dotenv").config();
 const puppeteer = require("puppeteer");
 const winston = require("winston");
 
-
 // Configure logger
 const logger = winston.createLogger({
   level: "info",
@@ -26,7 +25,7 @@ if (process.env.NODE_ENV !== "production") {
 
 async function loginToReddit() {
   const browser = await puppeteer.launch({
-    headless: false, // Set to true in production
+    headless: false,
     defaultViewport: null,
     args: ['--start-maximized']
   });
@@ -36,62 +35,108 @@ async function loginToReddit() {
     
     // Go to Reddit login page
     logger.info("Going to Reddit login page");
-    await page.goto('https://www.reddit.com/login');
-
-    // wait 3000s using SetTimeout
-    logger.info("Waiting 10000s");
-    await new Promise(resolve => setTimeout(resolve, 10000));
-    logger.info("10000s passed");
-
-    // Wait for the login form to load
-    await page.waitForSelector('#login-username');
+    await page.goto('https://www.reddit.com/login', { waitUntil: 'networkidle2' });
     
-    // Get all input fields and their properties
+    // Wait longer for dynamic content to load
+    logger.info("Waiting for page to fully load");
+    await new Promise(resolve => setTimeout(resolve, 10000));
+    
+    // Reddit uses custom web components, so wait for those
+    const possibleSelectors = [
+      'faceplate-text-input#login-username',
+      'faceplate-text-input#login-password',
+      '#login-username',
+      '#login-password'
+    ];
+    
+    // Wait for any of these selectors to appear
+    let foundSelector = null;
+    for (const selector of possibleSelectors) {
+      try {
+        await page.waitForSelector(selector, { timeout: 2000 });
+        foundSelector = selector;
+        logger.info(`Found selector: ${selector}`);
+        break;
+      } catch (e) {
+        // Continue to next selector
+      }
+    }
+    
+    // Get all input fields using multiple approaches including custom elements
     const inputFields = await page.evaluate(() => {
+      // Get regular input elements
       const inputs = Array.from(document.querySelectorAll('input'));
-      return inputs.map(input => ({
+      
+      // Get Reddit's custom faceplate-text-input elements
+      const faceplateInputs = Array.from(document.querySelectorAll('faceplate-text-input'));
+      
+      // Get inputs within forms
+      const formInputs = Array.from(document.querySelectorAll('form input'));
+      
+      // Combine all and map to useful data
+      const allElements = [...inputs, ...formInputs];
+      const inputData = allElements.map(input => ({
+        tagName: input.tagName,
         id: input.id,
         name: input.name,
         type: input.type,
-        placeholder: input.placeholder
+        className: input.className,
+        placeholder: input.placeholder,
+        label: input.getAttribute('aria-label'),
+        dataTestId: input.getAttribute('data-testid'),
+        outerHTML: input.outerHTML.substring(0, 200)
       }));
+      
+      // Add faceplate custom elements
+      const faceplateData = faceplateInputs.map(input => ({
+        tagName: input.tagName,
+        id: input.id,
+        name: input.getAttribute('name'),
+        type: input.getAttribute('type'),
+        className: input.className,
+        placeholder: input.getAttribute('placeholder'),
+        label: input.querySelector('span[slot="label"]')?.textContent?.trim(),
+        autocomplete: input.getAttribute('autocomplete'),
+        outerHTML: input.outerHTML.substring(0, 300)
+      }));
+      
+      return {
+        regularInputs: inputData,
+        faceplateInputs: faceplateData,
+        totalInputs: inputs.length,
+        totalFaceplateInputs: faceplateInputs.length
+      };
     });
     
     // Log all input fields
-    logger.info(`Found ${inputFields.length} input elements`);
-    logger.info('Found input fields: ' + JSON.stringify(inputFields, null, 2));
+    logger.info(`Found ${inputFields.totalInputs} regular input elements`);
+    logger.info(`Found ${inputFields.totalFaceplateInputs} faceplate input elements`);
+    logger.info('Regular inputs: ' + JSON.stringify(inputFields.regularInputs, null, 2));
+    logger.info('Faceplate inputs: ' + JSON.stringify(inputFields.faceplateInputs, null, 2));
     
-    // Fill in login credentials
-    await page.type('#login-username', process.env.REDDIT_USERNAME);
-    await page.type('#login-password', process.env.REDDIT_PASSWORD);
+    // Also check for any forms on the page
+    const forms = await page.evaluate(() => {
+      const formElements = Array.from(document.querySelectorAll('form'));
+      return formElements.map(form => ({
+        id: form.id,
+        className: form.className,
+        action: form.action,
+        method: form.method,
+        innerHTML: form.innerHTML.substring(0, 500) // First 500 chars
+      }));
+    });
     
-    // Click login button
-    await page.click('button.login');
+    logger.info(`Found ${forms.length} form elements`);
+    logger.info('Found forms: ' + JSON.stringify(forms, null, 2));
     
-    // Wait for navigation to complete
-    await page.waitForNavigation();
-    
-    // Check if login was successful
-    const currentUrl = page.url();
-    if (currentUrl.includes('reddit.com')) {
-      logger.info('Successfully logged in to Reddit');
-      return { browser, page };
-    } else {
-      throw new Error('Login failed');
-    }
   } catch (error) {
     logger.error('Error during Reddit login:', error);
-    await browser.close();
     throw error;
   }
 }
 
 async function main() {
-  const { browser, page } = await loginToReddit();
-  await browser.close();
+  await loginToReddit();
 }
 
 main();
-
-// Export the login function
-module.exports = { loginToReddit }; 
