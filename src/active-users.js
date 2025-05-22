@@ -46,25 +46,68 @@ if (process.env.NODE_ENV !== "production") {
 
 const ACTIVE_USERS_FILE = "data/active_users.json";
 const TARGET_SUBREDDITS = [
-  // "LeadGeneration",
-  // "smallbusiness",
-  // "GrowthHacking",
-  // "Entrepreneur",
-  // "startups",
-  // "marketing",
-  // "digitalmarketing",
-  // "socialmedia",
-  // "content_marketing",
-  // "business",
-  // "entrepreneurship",
-  // "sales",
-  // "b2b_sales",
-  // "b2bmarketing",
-  // "B2BForHire",
-  // "B2BSaaS",
-  // "networking",
-  "EntrepreneurRideAlong",
+  // SaaS & Tech Business
   "SaaS",
+  "startup_tech",
+  "startup_software",
+  "startup_web",
+  "startup_mobile",
+  "techbusiness",
+  
+  // Entrepreneurship & Startups
+  "startup_ideas",
+  "indiehackers",
+  "startup_resources",
+  "techstartups",
+  "startup_mentors",
+  "startup_networking",
+  "startup_incubator",
+  "startup_accelerator",
+  "startup_consulting",
+  "startup_advice",
+  
+  // Marketing & Growth
+  "marketing",
+  "digitalmarketing",
+  "socialmedia",
+  "content_marketing",
+  "b2bmarketing",
+  "emailmarketing",
+  "growthhacking",
+  "startup_marketing",
+  "marketing_tech",
+  "marketing_automation",
+  
+  // Business & Sales
+  "sales",
+  "b2b_sales",
+  "sales_tech",
+  "sales_automation",
+  "sales_development",
+  "sales_operations",
+  "sales_engineering",
+  "sales_management",
+  "sales_training",
+  "sales_consulting",
+  
+  // Community & Networking
+  "startup_networking",
+  "startup_mentors",
+  "startup_incubator",
+  "startup_accelerator",
+  "startup_consulting",
+  "startup_advice",
+  
+  // Tools & Resources
+  "startup_resources",
+  "startup_tools",
+  "startup_software",
+  "startup_tech",
+  "startup_web",
+  "startup_mobile",
+  
+  // Original subreddits
+  "EntrepreneurRideAlong",
   "coldemail",
   "microsaas",
   "sideproject",
@@ -74,7 +117,7 @@ const TARGET_SUBREDDITS = [
   "ycombinator",
   "digital_marketing",
   "agency",
-  "askmarketing",
+  "askmarketing"
 ];
 
 // Configuration for post fetching
@@ -211,7 +254,7 @@ async function getMostActiveUsers(subreddits) {
             case "top":
               posts = await subreddit.getTop({
                 time: timePeriod === "all" ? "all" : timePeriod,
-                limit: 2000000,
+                limit: 200000,
               });
               break;
             case "hot":
