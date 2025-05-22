@@ -139,10 +139,10 @@ async function loginToReddit() {
           logger.info('Found faceplate elements, will try direct interaction');
           
           // Uncomment to fill:
-          // await usernameElement.click();
-          // await page.keyboard.type(process.env.REDDIT_USERNAME);
-          // await passwordElement.click();
-          // await page.keyboard.type(process.env.REDDIT_PASSWORD);
+          await usernameElement.click();
+          await page.keyboard.type(process.env.REDDIT_USERNAME);
+          await passwordElement.click();
+          await page.keyboard.type(process.env.REDDIT_PASSWORD);
         }
       }
     } catch (error) {
