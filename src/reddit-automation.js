@@ -114,6 +114,41 @@ async function loginToReddit() {
     logger.info('Regular inputs: ' + JSON.stringify(inputFields.regularInputs, null, 2));
     logger.info('Faceplate inputs: ' + JSON.stringify(inputFields.faceplateInputs, null, 2));
     
+    // Now try to fill the login fields
+    try {
+      // For faceplate-text-input, we need to find the actual input inside it
+      const usernameInput = await page.$('#login-username input');
+      const passwordInput = await page.$('#login-password input');
+      
+      if (usernameInput && passwordInput) {
+        logger.info('Found actual input elements inside faceplate components');
+        
+        // Fill in the credentials (uncomment when ready to use)
+        // await usernameInput.type(process.env.REDDIT_USERNAME);
+        // await passwordInput.type(process.env.REDDIT_PASSWORD);
+        
+        logger.info('Login fields are ready to be filled');
+      } else {
+        logger.info('Could not find actual input elements inside faceplate components');
+        
+        // Try alternative method - clicking and typing directly on the faceplate elements
+        const usernameElement = await page.$('#login-username');
+        const passwordElement = await page.$('#login-password');
+        
+        if (usernameElement && passwordElement) {
+          logger.info('Found faceplate elements, will try direct interaction');
+          
+          // Uncomment to fill:
+          // await usernameElement.click();
+          // await page.keyboard.type(process.env.REDDIT_USERNAME);
+          // await passwordElement.click();
+          // await page.keyboard.type(process.env.REDDIT_PASSWORD);
+        }
+      }
+    } catch (error) {
+      logger.error('Error trying to interact with login fields:', error);
+    }
+    
     // Also check for any forms on the page
     const forms = await page.evaluate(() => {
       const formElements = Array.from(document.querySelectorAll('form'));
