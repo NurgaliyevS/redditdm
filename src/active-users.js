@@ -9,8 +9,6 @@ const cron = require("node-cron");
 // check env dev or prod
 const isDev = process.env.NODE_ENV !== "production";
 
-console.log("isDev", isDev);
-
 // Initialize Reddit client
 const reddit = new Snoowrap({
   userAgent: isDev ? process.env.REDDIT_USER_AGENT_2 : process.env.REDDIT_USER_AGENT,
