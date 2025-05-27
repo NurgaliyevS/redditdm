@@ -36,13 +36,13 @@ const logger = winston.createLogger({
   ],
 });
 
-if (process.env.NODE_ENV !== "production") {
-  logger.add(
-    new winston.transports.Console({
-      format: winston.format.simple(),
-    })
-  );
-}
+// if (process.env.NODE_ENV !== "production") {
+//   logger.add(
+//     new winston.transports.Console({
+//       format: winston.format.simple(),
+//     })
+//   );
+// }
 
 const ACTIVE_USERS_FILE = "data/active_users.json";
 const TARGET_SUBREDDITS = [
