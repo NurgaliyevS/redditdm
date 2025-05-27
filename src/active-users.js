@@ -259,11 +259,6 @@ async function getMostActiveUsers(subreddits) {
                   limit: 200000,
                 });
                 break;
-                posts = await subreddit.getNew({ 
-                  limit: POST_FETCH_CONFIG.chunkSize,
-                  after: offset > 0 ? allPosts[allPosts.length - 1]?.name : undefined,
-                });
-                break;
             }
 
             if (posts.length === 0) {
