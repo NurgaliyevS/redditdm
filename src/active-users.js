@@ -395,7 +395,6 @@ async function main() {
 // run every 10 minutes
 cron.schedule("*/10 * * * *", async () => {
   try {
-    await telegramBot.sendMessage(process.env.TELEGRAM_CHAT_ID, "Telegram bot is running");
     logger.info("Starting scheduled Reddit active users analysis every 10 minutes");
 
     await main();
