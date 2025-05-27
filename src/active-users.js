@@ -47,24 +47,24 @@ if (process.env.NODE_ENV !== "production") {
 const ACTIVE_USERS_FILE = "data/active_users.json";
 const TARGET_SUBREDDITS = [
   // SaaS & Tech Business
-  // "SaaS",
-  // "startup_tech",
-  // "startup_software",
-  // "startup_web",
-  // "startup_mobile",
-  // "techbusiness",
+  "SaaS",
+  "startup_tech",
+  "startup_software",
+  "startup_web",
+  "startup_mobile",
+  "techbusiness",
   
   // Entrepreneurship & Startups
-  // "startup_ideas",
-  // "indiehackers",
-  // "startup_resources",
-  // "techstartups",
-  // "startup_mentors",
-  // "startup_networking",
-  // "startup_incubator",
-  // "startup_accelerator",
-  // "startup_consulting",
-  // "startup_advice",
+  "startup_ideas",
+  "indiehackers",
+  "startup_resources",
+  "techstartups",
+  "startup_mentors",
+  "startup_networking",
+  "startup_incubator",
+  "startup_accelerator",
+  "startup_consulting",
+  "startup_advice",
   
   // Marketing & Growth
   "marketing",
@@ -75,49 +75,50 @@ const TARGET_SUBREDDITS = [
   "emailmarketing",
   "growthhacking",
   "startup_marketing",
+    "marketing",
   "marketing_tech",
   "marketing_automation",
   
   // Business & Sales
-  // "sales",
-  // "b2b_sales",
-  // "sales_tech",
-  // "sales_automation",
-  // "sales_development",
-  // "sales_operations",
-  // "sales_engineering",
-  // "sales_management",
-  // "sales_training",
-  // "sales_consulting",
+  "sales",
+  "b2b_sales",
+  "sales_tech",
+  "sales_automation",
+  "sales_development",
+  "sales_operations",
+  "sales_engineering",
+  "sales_management",
+  "sales_training",
+  "sales_consulting",
   
   // Community & Networking
-  // "startup_networking",
-  // "startup_mentors",
-  // "startup_incubator",
-  // "startup_accelerator",
-  // "startup_consulting",
-  // "startup_advice",
+  "startup_networking",
+  "startup_mentors",
+  "startup_incubator",
+  "startup_accelerator",
+  "startup_consulting",
+  "startup_advice",
   
   // Tools & Resources
-  // "startup_resources",
-  // "startup_tools",
-  // "startup_software",
-  // "startup_tech",
-  // "startup_web",
-  // "startup_mobile",
+  "startup_resources",
+  "startup_tools",
+  "startup_software",
+  "startup_tech",
+  "startup_web",
+  "startup_mobile",
   
   // Original subreddits
-  // "EntrepreneurRideAlong",
-  // "coldemail",
-  // "microsaas",
-  // "sideproject",
-  // "saasmarketing",
-  // "ecommerce",
-  // "Entrepreneurs",
-  // "ycombinator",
-  // "digital_marketing",
-  // "agency",
-  // "askmarketing"
+  "EntrepreneurRideAlong",
+  "coldemail",
+  "microsaas",
+  "sideproject",
+  "saasmarketing",
+  "ecommerce",
+  "Entrepreneurs",
+  "ycombinator",
+  "digital_marketing",
+  "agency",
+  "askmarketing"
 ];
 
 // Configuration for post fetching
@@ -236,105 +237,116 @@ async function getMostActiveUsers(subreddits) {
 
     for (const subredditName of subreddits) {
       logger.info(`Processing subreddit: ${subredditName}`);
-      const subreddit = await reddit.getSubreddit(subredditName);
-      let attempts = 0;
-      let allPosts = [];
-      let currentChunk = 0;
+      try {
+        const subreddit = await reddit.getSubreddit(subredditName);
+        let attempts = 0;
+        let allPosts = [];
+        let currentChunk = 0;
 
-      // Fetch posts in chunks
-      while (true) {
-        try {
-          const offset = currentChunk * POST_FETCH_CONFIG.chunkSize;
-          logger.info(
-            `Fetching ${sortMethod} posts from ${subredditName} for the past ${timePeriod} (chunk ${currentChunk + 1}, offset: ${offset})`
-          );
-
-          let posts;
-          switch (sortMethod) {
-            case "top":
-              posts = await subreddit.getTop({
-                time: timePeriod === "all" ? "all" : timePeriod,
-                limit: 200000,
-              });
-              break;
-            case "hot":
-              posts = await subreddit.getHot({ 
-                limit: POST_FETCH_CONFIG.chunkSize,
-                after: offset > 0 ? allPosts[allPosts.length - 1]?.name : undefined,
-              });
-              break;
-            case "new":
-              posts = await subreddit.getNew({ 
-                limit: POST_FETCH_CONFIG.chunkSize,
-                after: offset > 0 ? allPosts[allPosts.length - 1]?.name : undefined,
-              });
-              break;
-          }
-
-          if (posts.length === 0) {
-            logger.info(`No more posts found in ${subredditName} after chunk ${currentChunk + 1}`);
-            break;
-          }
-
-          allPosts = allPosts.concat(posts);
-          logger.info(
-            `Successfully fetched ${posts.length} ${sortMethod} posts from ${subredditName} (total: ${allPosts.length})`
-          );
-
-          currentChunk++;
-          if (POST_FETCH_CONFIG.maxChunks > 0 && currentChunk >= POST_FETCH_CONFIG.maxChunks) {
-            logger.info(`Reached maximum number of chunks (${POST_FETCH_CONFIG.maxChunks}) for ${subredditName}`);
-            break;
-          }
-
-          // Add delay between chunks
-          await new Promise((resolve) => setTimeout(resolve, POST_FETCH_CONFIG.delayBetweenChunks));
-        } catch (err) {
-          if (
-            err.statusCode === 429 ||
-            (err.message && err.message.includes("rate limit"))
-          ) {
+        // Fetch posts in chunks
+        while (true) {
+          try {
+            const offset = currentChunk * POST_FETCH_CONFIG.chunkSize;
             logger.info(
-              `Reddit API rate limit hit for posts in ${subredditName}. Waiting 60 seconds...`
+              `Fetching ${sortMethod} posts from ${subredditName} for the past ${timePeriod} (chunk ${currentChunk + 1}, offset: ${offset})`
             );
-            await new Promise((resolve) => setTimeout(resolve, 60 * 1000));
-            attempts++;
-            if (attempts > 5)
-              throw new Error("Too many rate limit retries for posts.");
-          } else {
-            logger.error(`Error fetching posts from ${subredditName}:`, err);
-            throw err;
+
+            let posts;
+            switch (sortMethod) {
+              case "top":
+                posts = await subreddit.getTop({
+                  time: timePeriod === "all" ? "all" : timePeriod,
+                  limit: 200000,
+                });
+                break;
+              case "hot":
+                posts = await subreddit.getHot({ 
+                  limit: POST_FETCH_CONFIG.chunkSize,
+                  after: offset > 0 ? allPosts[allPosts.length - 1]?.name : undefined,
+                });
+                break;
+              case "new":
+                posts = await subreddit.getNew({ 
+                  limit: POST_FETCH_CONFIG.chunkSize,
+                  after: offset > 0 ? allPosts[allPosts.length - 1]?.name : undefined,
+                });
+                break;
+            }
+
+            if (posts.length === 0) {
+              logger.info(`No more posts found in ${subredditName} after chunk ${currentChunk + 1}`);
+              break;
+            }
+
+            allPosts = allPosts.concat(posts);
+            logger.info(
+              `Successfully fetched ${posts.length} ${sortMethod} posts from ${subredditName} (total: ${allPosts.length})`
+            );
+
+            currentChunk++;
+            if (POST_FETCH_CONFIG.maxChunks > 0 && currentChunk >= POST_FETCH_CONFIG.maxChunks) {
+              logger.info(`Reached maximum number of chunks (${POST_FETCH_CONFIG.maxChunks}) for ${subredditName}`);
+              break;
+            }
+
+            // Add delay between chunks
+            await new Promise((resolve) => setTimeout(resolve, POST_FETCH_CONFIG.delayBetweenChunks));
+          } catch (err) {
+            if (
+              err.statusCode === 429 ||
+              (err.message && err.message.includes("rate limit"))
+            ) {
+              logger.info(
+                `Reddit API rate limit hit for posts in ${subredditName}. Waiting 60 seconds...`
+              );
+              await new Promise((resolve) => setTimeout(resolve, 60 * 1000));
+              attempts++;
+              if (attempts > 5)
+                throw new Error("Too many rate limit retries for posts.");
+            } else {
+              logger.error(`Error fetching posts from ${subredditName}:`, err);
+              throw err;
+            }
           }
         }
+
+        // Count posts and karma
+        logger.info(`Processing ${allPosts.length} posts from ${subredditName}`);
+        for (const post of allPosts) {
+          const username = post.author.name;
+          if (username === "[deleted]") continue;
+          if (username === "AutoModerator") continue;
+
+          userActivity[username] = userActivity[username] || {
+            posts: 0,
+            karma: 0,
+            subreddits: new Set(),
+            crossSubredditActivity: {},
+          };
+          userActivity[username].posts += 1;
+          userActivity[username].karma += post.score;
+          userActivity[username].subreddits.add(subredditName);
+          
+          // Track cross-subreddit activity
+          userActivity[username].crossSubredditActivity[subredditName] = 
+            (userActivity[username].crossSubredditActivity[subredditName] || 0) + 1;
+        }
+
+        logger.info(
+          `Completed processing ${subredditName}. Found ${
+            Object.keys(userActivity).length
+          } active users so far`
+        );
+      } catch (err) {
+        // Handle banned/not found subreddits
+        if (err.statusCode === 404 && err.response?.body?.reason === "banned") {
+          logger.warn(`Subreddit ${subredditName} is banned or not found. Skipping...`);
+          continue;
+        }
+        // Handle other errors
+        logger.error(`Error processing subreddit ${subredditName}:`, err);
+        continue;
       }
-
-      // Count posts and karma
-      logger.info(`Processing ${allPosts.length} posts from ${subredditName}`);
-      for (const post of allPosts) {
-        const username = post.author.name;
-        if (username === "[deleted]") continue;
-        if (username === "AutoModerator") continue;
-
-        userActivity[username] = userActivity[username] || {
-          posts: 0,
-          karma: 0,
-          subreddits: new Set(),
-          crossSubredditActivity: {},
-        };
-        userActivity[username].posts += 1;
-        userActivity[username].karma += post.score;
-        userActivity[username].subreddits.add(subredditName);
-        
-        // Track cross-subreddit activity
-        userActivity[username].crossSubredditActivity[subredditName] = 
-          (userActivity[username].crossSubredditActivity[subredditName] || 0) + 1;
-      }
-
-      logger.info(
-        `Completed processing ${subredditName}. Found ${
-          Object.keys(userActivity).length
-        } active users so far`
-      );
       await new Promise((resolve) => setTimeout(resolve, 2500));
     }
 
