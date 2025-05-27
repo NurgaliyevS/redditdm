@@ -7,15 +7,17 @@ const TelegramBot = require("node-telegram-bot-api");
 const cron = require("node-cron");
 
 // check env dev or prod
-const isDev = process.env.NODE_ENV !== "production";
+const isDev = process.env.NODE_ENV === "production";
+
+console.log("isDev", isDev);
 
 // Initialize Reddit client
 const reddit = new Snoowrap({
-  userAgent: isDev ? process.env.REDDIT_USER_AGENT_2 : process.env.REDDIT_USER_AGENT,
-  clientId: isDev ? process.env.REDDIT_CLIENT_ID_2 : process.env.REDDIT_CLIENT_ID,
-  clientSecret: isDev ? process.env.REDDIT_CLIENT_SECRET_2 : process.env.REDDIT_CLIENT_SECRET,
-  username: isDev ? process.env.REDDIT_USERNAME_2 : process.env.REDDIT_USERNAME,
-  password: isDev ? process.env.REDDIT_PASSWORD_2 : process.env.REDDIT_PASSWORD,
+  userAgent: isDev ? process.env.REDDIT_USER_AGENT_2 : process.env.REDDIT_USER_AGENT_PROD,
+  clientId: isDev ? process.env.REDDIT_CLIENT_ID_2 : process.env.REDDIT_CLIENT_ID_PROD,
+  clientSecret: isDev ? process.env.REDDIT_CLIENT_SECRET_2 : process.env.REDDIT_CLIENT_SECRET_PROD,
+  username: isDev ? process.env.REDDIT_USERNAME_2 : process.env.REDDIT_USERNAME_PROD,
+  password: isDev ? process.env.REDDIT_PASSWORD_2 : process.env.REDDIT_PASSWORD_PROD,
 });
 
 // Initialize Telegram bot
