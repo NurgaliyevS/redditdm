@@ -350,7 +350,7 @@ async function getMostActiveUsers(subreddits) {
         crossSubredditScore: Object.keys(data.crossSubredditActivity).length,
       }))
       .filter((user) => user.posts >= 5)
-      .filter((user) => user.karma >= 1000)
+      .filter((user) => user.karma >= 500)
       .sort((a, b) => b.karma - a.karma);
 
     // Save results
@@ -431,11 +431,16 @@ async function main() {
 
 // run every 10 minutes
 cron.schedule("*/10 * * * *", async () => {
-  logger.info("Starting scheduled Reddit active users analysis every 10 minutes");
+  try {
+    await telegramBot.sendMessage(process.env.TELEGRAM_CHAT_ID, "Telegram bot is running");
+    logger.info("Starting scheduled Reddit active users analysis every 10 minutes");
 
-  await main();
+    await main();
 
-  logger.info("Completed scheduled Reddit active users analysis");
+    logger.info("Completed scheduled Reddit active users analysis");
+  } catch (error) {
+    logger.error("Error in scheduled Reddit active users analysis:", error);
+  }
 });
 
 logger.info("Reddit active users analysis - Will run every 10 minutes");
