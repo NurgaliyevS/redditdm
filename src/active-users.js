@@ -137,6 +137,10 @@ function getRandomTimeAndSort() {
   return { timePeriod, sortMethod };
 }
 
+function randomDelay(min = 2000, max = 7000) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
 async function saveActiveUsers(newUsers) {
   try {
     // Get existing users
@@ -296,7 +300,7 @@ async function getMostActiveUsers(subreddits) {
         logger.error(`Error processing subreddit ${subredditName}:`, err);
         continue;
       }
-      await new Promise((resolve) => setTimeout(resolve, 2500));
+      await new Promise((resolve) => setTimeout(resolve, randomDelay()));
     }
 
     // Calculate activity score and sort users
@@ -371,7 +375,7 @@ async function main() {
           await sendActiveUserNotification(user);
           logger.info(`Sent notification for new user: ${user.username}`);
           // Add delay between notifications to avoid rate limits
-          await new Promise((resolve) => setTimeout(resolve, 1000));
+          await new Promise((resolve) => setTimeout(resolve, randomDelay()));
         }
 
         // Send summary report
