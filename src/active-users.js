@@ -237,68 +237,31 @@ async function getMostActiveUsers(subreddits) {
       logger.info(`Processing subreddit: ${subredditName}`);
       try {
         const subreddit = await reddit.getSubreddit(subredditName);
-        let attempts = 0;
-        let allPosts = [];
-        let currentChunk = 0;
-
-        // Fetch posts in chunks
-        while (true) {
-          try {
-            const offset = currentChunk * POST_FETCH_CONFIG.chunkSize;
-            logger.info(
-              `Fetching ${sortMethod} posts from ${subredditName} for the past ${timePeriod} (chunk ${currentChunk + 1}, offset: ${offset})`
-            );
-
-            let posts;
-            switch (sortMethod) {
-              case "top":
-                posts = await subreddit.getTop({
-                  time: timePeriod === "all" ? "all" : timePeriod,
-                  limit: 200000,
-                });
-                break;
-            }
-
-            if (posts.length === 0) {
-              logger.info(`No more posts found in ${subredditName} after chunk ${currentChunk + 1}`);
-              break;
-            }
-
-            allPosts = allPosts.concat(posts);
-            logger.info(
-              `Successfully fetched ${posts.length} ${sortMethod} posts from ${subredditName} (total: ${allPosts.length})`
-            );
-
-            currentChunk++;
-            if (POST_FETCH_CONFIG.maxChunks > 0 && currentChunk >= POST_FETCH_CONFIG.maxChunks) {
-              logger.info(`Reached maximum number of chunks (${POST_FETCH_CONFIG.maxChunks}) for ${subredditName}`);
-              break;
-            }
-
-            // Add delay between chunks
-            await new Promise((resolve) => setTimeout(resolve, POST_FETCH_CONFIG.delayBetweenChunks));
-          } catch (err) {
-            if (
-              err.statusCode === 429 ||
-              (err.message && err.message.includes("rate limit"))
-            ) {
-              logger.info(
-                `Reddit API rate limit hit for posts in ${subredditName}. Waiting 60 seconds...`
-              );
-              await new Promise((resolve) => setTimeout(resolve, 60 * 1000));
-              attempts++;
-              if (attempts > 5)
-                throw new Error("Too many rate limit retries for posts.");
-            } else {
-              logger.error(`Error fetching posts from ${subredditName}:`, err);
-              throw err;
-            }
-          }
+        logger.info(
+          `Fetching up to 1000 ${sortMethod} posts from ${subredditName} for the past ${timePeriod}`
+        );
+        let posts = [];
+        switch (sortMethod) {
+          case "top":
+            posts = await subreddit.getTop({
+              time: timePeriod === "all" ? "all" : timePeriod,
+              limit: 1000,
+            });
+            break;
         }
 
+        if (posts.length === 0) {
+          logger.info(`No posts found in ${subredditName}`);
+          continue;
+        }
+
+        logger.info(
+          `Successfully fetched ${posts.length} ${sortMethod} posts from ${subredditName}`
+        );
+
         // Count posts and karma
-        logger.info(`Processing ${allPosts.length} posts from ${subredditName}`);
-        for (const post of allPosts) {
+        logger.info(`Processing ${posts.length} posts from ${subredditName}`);
+        for (const post of posts) {
           const username = post.author.name;
           if (username === "[deleted]") continue;
           if (username === "AutoModerator") continue;
