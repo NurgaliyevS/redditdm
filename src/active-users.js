@@ -11,22 +11,14 @@ const isDev = process.env.NODE_ENV !== "production";
 
 console.log("isDev", isDev);
 
-const reddit = new Snoowrap({
-  userAgent: process.env.REDDIT_USER_AGENT_2,
-  clientId: process.env.REDDIT_CLIENT_ID_2,
-  clientSecret: process.env.REDDIT_CLIENT_SECRET_2,
-  username: process.env.REDDIT_USERNAME_2,
-  password: process.env.REDDIT_PASSWORD_2,
-});
-
 // Initialize Reddit client
-// const reddit = new Snoowrap({
-//   userAgent: isDev ? process.env.REDDIT_USER_AGENT_2 : process.env.REDDIT_USER_AGENT,
-//   clientId: isDev ? process.env.REDDIT_CLIENT_ID_2 : process.env.REDDIT_CLIENT_ID,
-//   clientSecret: isDev ? process.env.REDDIT_CLIENT_SECRET_2 : process.env.REDDIT_CLIENT_SECRET,
-//   username: isDev ? process.env.REDDIT_USERNAME_2 : process.env.REDDIT_USERNAME,
-//   password: isDev ? process.env.REDDIT_PASSWORD_2 : process.env.REDDIT_PASSWORD,
-// });
+const reddit = new Snoowrap({
+  userAgent: isDev ? process.env.REDDIT_USER_AGENT_2 : process.env.REDDIT_USER_AGENT,
+  clientId: isDev ? process.env.REDDIT_CLIENT_ID_2 : process.env.REDDIT_CLIENT_ID,
+  clientSecret: isDev ? process.env.REDDIT_CLIENT_SECRET_2 : process.env.REDDIT_CLIENT_SECRET,
+  username: isDev ? process.env.REDDIT_USERNAME_2 : process.env.REDDIT_USERNAME,
+  password: isDev ? process.env.REDDIT_PASSWORD_2 : process.env.REDDIT_PASSWORD,
+});
 
 // Initialize Telegram bot
 const telegramBot = new TelegramBot(process.env.TELEGRAM_BOT_TOKEN, {
