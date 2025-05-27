@@ -340,8 +340,15 @@ async function main() {
     );
     logger.info(`Found ${existingUsers.length} existing users in the database`);
 
+    // Search for subreddits by keyword
+    const KEYWORD = 'marketing';
+    const searchResults = await reddit.searchSubreddits({query: KEYWORD, limit: 100});
+    const subredditsToProcess = searchResults.map(sub => sub.display_name);
+
+    logger.info(`Found ${subredditsToProcess.length} subreddits for keyword '${KEYWORD}': ${subredditsToProcess.join(', ')}`);
+
     // Fetch most active users
-    const activeUsers = await getMostActiveUsers(TARGET_SUBREDDITS);
+    const activeUsers = await getMostActiveUsers(subredditsToProcess);
     if (activeUsers.length > 0) {
       // Filter out existing users for notifications only
       const newUsers = activeUsers.filter(
