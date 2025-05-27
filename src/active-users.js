@@ -239,67 +239,79 @@ async function getMostActiveUsers(subreddits) {
 
     for (const subredditName of subreddits) {
       logger.info(`Processing subreddit: ${subredditName}`);
-      try {
-        const subreddit = await reddit.getSubreddit(subredditName);
-        logger.info(
-          `Fetching up to 1000 ${sortMethod} posts from ${subredditName} for the past ${timePeriod}`
-        );
-        let posts = [];
-        switch (sortMethod) {
-          case "top":
-            posts = await subreddit.getTop({
-              time: timePeriod === "all" ? "all" : timePeriod,
-              limit: 1000,
-            });
+      let attempts = 0;
+      while (attempts < 5) {
+        try {
+          const subreddit = await reddit.getSubreddit(subredditName);
+          logger.info(
+            `Fetching up to 1000 ${sortMethod} posts from ${subredditName} for the past ${timePeriod}`
+          );
+          let posts = [];
+          switch (sortMethod) {
+            case "top":
+              posts = await subreddit.getTop({
+                time: timePeriod === "all" ? "all" : timePeriod,
+                limit: 1000,
+              });
+              break;
+          }
+
+          if (posts.length === 0) {
+            logger.info(`No posts found in ${subredditName}`);
             break;
+          }
+
+          logger.info(
+            `Successfully fetched ${posts.length} ${sortMethod} posts from ${subredditName}`
+          );
+
+          // Count posts and karma
+          logger.info(`Processing ${posts.length} posts from ${subredditName}`);
+          for (const post of posts) {
+            const username = post.author.name;
+            if (username === "[deleted]") continue;
+            if (username === "AutoModerator") continue;
+
+            userActivity[username] = userActivity[username] || {
+              posts: 0,
+              karma: 0,
+              subreddits: new Set(),
+              crossSubredditActivity: {},
+            };
+            userActivity[username].posts += 1;
+            userActivity[username].karma += post.score;
+            userActivity[username].subreddits.add(subredditName);
+            
+            // Track cross-subreddit activity
+            userActivity[username].crossSubredditActivity[subredditName] = 
+              (userActivity[username].crossSubredditActivity[subredditName] || 0) + 1;
+          }
+
+          logger.info(
+            `Completed processing ${subredditName}. Found ${
+              Object.keys(userActivity).length
+            } active users so far`
+          );
+          break; // Success, exit retry loop
+        } catch (err) {
+          if (err.statusCode === 429 || (err.message && err.message.includes("rate limit"))) {
+            attempts++;
+            const waitTime = 60000 * attempts; // Exponential backoff: 1min, 2min, 3min, etc.
+            logger.warn(
+              `Rate limit hit for ${subredditName}. Waiting ${waitTime / 1000} seconds before retrying (attempt ${attempts}/5)...`
+            );
+            await new Promise((resolve) => setTimeout(resolve, waitTime));
+            continue;
+          } else if (err.statusCode === 404 && err.response?.body?.reason === "banned") {
+            logger.warn(`Subreddit ${subredditName} is banned or not found. Skipping...`);
+            break;
+          } else {
+            logger.error(`Error processing subreddit ${subredditName}:`, err);
+            break;
+          }
         }
-
-        if (posts.length === 0) {
-          logger.info(`No posts found in ${subredditName}`);
-          continue;
-        }
-
-        logger.info(
-          `Successfully fetched ${posts.length} ${sortMethod} posts from ${subredditName}`
-        );
-
-        // Count posts and karma
-        logger.info(`Processing ${posts.length} posts from ${subredditName}`);
-        for (const post of posts) {
-          const username = post.author.name;
-          if (username === "[deleted]") continue;
-          if (username === "AutoModerator") continue;
-
-          userActivity[username] = userActivity[username] || {
-            posts: 0,
-            karma: 0,
-            subreddits: new Set(),
-            crossSubredditActivity: {},
-          };
-          userActivity[username].posts += 1;
-          userActivity[username].karma += post.score;
-          userActivity[username].subreddits.add(subredditName);
-          
-          // Track cross-subreddit activity
-          userActivity[username].crossSubredditActivity[subredditName] = 
-            (userActivity[username].crossSubredditActivity[subredditName] || 0) + 1;
-        }
-
-        logger.info(
-          `Completed processing ${subredditName}. Found ${
-            Object.keys(userActivity).length
-          } active users so far`
-        );
-      } catch (err) {
-        // Handle banned/not found subreddits
-        if (err.statusCode === 404 && err.response?.body?.reason === "banned") {
-          logger.warn(`Subreddit ${subredditName} is banned or not found. Skipping...`);
-          continue;
-        }
-        // Handle other errors
-        logger.error(`Error processing subreddit ${subredditName}:`, err);
-        continue;
       }
+      // Random delay between subreddits
       await new Promise((resolve) => setTimeout(resolve, randomDelay()));
     }
 
