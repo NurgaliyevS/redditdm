@@ -442,4 +442,4 @@ cron.schedule("*/10 * * * *", async () => {
 
 logger.info("Reddit active users analysis - Will run every 10 minutes");
 
-// main();
+main();
