@@ -7,7 +7,7 @@ const TelegramBot = require("node-telegram-bot-api");
 const cron = require("node-cron");
 
 // check env dev or prod
-const isDev = process.env.NODE_ENV === "production";
+const isDev = process.env.NODE_ENV !== "production";
 
 console.log("isDev", isDev);
 
