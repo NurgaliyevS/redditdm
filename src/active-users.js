@@ -305,8 +305,21 @@ async function getMostActiveUsers(subreddits) {
           } else if (err.statusCode === 404 && err.response?.body?.reason === "banned") {
             logger.warn(`Subreddit ${subredditName} is banned or not found. Skipping...`);
             break;
+          } else if (err.statusCode === 403 && err.response?.body?.reason === "private") {
+            logger.warn(
+              `Subreddit ${subredditName} is private or forbidden. Reason: ${err.response.body.reason}, Message: ${err.response.body.message}`
+            );
+            break;
           } else {
-            logger.error(`Error processing subreddit ${subredditName}:`, err);
+            // Fallback for other errors
+            logger.error(
+              `Error processing subreddit ${subredditName}: ${err.message || err}`,
+              {
+                reason: err.response?.body?.reason,
+                message: err.response?.body?.message,
+                statusCode: err?.statusCode,
+              }
+            );
             break;
           }
         }

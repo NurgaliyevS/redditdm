@@ -1,0 +1,952 @@
+
+{"level":"info","message":"Successfully fetched 987 top posts from AllCryptoBets","timestamp":"2025-05-28T05:10:27.581Z"}
+{"level":"info","message":"Processing 987 posts from AllCryptoBets","timestamp":"2025-05-28T05:10:27.581Z"}
+{"level":"info","message":"Completed processing AllCryptoBets. Found 17629 active users so far","timestamp":"2025-05-28T05:10:27.589Z"}
+{"level":"info","message":"Processing subreddit: socialmedia_marketing","timestamp":"2025-05-28T05:10:32.890Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from socialmedia_marketing for the past all","timestamp":"2025-05-28T05:10:32.895Z"}
+{"level":"info","message":"Successfully fetched 987 top posts from assholedesign","timestamp":"2025-05-28T05:10:33.603Z"}
+{"level":"info","message":"Processing 987 posts from assholedesign","timestamp":"2025-05-28T05:10:33.603Z"}
+{"level":"info","message":"Completed processing assholedesign. Found 29739 active users so far","timestamp":"2025-05-28T05:10:33.614Z"}
+{"level":"info","message":"Processing subreddit: atrioc","timestamp":"2025-05-28T05:10:37.536Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from atrioc for the past all","timestamp":"2025-05-28T05:10:37.536Z"}
+{"level":"info","message":"Successfully fetched 978 top posts from DigitalMarketing","timestamp":"2025-05-28T05:10:41.157Z"}
+{"level":"info","message":"Processing 978 posts from DigitalMarketing","timestamp":"2025-05-28T05:10:41.157Z"}
+{"level":"info","message":"Completed processing DigitalMarketing. Found 1465 active users so far","timestamp":"2025-05-28T05:10:41.160Z"}
+{"level":"info","message":"Successfully fetched 573 top posts from socialmedia_marketing","timestamp":"2025-05-28T05:10:41.649Z"}
+{"level":"info","message":"Processing 573 posts from socialmedia_marketing","timestamp":"2025-05-28T05:10:41.650Z"}
+{"level":"info","message":"Completed processing socialmedia_marketing. Found 18020 active users so far","timestamp":"2025-05-28T05:10:41.668Z"}
+{"level":"info","message":"Processing subreddit: MarketingPorn","timestamp":"2025-05-28T05:10:44.019Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from MarketingPorn for the past all","timestamp":"2025-05-28T05:10:44.020Z"}
+{"level":"info","message":"Successfully fetched 130 top posts from MarketingPorn","timestamp":"2025-05-28T05:10:46.052Z"}
+{"level":"info","message":"Processing 130 posts from MarketingPorn","timestamp":"2025-05-28T05:10:46.052Z"}
+{"level":"info","message":"Completed processing MarketingPorn. Found 18095 active users so far","timestamp":"2025-05-28T05:10:46.056Z"}
+{"level":"info","message":"Processing subreddit: digital_marketing","timestamp":"2025-05-28T05:10:46.385Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from digital_marketing for the past year","timestamp":"2025-05-28T05:10:46.386Z"}
+{"level":"info","message":"Processing subreddit: Marketing_Design","timestamp":"2025-05-28T05:10:50.317Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from Marketing_Design for the past all","timestamp":"2025-05-28T05:10:50.318Z"}
+{"level":"info","message":"Successfully fetched 999 top posts from atrioc","timestamp":"2025-05-28T05:10:56.002Z"}
+{"level":"info","message":"Processing 999 posts from atrioc","timestamp":"2025-05-28T05:10:56.003Z"}
+{"level":"info","message":"Completed processing atrioc. Found 30501 active users so far","timestamp":"2025-05-28T05:10:56.016Z"}
+{"level":"info","message":"Processing subreddit: MarketingAIHub","timestamp":"2025-05-28T05:10:59.465Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from MarketingAIHub for the past all","timestamp":"2025-05-28T05:10:59.465Z"}
+{"level":"info","message":"Successfully fetched 982 top posts from digital_marketing","timestamp":"2025-05-28T05:11:00.695Z"}
+{"level":"info","message":"Processing 982 posts from digital_marketing","timestamp":"2025-05-28T05:11:00.695Z"}
+{"level":"info","message":"Completed processing digital_marketing. Found 2108 active users so far","timestamp":"2025-05-28T05:11:00.699Z"}
+{"level":"info","message":"Successfully fetched 59 top posts from MarketingAIHub","timestamp":"2025-05-28T05:11:00.724Z"}
+{"level":"info","message":"Processing 59 posts from MarketingAIHub","timestamp":"2025-05-28T05:11:00.724Z"}
+{"level":"info","message":"Completed processing MarketingAIHub. Found 30514 active users so far","timestamp":"2025-05-28T05:11:00.735Z"}
+{"level":"info","message":"Successfully fetched 955 top posts from Marketing_Design","timestamp":"2025-05-28T05:11:03.747Z"}
+{"level":"info","message":"Processing 955 posts from Marketing_Design","timestamp":"2025-05-28T05:11:03.748Z"}
+{"level":"info","message":"Completed processing Marketing_Design. Found 18112 active users so far","timestamp":"2025-05-28T05:11:03.761Z"}
+{"level":"info","message":"Processing subreddit: OnlineMarketing","timestamp":"2025-05-28T05:11:05.863Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from OnlineMarketing for the past all","timestamp":"2025-05-28T05:11:05.863Z"}
+{"level":"info","message":"Successfully fetched 68 top posts from OnlineMarketing","timestamp":"2025-05-28T05:11:07.004Z"}
+{"level":"info","message":"Processing 68 posts from OnlineMarketing","timestamp":"2025-05-28T05:11:07.005Z"}
+{"level":"info","message":"Completed processing OnlineMarketing. Found 30562 active users so far","timestamp":"2025-05-28T05:11:07.013Z"}
+{"level":"info","message":"Processing subreddit: Entrepreneur","timestamp":"2025-05-28T05:11:07.210Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from Entrepreneur for the past year","timestamp":"2025-05-28T05:11:07.210Z"}
+{"level":"info","message":"Processing subreddit: SaaS_Email_Marketing","timestamp":"2025-05-28T05:11:08.980Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from SaaS_Email_Marketing for the past all","timestamp":"2025-05-28T05:11:08.980Z"}
+{"level":"info","message":"Processing subreddit: forhire","timestamp":"2025-05-28T05:11:09.256Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from forhire for the past all","timestamp":"2025-05-28T05:11:09.256Z"}
+{"level":"info","message":"Successfully fetched 673 top posts from SaaS_Email_Marketing","timestamp":"2025-05-28T05:11:21.413Z"}
+{"level":"info","message":"Processing 673 posts from SaaS_Email_Marketing","timestamp":"2025-05-28T05:11:21.415Z"}
+{"level":"info","message":"Completed processing SaaS_Email_Marketing. Found 18411 active users so far","timestamp":"2025-05-28T05:11:21.428Z"}
+{"level":"info","message":"Successfully fetched 984 top posts from Entrepreneur","timestamp":"2025-05-28T05:11:23.731Z"}
+{"level":"info","message":"Processing 984 posts from Entrepreneur","timestamp":"2025-05-28T05:11:23.731Z"}
+{"level":"info","message":"Completed processing Entrepreneur. Found 2841 active users so far","timestamp":"2025-05-28T05:11:23.743Z"}
+{"level":"info","message":"Processing subreddit: Affiliatemarketing","timestamp":"2025-05-28T05:11:25.862Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from Affiliatemarketing for the past year","timestamp":"2025-05-28T05:11:25.863Z"}
+{"level":"info","message":"Processing subreddit: Showerthoughts","timestamp":"2025-05-28T05:11:27.657Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from Showerthoughts for the past all","timestamp":"2025-05-28T05:11:27.658Z"}
+{"level":"info","message":"Successfully fetched 996 top posts from forhire","timestamp":"2025-05-28T05:11:27.985Z"}
+{"level":"info","message":"Processing 996 posts from forhire","timestamp":"2025-05-28T05:11:27.985Z"}
+{"level":"info","message":"Completed processing forhire. Found 31256 active users so far","timestamp":"2025-05-28T05:11:28.004Z"}
+{"level":"info","message":"Processing subreddit: pics","timestamp":"2025-05-28T05:11:33.814Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from pics for the past all","timestamp":"2025-05-28T05:11:33.815Z"}
+{"level":"info","message":"Successfully fetched 916 top posts from Affiliatemarketing","timestamp":"2025-05-28T05:11:38.666Z"}
+{"level":"info","message":"Processing 916 posts from Affiliatemarketing","timestamp":"2025-05-28T05:11:38.667Z"}
+{"level":"info","message":"Completed processing Affiliatemarketing. Found 3474 active users so far","timestamp":"2025-05-28T05:11:38.670Z"}
+{"level":"info","message":"Successfully fetched 964 top posts from Showerthoughts","timestamp":"2025-05-28T05:11:39.186Z"}
+{"level":"info","message":"Processing 964 posts from Showerthoughts","timestamp":"2025-05-28T05:11:39.186Z"}
+{"level":"info","message":"Completed processing Showerthoughts. Found 19227 active users so far","timestamp":"2025-05-28T05:11:39.194Z"}
+{"level":"info","message":"Processing subreddit: InstagramMarketing","timestamp":"2025-05-28T05:11:42.021Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from InstagramMarketing for the past year","timestamp":"2025-05-28T05:11:42.021Z"}
+{"level":"info","message":"Processing subreddit: shitcoinmoonshots","timestamp":"2025-05-28T05:11:42.547Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from shitcoinmoonshots for the past all","timestamp":"2025-05-28T05:11:42.548Z"}
+{"level":"info","message":"Successfully fetched 994 top posts from pics","timestamp":"2025-05-28T05:11:51.740Z"}
+{"level":"info","message":"Processing 994 posts from pics","timestamp":"2025-05-28T05:11:51.740Z"}
+{"level":"info","message":"Completed processing pics. Found 31999 active users so far","timestamp":"2025-05-28T05:11:51.754Z"}
+{"level":"info","message":"Processing subreddit: AutomatedMarketing","timestamp":"2025-05-28T05:11:53.777Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from AutomatedMarketing for the past all","timestamp":"2025-05-28T05:11:53.778Z"}
+{"level":"info","message":"Successfully fetched 987 top posts from InstagramMarketing","timestamp":"2025-05-28T05:11:57.401Z"}
+{"level":"info","message":"Processing 987 posts from InstagramMarketing","timestamp":"2025-05-28T05:11:57.402Z"}
+{"level":"info","message":"Completed processing InstagramMarketing. Found 4226 active users so far","timestamp":"2025-05-28T05:11:57.405Z"}
+{"level":"info","message":"Processing subreddit: SocialMediaMarketing","timestamp":"2025-05-28T05:11:59.766Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from SocialMediaMarketing for the past year","timestamp":"2025-05-28T05:11:59.766Z"}
+{"level":"info","message":"Successfully fetched 970 top posts from AutomatedMarketing","timestamp":"2025-05-28T05:12:06.095Z"}
+{"level":"info","message":"Processing 970 posts from AutomatedMarketing","timestamp":"2025-05-28T05:12:06.095Z"}
+{"level":"info","message":"Completed processing AutomatedMarketing. Found 32118 active users so far","timestamp":"2025-05-28T05:12:06.108Z"}
+{"level":"info","message":"Processing subreddit: Nonprofit_Marketing","timestamp":"2025-05-28T05:12:10.242Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from Nonprofit_Marketing for the past all","timestamp":"2025-05-28T05:12:10.242Z"}
+{"level":"info","message":"Successfully fetched 998 top posts from shitcoinmoonshots","timestamp":"2025-05-28T05:12:10.351Z"}
+{"level":"info","message":"Processing 998 posts from shitcoinmoonshots","timestamp":"2025-05-28T05:12:10.351Z"}
+{"level":"info","message":"Completed processing shitcoinmoonshots. Found 19435 active users so far","timestamp":"2025-05-28T05:12:10.358Z"}
+{"level":"info","message":"Successfully fetched 978 top posts from SocialMediaMarketing","timestamp":"2025-05-28T05:12:14.984Z"}
+{"level":"info","message":"Processing 978 posts from SocialMediaMarketing","timestamp":"2025-05-28T05:12:14.984Z"}
+{"level":"info","message":"Completed processing SocialMediaMarketing. Found 4897 active users so far","timestamp":"2025-05-28T05:12:14.988Z"}
+{"level":"info","message":"Processing subreddit: MarketingJobs","timestamp":"2025-05-28T05:12:15.160Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from MarketingJobs for the past all","timestamp":"2025-05-28T05:12:15.160Z"}
+{"level":"info","message":"Successfully fetched 276 top posts from MarketingJobs","timestamp":"2025-05-28T05:12:20.108Z"}
+{"level":"info","message":"Processing 276 posts from MarketingJobs","timestamp":"2025-05-28T05:12:20.109Z"}
+{"level":"info","message":"Completed processing MarketingJobs. Found 19637 active users so far","timestamp":"2025-05-28T05:12:20.116Z"}
+{"level":"info","message":"Processing subreddit: CryptoMoonShots","timestamp":"2025-05-28T05:12:20.705Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from CryptoMoonShots for the past year","timestamp":"2025-05-28T05:12:20.705Z"}
+{"level":"info","message":"Processing subreddit: InternetMarketing","timestamp":"2025-05-28T05:12:23.083Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from InternetMarketing for the past all","timestamp":"2025-05-28T05:12:23.084Z"}
+{"level":"info","message":"Successfully fetched 981 top posts from Nonprofit_Marketing","timestamp":"2025-05-28T05:12:24.516Z"}
+{"level":"info","message":"Processing 981 posts from Nonprofit_Marketing","timestamp":"2025-05-28T05:12:24.516Z"}
+{"level":"info","message":"Completed processing Nonprofit_Marketing. Found 32333 active users so far","timestamp":"2025-05-28T05:12:24.530Z"}
+{"level":"info","message":"Processing subreddit: tea","timestamp":"2025-05-28T05:12:27.371Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from tea for the past all","timestamp":"2025-05-28T05:12:27.372Z"}
+{"level":"info","message":"Successfully fetched 459 top posts from InternetMarketing","timestamp":"2025-05-28T05:12:31.974Z"}
+{"level":"info","message":"Processing 459 posts from InternetMarketing","timestamp":"2025-05-28T05:12:31.974Z"}
+{"level":"info","message":"Completed processing InternetMarketing. Found 19802 active users so far","timestamp":"2025-05-28T05:12:31.981Z"}
+{"level":"info","message":"Processing subreddit: AskReddit","timestamp":"2025-05-28T05:12:37.691Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from AskReddit for the past all","timestamp":"2025-05-28T05:12:37.693Z"}
+{"level":"info","message":"Successfully fetched 994 top posts from CryptoMoonShots","timestamp":"2025-05-28T05:12:46.191Z"}
+{"level":"info","message":"Processing 994 posts from CryptoMoonShots","timestamp":"2025-05-28T05:12:46.192Z"}
+{"level":"info","message":"Completed processing CryptoMoonShots. Found 5210 active users so far","timestamp":"2025-05-28T05:12:46.200Z"}
+{"level":"info","message":"Successfully fetched 997 top posts from tea","timestamp":"2025-05-28T05:12:47.456Z"}
+{"level":"info","message":"Processing 997 posts from tea","timestamp":"2025-05-28T05:12:47.457Z"}
+{"level":"info","message":"Completed processing tea. Found 33100 active users so far","timestamp":"2025-05-28T05:12:47.468Z"}
+{"level":"info","message":"Successfully fetched 988 top posts from AskReddit","timestamp":"2025-05-28T05:12:48.519Z"}
+{"level":"info","message":"Processing 988 posts from AskReddit","timestamp":"2025-05-28T05:12:48.519Z"}
+{"level":"info","message":"Completed processing AskReddit. Found 20616 active users so far","timestamp":"2025-05-28T05:12:48.530Z"}
+{"level":"info","message":"Processing subreddit: Wallstreetsilver","timestamp":"2025-05-28T05:12:49.602Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from Wallstreetsilver for the past all","timestamp":"2025-05-28T05:12:49.603Z"}
+{"level":"info","message":"Processing subreddit: BSCMoonShots","timestamp":"2025-05-28T05:12:51.082Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from BSCMoonShots for the past all","timestamp":"2025-05-28T05:12:51.082Z"}
+{"level":"info","message":"Processing subreddit: AskMarketing","timestamp":"2025-05-28T05:12:51.871Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from AskMarketing for the past year","timestamp":"2025-05-28T05:12:51.872Z"}
+{"level":"info","message":"Successfully fetched 991 top posts from AskMarketing","timestamp":"2025-05-28T05:13:05.570Z"}
+{"level":"info","message":"Processing 991 posts from AskMarketing","timestamp":"2025-05-28T05:13:05.570Z"}
+{"level":"info","message":"Completed processing AskMarketing. Found 5935 active users so far","timestamp":"2025-05-28T05:13:05.576Z"}
+{"level":"info","message":"Processing subreddit: SEO_Digital_Marketing","timestamp":"2025-05-28T05:13:07.702Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from SEO_Digital_Marketing for the past year","timestamp":"2025-05-28T05:13:07.702Z"}
+{"level":"info","message":"Successfully fetched 996 top posts from Wallstreetsilver","timestamp":"2025-05-28T05:13:09.162Z"}
+{"level":"info","message":"Processing 996 posts from Wallstreetsilver","timestamp":"2025-05-28T05:13:09.162Z"}
+{"level":"info","message":"Completed processing Wallstreetsilver. Found 33730 active users so far","timestamp":"2025-05-28T05:13:09.174Z"}
+{"level":"info","message":"Processing subreddit: BenefitMarketing","timestamp":"2025-05-28T05:13:12.694Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from BenefitMarketing for the past all","timestamp":"2025-05-28T05:13:12.695Z"}
+{"level":"info","message":"Successfully fetched 195 top posts from BenefitMarketing","timestamp":"2025-05-28T05:13:15.423Z"}
+{"level":"info","message":"Processing 195 posts from BenefitMarketing","timestamp":"2025-05-28T05:13:15.423Z"}
+{"level":"info","message":"Completed processing BenefitMarketing. Found 33867 active users so far","timestamp":"2025-05-28T05:13:15.435Z"}
+{"level":"info","message":"Processing subreddit: AffiliateMarketing_","timestamp":"2025-05-28T05:13:18.874Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from AffiliateMarketing_ for the past all","timestamp":"2025-05-28T05:13:18.875Z"}
+{"level":"info","message":"Successfully fetched 995 top posts from BSCMoonShots","timestamp":"2025-05-28T05:13:19.195Z"}
+{"level":"info","message":"Processing 995 posts from BSCMoonShots","timestamp":"2025-05-28T05:13:19.195Z"}
+{"level":"info","message":"Completed processing BSCMoonShots. Found 20800 active users so far","timestamp":"2025-05-28T05:13:19.204Z"}
+{"level":"info","message":"Processing subreddit: marketingnews","timestamp":"2025-05-28T05:13:23.257Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from marketingnews for the past all","timestamp":"2025-05-28T05:13:23.257Z"}
+{"level":"info","message":"Successfully fetched 36 top posts from marketingnews","timestamp":"2025-05-28T05:13:23.861Z"}
+{"level":"info","message":"Processing 36 posts from marketingnews","timestamp":"2025-05-28T05:13:23.862Z"}
+{"level":"info","message":"Completed processing marketingnews. Found 20821 active users so far","timestamp":"2025-05-28T05:13:23.868Z"}
+{"level":"info","message":"Successfully fetched 979 top posts from SEO_Digital_Marketing","timestamp":"2025-05-28T05:13:24.187Z"}
+{"level":"info","message":"Processing 979 posts from SEO_Digital_Marketing","timestamp":"2025-05-28T05:13:24.187Z"}
+{"level":"info","message":"Completed processing SEO_Digital_Marketing. Found 6510 active users so far","timestamp":"2025-05-28T05:13:24.191Z"}
+{"level":"info","message":"Successfully fetched 430 top posts from AffiliateMarketing_","timestamp":"2025-05-28T05:13:25.395Z"}
+{"level":"info","message":"Processing 430 posts from AffiliateMarketing_","timestamp":"2025-05-28T05:13:25.395Z"}
+{"level":"info","message":"Completed processing AffiliateMarketing_. Found 33935 active users so far","timestamp":"2025-05-28T05:13:25.411Z"}
+{"level":"info","message":"Processing subreddit: Affiliate","timestamp":"2025-05-28T05:13:30.604Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from Affiliate for the past all","timestamp":"2025-05-28T05:13:30.605Z"}
+{"level":"info","message":"Processing subreddit: MarketingMentor","timestamp":"2025-05-28T05:13:30.849Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from MarketingMentor for the past year","timestamp":"2025-05-28T05:13:30.850Z"}
+{"level":"info","message":"Processing subreddit: conspiracy","timestamp":"2025-05-28T05:13:31.924Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from conspiracy for the past all","timestamp":"2025-05-28T05:13:31.925Z"}
+{"level":"info","message":"Successfully fetched 317 top posts from Affiliate","timestamp":"2025-05-28T05:13:36.386Z"}
+{"level":"info","message":"Processing 317 posts from Affiliate","timestamp":"2025-05-28T05:13:36.386Z"}
+{"level":"info","message":"Completed processing Affiliate. Found 20975 active users so far","timestamp":"2025-05-28T05:13:36.395Z"}
+{"level":"info","message":"Successfully fetched 664 top posts from MarketingMentor","timestamp":"2025-05-28T05:13:39.802Z"}
+{"level":"info","message":"Processing 664 posts from MarketingMentor","timestamp":"2025-05-28T05:13:39.802Z"}
+{"level":"info","message":"Completed processing MarketingMentor. Found 6979 active users so far","timestamp":"2025-05-28T05:13:39.806Z"}
+{"level":"info","message":"Processing subreddit: CryptoMarsShots","timestamp":"2025-05-28T05:13:41.100Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from CryptoMarsShots for the past all","timestamp":"2025-05-28T05:13:41.101Z"}
+{"level":"info","message":"Processing subreddit: Emailmarketing","timestamp":"2025-05-28T05:13:44.906Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from Emailmarketing for the past year","timestamp":"2025-05-28T05:13:44.907Z"}
+{"level":"info","message":"Successfully fetched 990 top posts from conspiracy","timestamp":"2025-05-28T05:13:48.166Z"}
+{"level":"info","message":"Processing 990 posts from conspiracy","timestamp":"2025-05-28T05:13:48.166Z"}
+{"level":"info","message":"Completed processing conspiracy. Found 34549 active users so far","timestamp":"2025-05-28T05:13:48.182Z"}
+{"level":"info","message":"Processing subreddit: Mobile_Marketing","timestamp":"2025-05-28T05:13:52.824Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from Mobile_Marketing for the past all","timestamp":"2025-05-28T05:13:52.824Z"}
+{"level":"info","message":"Successfully fetched 984 top posts from Emailmarketing","timestamp":"2025-05-28T05:13:59.285Z"}
+{"level":"info","message":"Processing 984 posts from Emailmarketing","timestamp":"2025-05-28T05:13:59.286Z"}
+{"level":"info","message":"Completed processing Emailmarketing. Found 7690 active users so far","timestamp":"2025-05-28T05:13:59.290Z"}
+{"level":"info","message":"Successfully fetched 784 top posts from Mobile_Marketing","timestamp":"2025-05-28T05:14:03.151Z"}
+{"level":"info","message":"Processing 784 posts from Mobile_Marketing","timestamp":"2025-05-28T05:14:03.151Z"}
+{"level":"info","message":"Completed processing Mobile_Marketing. Found 34895 active users so far","timestamp":"2025-05-28T05:14:03.164Z"}
+{"level":"info","message":"Processing subreddit: smallbusiness","timestamp":"2025-05-28T05:14:03.671Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from smallbusiness for the past year","timestamp":"2025-05-28T05:14:03.672Z"}
+{"level":"info","message":"Processing subreddit: MarketingAnalytics","timestamp":"2025-05-28T05:14:07.415Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from MarketingAnalytics for the past all","timestamp":"2025-05-28T05:14:07.415Z"}
+{"level":"info","message":"Successfully fetched 976 top posts from CryptoMarsShots","timestamp":"2025-05-28T05:14:08.366Z"}
+{"level":"info","message":"Processing 976 posts from CryptoMarsShots","timestamp":"2025-05-28T05:14:08.366Z"}
+{"level":"info","message":"Completed processing CryptoMarsShots. Found 21110 active users so far","timestamp":"2025-05-28T05:14:08.373Z"}
+{"level":"info","message":"Successfully fetched 201 top posts from MarketingAnalytics","timestamp":"2025-05-28T05:14:10.295Z"}
+{"level":"info","message":"Processing 201 posts from MarketingAnalytics","timestamp":"2025-05-28T05:14:10.297Z"}
+{"level":"info","message":"Completed processing MarketingAnalytics. Found 35032 active users so far","timestamp":"2025-05-28T05:14:10.334Z"}
+{"level":"info","message":"Processing subreddit: boxoffice","timestamp":"2025-05-28T05:14:13.106Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from boxoffice for the past all","timestamp":"2025-05-28T05:14:13.107Z"}
+{"level":"info","message":"Processing subreddit: ecommerce","timestamp":"2025-05-28T05:14:13.441Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from ecommerce for the past all","timestamp":"2025-05-28T05:14:13.441Z"}
+{"level":"info","message":"Successfully fetched 982 top posts from smallbusiness","timestamp":"2025-05-28T05:14:19.352Z"}
+{"level":"info","message":"Processing 982 posts from smallbusiness","timestamp":"2025-05-28T05:14:19.353Z"}
+{"level":"info","message":"Completed processing smallbusiness. Found 8481 active users so far","timestamp":"2025-05-28T05:14:19.357Z"}
+{"level":"info","message":"Processing subreddit: ProductMarketing","timestamp":"2025-05-28T05:14:21.397Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from ProductMarketing for the past year","timestamp":"2025-05-28T05:14:21.397Z"}
+{"level":"info","message":"Successfully fetched 966 top posts from boxoffice","timestamp":"2025-05-28T05:14:28.884Z"}
+{"level":"info","message":"Processing 966 posts from boxoffice","timestamp":"2025-05-28T05:14:28.884Z"}
+{"level":"info","message":"Completed processing boxoffice. Found 21351 active users so far","timestamp":"2025-05-28T05:14:28.892Z"}
+{"level":"info","message":"Successfully fetched 997 top posts from ecommerce","timestamp":"2025-05-28T05:14:29.576Z"}
+{"level":"info","message":"Processing 997 posts from ecommerce","timestamp":"2025-05-28T05:14:29.576Z"}
+{"level":"info","message":"Completed processing ecommerce. Found 35680 active users so far","timestamp":"2025-05-28T05:14:29.588Z"}
+{"level":"info","message":"Successfully fetched 588 top posts from ProductMarketing","timestamp":"2025-05-28T05:14:30.732Z"}
+{"level":"info","message":"Processing 588 posts from ProductMarketing","timestamp":"2025-05-28T05:14:30.732Z"}
+{"level":"info","message":"Completed processing ProductMarketing. Found 8874 active users so far","timestamp":"2025-05-28T05:14:30.736Z"}
+{"level":"info","message":"Processing subreddit: CryptocurrencyICO","timestamp":"2025-05-28T05:14:33.006Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from CryptocurrencyICO for the past all","timestamp":"2025-05-28T05:14:33.007Z"}
+{"level":"info","message":"Processing subreddit: content_marketing","timestamp":"2025-05-28T05:14:33.879Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from content_marketing for the past year","timestamp":"2025-05-28T05:14:33.880Z"}
+{"level":"info","message":"Processing subreddit: webmarketing","timestamp":"2025-05-28T05:14:34.826Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from webmarketing for the past all","timestamp":"2025-05-28T05:14:34.826Z"}
+{"level":"info","message":"Successfully fetched 696 top posts from content_marketing","timestamp":"2025-05-28T05:14:45.308Z"}
+{"level":"info","message":"Processing 696 posts from content_marketing","timestamp":"2025-05-28T05:14:45.308Z"}
+{"level":"info","message":"Completed processing content_marketing. Found 9218 active users so far","timestamp":"2025-05-28T05:14:45.312Z"}
+{"level":"info","message":"Processing subreddit: funny","timestamp":"2025-05-28T05:14:48.587Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from funny for the past year","timestamp":"2025-05-28T05:14:48.588Z"}
+{"level":"info","message":"Successfully fetched 998 top posts from webmarketing","timestamp":"2025-05-28T05:14:49.117Z"}
+{"level":"info","message":"Processing 998 posts from webmarketing","timestamp":"2025-05-28T05:14:49.117Z"}
+{"level":"info","message":"Completed processing webmarketing. Found 21950 active users so far","timestamp":"2025-05-28T05:14:49.137Z"}
+{"level":"info","message":"Processing subreddit: MarketingDigitalBR","timestamp":"2025-05-28T05:14:55.336Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from MarketingDigitalBR for the past all","timestamp":"2025-05-28T05:14:55.337Z"}
+{"level":"info","message":"Successfully fetched 970 top posts from CryptocurrencyICO","timestamp":"2025-05-28T05:14:57.754Z"}
+{"level":"info","message":"Processing 970 posts from CryptocurrencyICO","timestamp":"2025-05-28T05:14:57.755Z"}
+{"level":"info","message":"Completed processing CryptocurrencyICO. Found 35873 active users so far","timestamp":"2025-05-28T05:14:57.772Z"}
+{"level":"info","message":"Processing subreddit: analytics","timestamp":"2025-05-28T05:15:02.441Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from analytics for the past all","timestamp":"2025-05-28T05:15:02.441Z"}
+{"level":"info","message":"Successfully fetched 993 top posts from funny","timestamp":"2025-05-28T05:15:03.241Z"}
+{"level":"info","message":"Processing 993 posts from funny","timestamp":"2025-05-28T05:15:03.241Z"}
+{"level":"info","message":"Completed processing funny. Found 9990 active users so far","timestamp":"2025-05-28T05:15:03.248Z"}
+{"level":"info","message":"Processing subreddit: gamedev","timestamp":"2025-05-28T05:15:09.233Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from gamedev for the past year","timestamp":"2025-05-28T05:15:09.233Z"}
+{"level":"info","message":"Successfully fetched 999 top posts from MarketingDigitalBR","timestamp":"2025-05-28T05:15:12.450Z"}
+{"level":"info","message":"Processing 999 posts from MarketingDigitalBR","timestamp":"2025-05-28T05:15:12.451Z"}
+{"level":"info","message":"Completed processing MarketingDigitalBR. Found 22568 active users so far","timestamp":"2025-05-28T05:15:12.460Z"}
+{"level":"info","message":"Processing subreddit: todayilearned","timestamp":"2025-05-28T05:15:16.509Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from todayilearned for the past all","timestamp":"2025-05-28T05:15:16.509Z"}
+{"level":"info","message":"Successfully fetched 1000 top posts from analytics","timestamp":"2025-05-28T05:15:17.796Z"}
+{"level":"info","message":"Processing 1000 posts from analytics","timestamp":"2025-05-28T05:15:17.796Z"}
+{"level":"info","message":"Completed processing analytics. Found 36564 active users so far","timestamp":"2025-05-28T05:15:17.808Z"}
+{"level":"info","message":"Processing subreddit: RealEstateMarketing","timestamp":"2025-05-28T05:15:21.130Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from RealEstateMarketing for the past all","timestamp":"2025-05-28T05:15:21.130Z"}
+{"level":"info","message":"Successfully fetched 997 top posts from gamedev","timestamp":"2025-05-28T05:15:24.882Z"}
+{"level":"info","message":"Processing 997 posts from gamedev","timestamp":"2025-05-28T05:15:24.883Z"}
+{"level":"info","message":"Completed processing gamedev. Found 10813 active users so far","timestamp":"2025-05-28T05:15:24.887Z"}
+{"level":"info","message":"Processing subreddit: MarketingAutomation","timestamp":"2025-05-28T05:15:27.959Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from MarketingAutomation for the past year","timestamp":"2025-05-28T05:15:27.960Z"}
+{"level":"info","message":"Successfully fetched 980 top posts from todayilearned","timestamp":"2025-05-28T05:15:31.327Z"}
+{"level":"info","message":"Processing 980 posts from todayilearned","timestamp":"2025-05-28T05:15:31.327Z"}
+{"level":"info","message":"Completed processing todayilearned. Found 23247 active users so far","timestamp":"2025-05-28T05:15:31.336Z"}
+{"level":"info","message":"Processing subreddit: SaaS","timestamp":"2025-05-28T05:15:33.920Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from SaaS for the past all","timestamp":"2025-05-28T05:15:33.921Z"}
+{"level":"info","message":"Successfully fetched 620 top posts from MarketingAutomation","timestamp":"2025-05-28T05:15:40.032Z"}
+{"level":"info","message":"Processing 620 posts from MarketingAutomation","timestamp":"2025-05-28T05:15:40.032Z"}
+{"level":"info","message":"Completed processing MarketingAutomation. Found 11105 active users so far","timestamp":"2025-05-28T05:15:40.040Z"}
+{"level":"info","message":"Successfully fetched 930 top posts from RealEstateMarketing","timestamp":"2025-05-28T05:15:41.506Z"}
+{"level":"info","message":"Processing 930 posts from RealEstateMarketing","timestamp":"2025-05-28T05:15:41.506Z"}
+{"level":"info","message":"Completed processing RealEstateMarketing. Found 36886 active users so far","timestamp":"2025-05-28T05:15:41.542Z"}
+{"level":"info","message":"Processing subreddit: EntrepreneurRideAlong","timestamp":"2025-05-28T05:15:43.922Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from EntrepreneurRideAlong for the past all","timestamp":"2025-05-28T05:15:43.923Z"}
+{"level":"info","message":"Processing subreddit: DigitalMarketingHelp","timestamp":"2025-05-28T05:15:46.764Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from DigitalMarketingHelp for the past year","timestamp":"2025-05-28T05:15:46.765Z"}
+{"level":"info","message":"Successfully fetched 222 top posts from DigitalMarketingHelp","timestamp":"2025-05-28T05:15:51.006Z"}
+{"level":"info","message":"Processing 222 posts from DigitalMarketingHelp","timestamp":"2025-05-28T05:15:51.007Z"}
+{"level":"info","message":"Completed processing DigitalMarketingHelp. Found 11218 active users so far","timestamp":"2025-05-28T05:15:51.011Z"}
+{"level":"info","message":"Successfully fetched 1000 top posts from SaaS","timestamp":"2025-05-28T05:15:54.985Z"}
+{"level":"info","message":"Processing 1000 posts from SaaS","timestamp":"2025-05-28T05:15:54.985Z"}
+{"level":"info","message":"Completed processing SaaS. Found 23914 active users so far","timestamp":"2025-05-28T05:15:54.995Z"}
+{"level":"info","message":"Processing subreddit: advertising","timestamp":"2025-05-28T05:15:55.418Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from advertising for the past year","timestamp":"2025-05-28T05:15:55.418Z"}
+{"level":"info","message":"Processing subreddit: b2bmarketing","timestamp":"2025-05-28T05:15:57.394Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from b2bmarketing for the past all","timestamp":"2025-05-28T05:15:57.395Z"}
+{"level":"info","message":"Successfully fetched 993 top posts from EntrepreneurRideAlong","timestamp":"2025-05-28T05:16:05.221Z"}
+{"level":"info","message":"Processing 993 posts from EntrepreneurRideAlong","timestamp":"2025-05-28T05:16:05.221Z"}
+{"level":"info","message":"Completed processing EntrepreneurRideAlong. Found 37290 active users so far","timestamp":"2025-05-28T05:16:05.235Z"}
+{"level":"info","message":"Processing subreddit: HailCorporate","timestamp":"2025-05-28T05:16:07.623Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from HailCorporate for the past all","timestamp":"2025-05-28T05:16:07.623Z"}
+{"level":"info","message":"Successfully fetched 976 top posts from advertising","timestamp":"2025-05-28T05:16:09.863Z"}
+{"level":"info","message":"Processing 976 posts from advertising","timestamp":"2025-05-28T05:16:09.863Z"}
+{"level":"info","message":"Completed processing advertising. Found 11875 active users so far","timestamp":"2025-05-28T05:16:09.869Z"}
+{"level":"info","message":"Successfully fetched 861 top posts from b2bmarketing","timestamp":"2025-05-28T05:16:10.963Z"}
+{"level":"info","message":"Processing 861 posts from b2bmarketing","timestamp":"2025-05-28T05:16:10.963Z"}
+{"level":"info","message":"Completed processing b2bmarketing. Found 24400 active users so far","timestamp":"2025-05-28T05:16:10.971Z"}
+{"level":"info","message":"Processing subreddit: antiMLM","timestamp":"2025-05-28T05:16:13.944Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from antiMLM for the past year","timestamp":"2025-05-28T05:16:13.945Z"}
+{"level":"info","message":"Processing subreddit: MarketingGeek","timestamp":"2025-05-28T05:16:16.187Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from MarketingGeek for the past all","timestamp":"2025-05-28T05:16:16.188Z"}
+{"level":"info","message":"Successfully fetched 452 top posts from MarketingGeek","timestamp":"2025-05-28T05:16:23.426Z"}
+{"level":"info","message":"Processing 452 posts from MarketingGeek","timestamp":"2025-05-28T05:16:23.427Z"}
+{"level":"info","message":"Completed processing MarketingGeek. Found 24442 active users so far","timestamp":"2025-05-28T05:16:23.434Z"}
+{"level":"info","message":"Successfully fetched 999 top posts from HailCorporate","timestamp":"2025-05-28T05:16:26.753Z"}
+{"level":"info","message":"Processing 999 posts from HailCorporate","timestamp":"2025-05-28T05:16:26.754Z"}
+{"level":"info","message":"Completed processing HailCorporate. Found 37976 active users so far","timestamp":"2025-05-28T05:16:26.766Z"}
+{"level":"info","message":"Processing subreddit: startups","timestamp":"2025-05-28T05:16:28.225Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from startups for the past all","timestamp":"2025-05-28T05:16:28.226Z"}
+{"level":"info","message":"Processing subreddit: SEO_Marketing_Offers","timestamp":"2025-05-28T05:16:32.054Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from SEO_Marketing_Offers for the past all","timestamp":"2025-05-28T05:16:32.055Z"}
+{"level":"info","message":"Successfully fetched 88 top posts from SEO_Marketing_Offers","timestamp":"2025-05-28T05:16:33.337Z"}
+{"level":"info","message":"Processing 88 posts from SEO_Marketing_Offers","timestamp":"2025-05-28T05:16:33.338Z"}
+{"level":"info","message":"Completed processing SEO_Marketing_Offers. Found 38039 active users so far","timestamp":"2025-05-28T05:16:33.364Z"}
+{"level":"info","message":"Processing subreddit: VideoMarketing","timestamp":"2025-05-28T05:16:38.725Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from VideoMarketing for the past all","timestamp":"2025-05-28T05:16:38.726Z"}
+{"level":"info","message":"Successfully fetched 998 top posts from antiMLM","timestamp":"2025-05-28T05:16:39.563Z"}
+{"level":"info","message":"Processing 998 posts from antiMLM","timestamp":"2025-05-28T05:16:39.563Z"}
+{"level":"info","message":"Completed processing antiMLM. Found 12415 active users so far","timestamp":"2025-05-28T05:16:39.575Z"}
+{"level":"info","message":"Successfully fetched 101 top posts from VideoMarketing","timestamp":"2025-05-28T05:16:40.140Z"}
+{"level":"info","message":"Processing 101 posts from VideoMarketing","timestamp":"2025-05-28T05:16:40.141Z"}
+{"level":"info","message":"Completed processing VideoMarketing. Found 38106 active users so far","timestamp":"2025-05-28T05:16:40.165Z"}
+{"level":"info","message":"Processing subreddit: CryptoCurrency","timestamp":"2025-05-28T05:16:44.339Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from CryptoCurrency for the past all","timestamp":"2025-05-28T05:16:44.340Z"}
+{"level":"info","message":"Processing subreddit: MarketingHelp","timestamp":"2025-05-28T05:16:44.802Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from MarketingHelp for the past year","timestamp":"2025-05-28T05:16:44.803Z"}
+{"level":"info","message":"Successfully fetched 999 top posts from startups","timestamp":"2025-05-28T05:16:46.496Z"}
+{"level":"info","message":"Processing 999 posts from startups","timestamp":"2025-05-28T05:16:46.497Z"}
+{"level":"info","message":"Completed processing startups. Found 25129 active users so far","timestamp":"2025-05-28T05:16:46.510Z"}
+{"level":"info","message":"Successfully fetched 230 top posts from MarketingHelp","timestamp":"2025-05-28T05:16:48.313Z"}
+{"level":"info","message":"Processing 230 posts from MarketingHelp","timestamp":"2025-05-28T05:16:48.313Z"}
+{"level":"info","message":"Completed processing MarketingHelp. Found 12506 active users so far","timestamp":"2025-05-28T05:16:48.318Z"}
+{"level":"info","message":"Processing subreddit: socialmedia","timestamp":"2025-05-28T05:16:50.483Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from socialmedia for the past all","timestamp":"2025-05-28T05:16:50.483Z"}
+{"level":"info","message":"Processing subreddit: MarketingResearch","timestamp":"2025-05-28T05:16:52.872Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from MarketingResearch for the past year","timestamp":"2025-05-28T05:16:52.872Z"}
+{"level":"info","message":"Successfully fetched 568 top posts from MarketingResearch","timestamp":"2025-05-28T05:17:02.014Z"}
+{"level":"info","message":"Processing 568 posts from MarketingResearch","timestamp":"2025-05-28T05:17:02.014Z"}
+{"level":"info","message":"Completed processing MarketingResearch. Found 12755 active users so far","timestamp":"2025-05-28T05:17:02.020Z"}
+{"level":"info","message":"Successfully fetched 906 top posts from CryptoCurrency","timestamp":"2025-05-28T05:17:03.340Z"}
+{"level":"info","message":"Processing 906 posts from CryptoCurrency","timestamp":"2025-05-28T05:17:03.340Z"}
+{"level":"info","message":"Completed processing CryptoCurrency. Found 38685 active users so far","timestamp":"2025-05-28T05:17:03.358Z"}
+{"level":"info","message":"Processing subreddit: SampleSize","timestamp":"2025-05-28T05:17:04.754Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from SampleSize for the past year","timestamp":"2025-05-28T05:17:04.755Z"}
+{"level":"info","message":"Processing subreddit: DispensaryMarketing","timestamp":"2025-05-28T05:17:06.860Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from DispensaryMarketing for the past all","timestamp":"2025-05-28T05:17:06.862Z"}
+{"level":"info","message":"Successfully fetched 999 top posts from socialmedia","timestamp":"2025-05-28T05:17:07.180Z"}
+{"level":"info","message":"Processing 999 posts from socialmedia","timestamp":"2025-05-28T05:17:07.180Z"}
+{"level":"info","message":"Completed processing socialmedia. Found 25703 active users so far","timestamp":"2025-05-28T05:17:07.189Z"}
+{"level":"info","message":"Successfully fetched 20 top posts from DispensaryMarketing","timestamp":"2025-05-28T05:17:07.219Z"}
+{"level":"info","message":"Processing 20 posts from DispensaryMarketing","timestamp":"2025-05-28T05:17:07.219Z"}
+{"level":"info","message":"Completed processing DispensaryMarketing. Found 38698 active users so far","timestamp":"2025-05-28T05:17:07.235Z"}
+{"level":"info","message":"Processing subreddit: musicmarketing","timestamp":"2025-05-28T05:17:09.257Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from musicmarketing for the past all","timestamp":"2025-05-28T05:17:09.257Z"}
+{"level":"info","message":"Processing subreddit: marketingagency","timestamp":"2025-05-28T05:17:11.442Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from marketingagency for the past all","timestamp":"2025-05-28T05:17:11.442Z"}
+{"level":"info","message":"Successfully fetched 335 top posts from marketingagency","timestamp":"2025-05-28T05:17:16.320Z"}
+{"level":"info","message":"Processing 335 posts from marketingagency","timestamp":"2025-05-28T05:17:16.320Z"}
+{"level":"info","message":"Completed processing marketingagency. Found 25900 active users so far","timestamp":"2025-05-28T05:17:16.329Z"}
+{"level":"info","message":"Processing subreddit: ecommercemarketing","timestamp":"2025-05-28T05:17:20.349Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from ecommercemarketing for the past all","timestamp":"2025-05-28T05:17:20.350Z"}
+{"level":"info","message":"Successfully fetched 982 top posts from SampleSize","timestamp":"2025-05-28T05:17:21.461Z"}
+{"level":"info","message":"Processing 982 posts from SampleSize","timestamp":"2025-05-28T05:17:21.462Z"}
+{"level":"info","message":"Completed processing SampleSize. Found 13496 active users so far","timestamp":"2025-05-28T05:17:21.469Z"}
+{"level":"info","message":"Processing subreddit: CryptoMars","timestamp":"2025-05-28T05:17:26.662Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from CryptoMars for the past year","timestamp":"2025-05-28T05:17:26.662Z"}
+{"level":"info","message":"Successfully fetched 1000 top posts from musicmarketing","timestamp":"2025-05-28T05:17:27.248Z"}
+{"level":"info","message":"Processing 1000 posts from musicmarketing","timestamp":"2025-05-28T05:17:27.248Z"}
+{"level":"info","message":"Completed processing musicmarketing. Found 39338 active users so far","timestamp":"2025-05-28T05:17:27.261Z"}
+{"level":"info","message":"Processing subreddit: AwesomeMarketing","timestamp":"2025-05-28T05:17:30.887Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from AwesomeMarketing for the past all","timestamp":"2025-05-28T05:17:30.888Z"}
+{"level":"info","message":"Successfully fetched 83 top posts from AwesomeMarketing","timestamp":"2025-05-28T05:17:32.257Z"}
+{"level":"info","message":"Processing 83 posts from AwesomeMarketing","timestamp":"2025-05-28T05:17:32.258Z"}
+{"level":"info","message":"Completed processing AwesomeMarketing. Found 39356 active users so far","timestamp":"2025-05-28T05:17:32.268Z"}
+{"level":"info","message":"Processing subreddit: influencermarketing","timestamp":"2025-05-28T05:17:34.395Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from influencermarketing for the past all","timestamp":"2025-05-28T05:17:34.396Z"}
+{"level":"info","message":"Successfully fetched 997 top posts from ecommercemarketing","timestamp":"2025-05-28T05:17:39.562Z"}
+{"level":"info","message":"Processing 997 posts from ecommercemarketing","timestamp":"2025-05-28T05:17:39.562Z"}
+{"level":"info","message":"Completed processing ecommercemarketing. Found 26446 active users so far","timestamp":"2025-05-28T05:17:39.571Z"}
+{"level":"info","message":"Processing subreddit: memes","timestamp":"2025-05-28T05:17:46.175Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from memes for the past all","timestamp":"2025-05-28T05:17:46.176Z"}
+{"level":"info","message":"Successfully fetched 995 top posts from CryptoMars","timestamp":"2025-05-28T05:17:51.742Z"}
+{"level":"info","message":"Processing 995 posts from CryptoMars","timestamp":"2025-05-28T05:17:51.742Z"}
+{"level":"info","message":"Completed processing CryptoMars. Found 13692 active users so far","timestamp":"2025-05-28T05:17:51.747Z"}
+{"level":"info","message":"Successfully fetched 1000 top posts from influencermarketing","timestamp":"2025-05-28T05:17:52.233Z"}
+{"level":"info","message":"Processing 1000 posts from influencermarketing","timestamp":"2025-05-28T05:17:52.233Z"}
+{"level":"info","message":"Completed processing influencermarketing. Found 39963 active users so far","timestamp":"2025-05-28T05:17:52.249Z"}
+{"level":"info","message":"Processing subreddit: DigitalMarketingHack","timestamp":"2025-05-28T05:17:55.321Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from DigitalMarketingHack for the past year","timestamp":"2025-05-28T05:17:55.321Z"}
+{"level":"info","message":"Processing subreddit: HealthcareMarketing","timestamp":"2025-05-28T05:17:56.300Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from HealthcareMarketing for the past all","timestamp":"2025-05-28T05:17:56.301Z"}
+{"level":"info","message":"Successfully fetched 104 top posts from HealthcareMarketing","timestamp":"2025-05-28T05:17:58.404Z"}
+{"level":"info","message":"Processing 104 posts from HealthcareMarketing","timestamp":"2025-05-28T05:17:58.405Z"}
+{"level":"info","message":"Completed processing HealthcareMarketing. Found 40016 active users so far","timestamp":"2025-05-28T05:17:58.420Z"}
+{"level":"info","message":"Successfully fetched 981 top posts from memes","timestamp":"2025-05-28T05:18:00.283Z"}
+{"level":"info","message":"Processing 981 posts from memes","timestamp":"2025-05-28T05:18:00.284Z"}
+{"level":"info","message":"Completed processing memes. Found 27159 active users so far","timestamp":"2025-05-28T05:18:00.293Z"}
+{"level":"info","message":"Processing subreddit: CryptoCurrencyTrading","timestamp":"2025-05-28T05:18:04.270Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from CryptoCurrencyTrading for the past all","timestamp":"2025-05-28T05:18:04.270Z"}
+{"level":"info","message":"Processing subreddit: growth_marketing","timestamp":"2025-05-28T05:18:04.728Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from growth_marketing for the past all","timestamp":"2025-05-28T05:18:04.729Z"}
+{"level":"info","message":"Successfully fetched 480 top posts from DigitalMarketingHack","timestamp":"2025-05-28T05:18:05.336Z"}
+{"level":"info","message":"Processing 480 posts from DigitalMarketingHack","timestamp":"2025-05-28T05:18:05.336Z"}
+{"level":"info","message":"Completed processing DigitalMarketingHack. Found 13843 active users so far","timestamp":"2025-05-28T05:18:05.343Z"}
+{"level":"info","message":"Successfully fetched 50 top posts from growth_marketing","timestamp":"2025-05-28T05:18:05.787Z"}
+{"level":"info","message":"Processing 50 posts from growth_marketing","timestamp":"2025-05-28T05:18:05.787Z"}
+{"level":"info","message":"Completed processing growth_marketing. Found 40020 active users so far","timestamp":"2025-05-28T05:18:05.801Z"}
+{"level":"info","message":"Processing subreddit: DropshipMarketing","timestamp":"2025-05-28T05:18:07.912Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from DropshipMarketing for the past all","timestamp":"2025-05-28T05:18:07.913Z"}
+{"level":"info","message":"Successfully fetched 64 top posts from DropshipMarketing","timestamp":"2025-05-28T05:18:09.256Z"}
+{"level":"info","message":"Processing 64 posts from DropshipMarketing","timestamp":"2025-05-28T05:18:09.256Z"}
+{"level":"info","message":"Completed processing DropshipMarketing. Found 40051 active users so far","timestamp":"2025-05-28T05:18:09.267Z"}
+{"level":"info","message":"Processing subreddit: ContentMarketing","timestamp":"2025-05-28T05:18:11.687Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from ContentMarketing for the past year","timestamp":"2025-05-28T05:18:11.687Z"}
+{"level":"info","message":"Successfully fetched 23 top posts from ContentMarketing","timestamp":"2025-05-28T05:18:12.384Z"}
+{"level":"info","message":"Processing 23 posts from ContentMarketing","timestamp":"2025-05-28T05:18:12.385Z"}
+{"level":"info","message":"Completed processing ContentMarketing. Found 13845 active users so far","timestamp":"2025-05-28T05:18:12.390Z"}
+{"level":"info","message":"Processing subreddit: bussiness_marketing","timestamp":"2025-05-28T05:18:15.348Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from bussiness_marketing for the past all","timestamp":"2025-05-28T05:18:15.348Z"}
+{"level":"info","message":"Successfully fetched 14 top posts from bussiness_marketing","timestamp":"2025-05-28T05:18:15.678Z"}
+{"level":"info","message":"Processing 14 posts from bussiness_marketing","timestamp":"2025-05-28T05:18:15.679Z"}
+{"level":"info","message":"Completed processing bussiness_marketing. Found 40063 active users so far","timestamp":"2025-05-28T05:18:15.696Z"}
+{"level":"info","message":"Processing subreddit: CryptoMoon","timestamp":"2025-05-28T05:18:18.327Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from CryptoMoon for the past year","timestamp":"2025-05-28T05:18:18.330Z"}
+{"level":"info","message":"Processing subreddit: SportsMarketing","timestamp":"2025-05-28T05:18:22.550Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from SportsMarketing for the past all","timestamp":"2025-05-28T05:18:22.550Z"}
+{"level":"info","message":"Successfully fetched 174 top posts from SportsMarketing","timestamp":"2025-05-28T05:18:24.986Z"}
+{"level":"info","message":"Processing 174 posts from SportsMarketing","timestamp":"2025-05-28T05:18:24.987Z"}
+{"level":"info","message":"Completed processing SportsMarketing. Found 40126 active users so far","timestamp":"2025-05-28T05:18:25.001Z"}
+{"level":"info","message":"Processing subreddit: TwitterMarketing","timestamp":"2025-05-28T05:18:30.917Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from TwitterMarketing for the past all","timestamp":"2025-05-28T05:18:30.918Z"}
+{"level":"info","message":"Successfully fetched 979 top posts from CryptoCurrencyTrading","timestamp":"2025-05-28T05:18:31.392Z"}
+{"level":"info","message":"Processing 979 posts from CryptoCurrencyTrading","timestamp":"2025-05-28T05:18:31.392Z"}
+{"level":"info","message":"Completed processing CryptoCurrencyTrading. Found 27348 active users so far","timestamp":"2025-05-28T05:18:31.401Z"}
+{"level":"info","message":"Successfully fetched 126 top posts from TwitterMarketing","timestamp":"2025-05-28T05:18:32.842Z"}
+{"level":"info","message":"Processing 126 posts from TwitterMarketing","timestamp":"2025-05-28T05:18:32.843Z"}
+{"level":"info","message":"Completed processing TwitterMarketing. Found 40211 active users so far","timestamp":"2025-05-28T05:18:32.859Z"}
+{"level":"info","message":"Processing subreddit: ChoicecoinMarketing","timestamp":"2025-05-28T05:18:35.316Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from ChoicecoinMarketing for the past all","timestamp":"2025-05-28T05:18:35.316Z"}
+{"level":"info","message":"Processing subreddit: Marketingcurated","timestamp":"2025-05-28T05:18:36.630Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from Marketingcurated for the past all","timestamp":"2025-05-28T05:18:36.630Z"}
+{"level":"info","message":"Successfully fetched 224 top posts from ChoicecoinMarketing","timestamp":"2025-05-28T05:18:39.268Z"}
+{"level":"info","message":"Processing 224 posts from ChoicecoinMarketing","timestamp":"2025-05-28T05:18:39.268Z"}
+{"level":"info","message":"Completed processing ChoicecoinMarketing. Found 40216 active users so far","timestamp":"2025-05-28T05:18:39.281Z"}
+{"level":"info","message":"Processing subreddit: MYDigitalMarketing","timestamp":"2025-05-28T05:18:41.766Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from MYDigitalMarketing for the past all","timestamp":"2025-05-28T05:18:41.767Z"}
+{"level":"info","message":"Successfully fetched 24 top posts from MYDigitalMarketing","timestamp":"2025-05-28T05:18:42.325Z"}
+{"level":"info","message":"Processing 24 posts from MYDigitalMarketing","timestamp":"2025-05-28T05:18:42.327Z"}
+{"level":"info","message":"Completed processing MYDigitalMarketing. Found 40222 active users so far","timestamp":"2025-05-28T05:18:42.358Z"}
+{"level":"info","message":"Successfully fetched 998 top posts from CryptoMoon","timestamp":"2025-05-28T05:18:43.855Z"}
+{"level":"info","message":"Processing 998 posts from CryptoMoon","timestamp":"2025-05-28T05:18:43.855Z"}
+{"level":"info","message":"Completed processing CryptoMoon. Found 13977 active users so far","timestamp":"2025-05-28T05:18:43.861Z"}
+{"level":"info","message":"Processing subreddit: OKayMarketing","timestamp":"2025-05-28T05:18:45.054Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from OKayMarketing for the past all","timestamp":"2025-05-28T05:18:45.055Z"}
+{"level":"info","message":"Successfully fetched 39 top posts from OKayMarketing","timestamp":"2025-05-28T05:18:45.697Z"}
+{"level":"info","message":"Processing 39 posts from OKayMarketing","timestamp":"2025-05-28T05:18:45.697Z"}
+{"level":"info","message":"Completed processing OKayMarketing. Found 40248 active users so far","timestamp":"2025-05-28T05:18:45.715Z"}
+{"level":"info","message":"Processing subreddit: AllCryptoBets","timestamp":"2025-05-28T05:18:48.881Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from AllCryptoBets for the past year","timestamp":"2025-05-28T05:18:48.882Z"}
+{"level":"info","message":"Processing subreddit: MarketingManagement","timestamp":"2025-05-28T05:18:52.124Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from MarketingManagement for the past all","timestamp":"2025-05-28T05:18:52.125Z"}
+{"level":"info","message":"Successfully fetched 83 top posts from MarketingManagement","timestamp":"2025-05-28T05:18:53.293Z"}
+{"level":"info","message":"Processing 83 posts from MarketingManagement","timestamp":"2025-05-28T05:18:53.293Z"}
+{"level":"info","message":"Completed processing MarketingManagement. Found 40261 active users so far","timestamp":"2025-05-28T05:18:53.310Z"}
+{"level":"info","message":"Processing subreddit: SocialMarketing","timestamp":"2025-05-28T05:18:59.705Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from SocialMarketing for the past all","timestamp":"2025-05-28T05:18:59.705Z"}
+{"level":"info","message":"Successfully fetched 1000 top posts from Marketingcurated","timestamp":"2025-05-28T05:19:00.591Z"}
+{"level":"info","message":"Processing 1000 posts from Marketingcurated","timestamp":"2025-05-28T05:19:00.591Z"}
+{"level":"info","message":"Completed processing Marketingcurated. Found 27404 active users so far","timestamp":"2025-05-28T05:19:00.603Z"}
+{"level":"info","message":"Successfully fetched 110 top posts from SocialMarketing","timestamp":"2025-05-28T05:19:01.482Z"}
+{"level":"info","message":"Processing 110 posts from SocialMarketing","timestamp":"2025-05-28T05:19:01.483Z"}
+{"level":"info","message":"Completed processing SocialMarketing. Found 40337 active users so far","timestamp":"2025-05-28T05:19:01.501Z"}
+{"level":"info","message":"Processing subreddit: affiliate_marketing","timestamp":"2025-05-28T05:19:03.042Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from affiliate_marketing for the past all","timestamp":"2025-05-28T05:19:03.043Z"}
+{"error":{"error":403,"message":"Forbidden","reason":"private"},"level":"error","message":"Error processing subreddit affiliate_marketing: 403 - {\"reason\":\"private\",\"message\":\"Forbidden\",\"error\":403}","name":"StatusCodeError","options":{"auth":{"bearer":"eyJhbGciOiJSUzI1NiIsImtpZCI6IlNIQTI1NjpzS3dsMnlsV0VtMjVmcXhwTU40cWY4MXE2OWFFdWFyMnpLMUdhVGxjdWNZIiwidHlwIjoiSldUIn0.eyJzdWIiOiJ1c2VyIiwiZXhwIjoxNzQ4NDU0OTgzLjU0OTAwOCwiaWF0IjoxNzQ4MzY4NTgzLjU0OTAwOCwianRpIjoicGJxT3E3VVZqbmpUQ0JMV21Ma19RNlBmZG9aMTNnIiwiY2lkIjoiaEpzVnE5RGs4WFFCVnVuVVY4S0ZmdyIsImxpZCI6InQyXzE1cjJpODhkM2ciLCJhaWQiOiJ0Ml8xNXIyaTg4ZDNnIiwibGNhIjoxNzIyNTA3NjAzMjQ4LCJzY3AiOiJlSnlLVnRKU2lnVUVBQURfX3dOekFTYyIsImZsbyI6OX0.K67kGH7q1AfLqq4tN0vU6n1330pYPX-FqAj-M98ikphzJTxFCf2rpxqI5v_CeKLTJNwb6j3o5AbJzRtZegcDDx9TPhcNFpKyjrxqQBPXiDw3c2CIrrNBOqrbSYUjCodUMMeU5QhQp2rCU2A9EkB3f5RDFRExfWvR_vNLlzwVgeV95nuekiWpMt-0YSgpoQxQ9LLN-rFpfEJTN6fviycKtqyx8iRjDzavESIO8cNI-9yTYaVOFjRxrC3PTiWMzu9arEgyBU0VNmisombWMRkX761GToPscQdg_956mHIfKXT3KGH8zjYAUzmUNz2AG3PelX3qovyCIQ67QrdCLGiupA"},"baseUrl":"https://oauth.reddit.com","gzip":true,"headers":{"user-agent":"script:redditdm:v2.0 (by /u/tech_nurgaliyev)"},"json":true,"method":"GET","qs":{"count":9999,"limit":1000,"raw_json":1,"t":"all"},"resolveWithFullResponse":true,"simple":true,"timeout":30000,"transform2xxOnly":false,"uri":"r/affiliate_marketing/top"},"response":{"body":{"error":403,"message":"Forbidden","reason":"private"},"headers":{"accept-ranges":"bytes","cache-control":"private, s-maxage=0, max-age=0, must-revalidate, no-store","connection":"close","content-encoding":"gzip","content-type":"application/json; charset=UTF-8","date":"Wed, 28 May 2025 05:19:03 GMT","expires":"-1","nel":"{\"report_to\": \"w3-reporting-nel\", \"max_age\": 14400, \"include_subdomains\": false, \"success_fraction\": 1.0, \"failure_fraction\": 1.0}","report-to":"{\"group\": \"w3-reporting-nel\", \"max_age\": 14400, \"include_subdomains\": true,  \"endpoints\": [{ \"url\": \"https://w3-reporting-nel.reddit.com/reports\" }]}, {\"group\": \"w3-reporting\", \"max_age\": 14400, \"include_subdomains\": true, \"endpoints\": [{ \"url\": \"https://w3-reporting.reddit.com/reports\" }]}, {\"group\": \"w3-reporting-csp\", \"max_age\": 14400, \"include_subdomains\": true, \"endpoints\": [{ \"url\": \"https://w3-reporting-csp.reddit.com/reports\" }]}","server":"snooserv","set-cookie":["loid=0000000015r2i88d3g.2.1722507603248.Z0FBQUFBQm9OcHpIbGJ3QUF5SGRWajYxUmdjX0NwbXlYc2FEYTE3aXAtd1VtQ1BaWjdhWXV4ZXF0MGV0aDEyOUlSUVNCWEpMT1hxbm05RHV6RnF3MFJWLWxrMkN0eWR5bDVDbW52Wk9yTjViLVdFTGlVcFJUazAzejVWUm9ndFpBaElXQzNlZm9wS3I; Domain=reddit.com; Max-Age=63071999; Path=/; expires=Fri, 28-May-2027 05:19:03 GMT; secure; SameSite=None; Secure","session_tracker=ncfmbornlaanlfjnom.0.1748409543179.Z0FBQUFBQm9OcHpIbmkyQWxSUFlOWlA0WGFrdWd0ekhMaHhDTG1SbTRPVXJoVUdXX2VDWmU5UWJIeHV0bW5iRHhoYWZGcFJmVUJNMnBaLU5YUHJRenpyZVZLemZDMm0zd3JSSDNpWXZRVkRyb2l4NC1uSExrQkFjRVlWanJPbTRNc3pxZ1JjdUY0bXQ; Domain=reddit.com; Max-Age=7199; Path=/; expires=Wed, 28-May-2025 07:19:03 GMT; secure; SameSite=None; Secure","csv=2; Max-Age=63072000; Domain=.reddit.com; Path=/; Secure; SameSite=None","edgebucket=zlT0WlqY1OaeSVySlf; Domain=reddit.com; Max-Age=63071999; Path=/;  secure"],"strict-transport-security":"max-age=31536000; includeSubdomains","transfer-encoding":"chunked","vary":"Accept-Encoding","via":"1.1 varnish","x-content-type-options":"nosniff","x-frame-options":"SAMEORIGIN","x-ratelimit-remaining":"307.0","x-ratelimit-reset":"56","x-ratelimit-used":"693","x-ua-compatible":"IE=edge","x-xss-protection":"1; mode=block"},"request":{"headers":{"accept":"application/json","accept-encoding":"gzip, deflate","authorization":"Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IlNIQTI1NjpzS3dsMnlsV0VtMjVmcXhwTU40cWY4MXE2OWFFdWFyMnpLMUdhVGxjdWNZIiwidHlwIjoiSldUIn0.eyJzdWIiOiJ1c2VyIiwiZXhwIjoxNzQ4NDU0OTgzLjU0OTAwOCwiaWF0IjoxNzQ4MzY4NTgzLjU0OTAwOCwianRpIjoicGJxT3E3VVZqbmpUQ0JMV21Ma19RNlBmZG9aMTNnIiwiY2lkIjoiaEpzVnE5RGs4WFFCVnVuVVY4S0ZmdyIsImxpZCI6InQyXzE1cjJpODhkM2ciLCJhaWQiOiJ0Ml8xNXIyaTg4ZDNnIiwibGNhIjoxNzIyNTA3NjAzMjQ4LCJzY3AiOiJlSnlLVnRKU2lnVUVBQURfX3dOekFTYyIsImZsbyI6OX0.K67kGH7q1AfLqq4tN0vU6n1330pYPX-FqAj-M98ikphzJTxFCf2rpxqI5v_CeKLTJNwb6j3o5AbJzRtZegcDDx9TPhcNFpKyjrxqQBPXiDw3c2CIrrNBOqrbSYUjCodUMMeU5QhQp2rCU2A9EkB3f5RDFRExfWvR_vNLlzwVgeV95nuekiWpMt-0YSgpoQxQ9LLN-rFpfEJTN6fviycKtqyx8iRjDzavESIO8cNI-9yTYaVOFjRxrC3PTiWMzu9arEgyBU0VNmisombWMRkX761GToPscQdg_956mHIfKXT3KGH8zjYAUzmUNz2AG3PelX3qovyCIQ67QrdCLGiupA","content-length":0,"user-agent":"script:redditdm:v2.0 (by /u/tech_nurgaliyev)"},"method":"get","uri":{"auth":null,"hash":null,"host":"oauth.reddit.com","hostname":"oauth.reddit.com","href":"https://oauth.reddit.com/r/affiliate_marketing/top?raw_json=1&count=9999&limit=1000&t=all","path":"/r/affiliate_marketing/top?raw_json=1&count=9999&limit=1000&t=all","pathname":"/r/affiliate_marketing/top","port":null,"protocol":"https:","query":"raw_json=1&count=9999&limit=1000&t=all","search":"?raw_json=1&count=9999&limit=1000&t=all","slashes":true}},"statusCode":403},"stack":"StatusCodeError: 403 - {\"reason\":\"private\",\"message\":\"Forbidden\",\"error\":403}\n    at new StatusCodeError (/app/node_modules/request-promise/node_modules/request-promise-core/lib/errors.js:32:15)\n    at /app/node_modules/request-promise/node_modules/request-promise-core/lib/plumbing.js:97:41\n    at tryCatcher (/app/node_modules/bluebird/js/release/util.js:16:23)\n    at Promise._settlePromiseFromHandler (/app/node_modules/bluebird/js/release/promise.js:547:31)\n    at Promise._settlePromise (/app/node_modules/bluebird/js/release/promise.js:604:18)\n    at Promise._settlePromiseCtx (/app/node_modules/bluebird/js/release/promise.js:641:10)\n    at _drainQueueStep (/app/node_modules/bluebird/js/release/async.js:97:12)\n    at _drainQueue (/app/node_modules/bluebird/js/release/async.js:86:9)\n    at Async._drainQueues (/app/node_modules/bluebird/js/release/async.js:102:5)\n    at Async.drainQueues [as _onImmediate] (/app/node_modules/bluebird/js/release/async.js:15:14)\n    at process.processImmediate (node:internal/timers:476:21)","statusCode":403,"timestamp":"2025-05-28T05:19:03.290Z"}
+{"level":"info","message":"Processing subreddit: MoneroMarketing","timestamp":"2025-05-28T05:19:07.116Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from MoneroMarketing for the past all","timestamp":"2025-05-28T05:19:07.116Z"}
+{"level":"info","message":"Successfully fetched 89 top posts from MoneroMarketing","timestamp":"2025-05-28T05:19:08.416Z"}
+{"level":"info","message":"Processing 89 posts from MoneroMarketing","timestamp":"2025-05-28T05:19:08.416Z"}
+{"level":"info","message":"Completed processing MoneroMarketing. Found 40376 active users so far","timestamp":"2025-05-28T05:19:08.427Z"}
+{"level":"info","message":"Processing subreddit: gaming","timestamp":"2025-05-28T05:19:10.000Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from gaming for the past all","timestamp":"2025-05-28T05:19:10.001Z"}
+{"level":"info","message":"Processing final results for 40376 users","timestamp":"2025-05-28T05:19:10.530Z"}
+{"level":"info","message":"Successfully saved 1525 users to data/active_users.json","timestamp":"2025-05-28T05:19:10.624Z"}
+{"level":"info","message":"Found 763 active users (with 5+ posts) across 100 subreddits. Top user: SrGrafo with 8212209 karma","timestamp":"2025-05-28T05:19:10.624Z"}
+{"level":"info","message":"Found 0 new users out of 763 total users","timestamp":"2025-05-28T05:19:10.625Z"}
+{"level":"info","message":"Successfully saved 1525 users to data/active_users.json","timestamp":"2025-05-28T05:19:10.643Z"}
+{"level":"info","message":"No new users found to notify","timestamp":"2025-05-28T05:19:10.644Z"}
+{"level":"info","message":"Completed active users analysis","timestamp":"2025-05-28T05:19:10.644Z"}
+{"level":"info","message":"Completed scheduled Reddit active users analysis","timestamp":"2025-05-28T05:19:10.644Z"}
+{"level":"info","message":"Successfully fetched 987 top posts from AllCryptoBets","timestamp":"2025-05-28T05:19:16.342Z"}
+{"level":"info","message":"Processing 987 posts from AllCryptoBets","timestamp":"2025-05-28T05:19:16.343Z"}
+{"level":"info","message":"Completed processing AllCryptoBets. Found 14068 active users so far","timestamp":"2025-05-28T05:19:16.352Z"}
+{"level":"info","message":"Processing subreddit: socialmedia_marketing","timestamp":"2025-05-28T05:19:21.421Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from socialmedia_marketing for the past year","timestamp":"2025-05-28T05:19:21.422Z"}
+{"level":"info","message":"Successfully fetched 95 top posts from socialmedia_marketing","timestamp":"2025-05-28T05:19:22.490Z"}
+{"level":"info","message":"Processing 95 posts from socialmedia_marketing","timestamp":"2025-05-28T05:19:22.491Z"}
+{"level":"info","message":"Completed processing socialmedia_marketing. Found 14123 active users so far","timestamp":"2025-05-28T05:19:22.495Z"}
+{"level":"info","message":"Successfully fetched 995 top posts from gaming","timestamp":"2025-05-28T05:19:25.894Z"}
+{"level":"info","message":"Processing 995 posts from gaming","timestamp":"2025-05-28T05:19:25.894Z"}
+{"level":"info","message":"Completed processing gaming. Found 28125 active users so far","timestamp":"2025-05-28T05:19:25.907Z"}
+{"level":"info","message":"Processing subreddit: MarketingPorn","timestamp":"2025-05-28T05:19:26.318Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from MarketingPorn for the past year","timestamp":"2025-05-28T05:19:26.319Z"}
+{"level":"info","message":"Successfully fetched 20 top posts from MarketingPorn","timestamp":"2025-05-28T05:19:26.786Z"}
+{"level":"info","message":"Processing 20 posts from MarketingPorn","timestamp":"2025-05-28T05:19:26.786Z"}
+{"level":"info","message":"Completed processing MarketingPorn. Found 14130 active users so far","timestamp":"2025-05-28T05:19:26.793Z"}
+{"level":"info","message":"Processing subreddit: Marketing_Design","timestamp":"2025-05-28T05:19:30.690Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from Marketing_Design for the past year","timestamp":"2025-05-28T05:19:30.691Z"}
+{"level":"info","message":"Processing subreddit: selfpublish","timestamp":"2025-05-28T05:19:30.808Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from selfpublish for the past all","timestamp":"2025-05-28T05:19:30.809Z"}
+{"level":"info","message":"Successfully fetched 657 top posts from Marketing_Design","timestamp":"2025-05-28T05:19:39.645Z"}
+{"level":"info","message":"Processing 657 posts from Marketing_Design","timestamp":"2025-05-28T05:19:39.645Z"}
+{"level":"info","message":"Completed processing Marketing_Design. Found 14135 active users so far","timestamp":"2025-05-28T05:19:39.651Z"}
+{"level":"info","message":"Processing subreddit: SaaS_Email_Marketing","timestamp":"2025-05-28T05:19:46.334Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from SaaS_Email_Marketing for the past year","timestamp":"2025-05-28T05:19:46.335Z"}
+{"level":"info","message":"Successfully fetched 1000 top posts from selfpublish","timestamp":"2025-05-28T05:19:48.998Z"}
+{"level":"info","message":"Processing 1000 posts from selfpublish","timestamp":"2025-05-28T05:19:48.998Z"}
+{"level":"info","message":"Completed processing selfpublish. Found 28868 active users so far","timestamp":"2025-05-28T05:19:49.010Z"}
+{"level":"info","message":"Successfully fetched 249 top posts from SaaS_Email_Marketing","timestamp":"2025-05-28T05:19:51.361Z"}
+{"level":"info","message":"Processing 249 posts from SaaS_Email_Marketing","timestamp":"2025-05-28T05:19:51.362Z"}
+{"level":"info","message":"Completed processing SaaS_Email_Marketing. Found 14221 active users so far","timestamp":"2025-05-28T05:19:51.366Z"}
+{"level":"info","message":"Processing subreddit: dailymarketing","timestamp":"2025-05-28T05:19:51.397Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from dailymarketing for the past all","timestamp":"2025-05-28T05:19:51.397Z"}
+{"level":"info","message":"Successfully fetched 191 top posts from dailymarketing","timestamp":"2025-05-28T05:19:54.180Z"}
+{"level":"info","message":"Processing 191 posts from dailymarketing","timestamp":"2025-05-28T05:19:54.180Z"}
+{"level":"info","message":"Completed processing dailymarketing. Found 28888 active users so far","timestamp":"2025-05-28T05:19:54.194Z"}
+{"level":"info","message":"Processing subreddit: Showerthoughts","timestamp":"2025-05-28T05:19:55.265Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from Showerthoughts for the past year","timestamp":"2025-05-28T05:19:55.265Z"}
+{"level":"info","message":"Processing subreddit: assholedesign","timestamp":"2025-05-28T05:20:00.124Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from assholedesign for the past all","timestamp":"2025-05-28T05:20:00.125Z"}
+{"level":"info","message":"Starting scheduled Reddit active users analysis every 10 minutes","timestamp":"2025-05-28T05:20:00.798Z"}
+{"level":"info","message":"Starting active users analysis","timestamp":"2025-05-28T05:20:00.798Z"}
+{"level":"info","message":"Found 1525 existing users in the database","timestamp":"2025-05-28T05:20:00.812Z"}
+{"level":"info","message":"Found 100 subreddits for keyword 'marketing': marketing, DigitalMarketing, digital_marketing, Entrepreneur, Affiliatemarketing, InstagramMarketing, SocialMediaMarketing, CryptoMoonShots, AskMarketing, SEO_Digital_Marketing, MarketingMentor, Emailmarketing, smallbusiness, ProductMarketing, content_marketing, funny, gamedev, MarketingAutomation, DigitalMarketingHelp, advertising, antiMLM, MarketingHelp, MarketingResearch, SampleSize, CryptoMars, DigitalMarketingHack, ContentMarketing, CryptoMoon, AllCryptoBets, socialmedia_marketing, MarketingPorn, Marketing_Design, SaaS_Email_Marketing, Showerthoughts, shitcoinmoonshots, MarketingJobs, InternetMarketing, AskReddit, BSCMoonShots, marketingnews, Affiliate, CryptoMarsShots, boxoffice, webmarketing, MarketingDigitalBR, todayilearned, SaaS, b2bmarketing, MarketingGeek, startups, socialmedia, marketingagency, ecommercemarketing, memes, CryptoCurrencyTrading, Marketingcurated, affiliate_marketing, gaming, selfpublish, dailymarketing, assholedesign, atrioc, MarketingAIHub, OnlineMarketing, forhire, pics, AutomatedMarketing, Nonprofit_Marketing, tea, Wallstreetsilver, BenefitMarketing, AffiliateMarketing_, conspiracy, Mobile_Marketing, MarketingAnalytics, ecommerce, CryptocurrencyICO, analytics, RealEstateMarketing, EntrepreneurRideAlong, HailCorporate, SEO_Marketing_Offers, VideoMarketing, CryptoCurrency, DispensaryMarketing, musicmarketing, AwesomeMarketing, influencermarketing, HealthcareMarketing, growth_marketing, DropshipMarketing, bussiness_marketing, SportsMarketing, TwitterMarketing, ChoicecoinMarketing, MYDigitalMarketing, OKayMarketing, MarketingManagement, SocialMarketing, MoneroMarketing","timestamp":"2025-05-28T05:20:02.203Z"}
+{"level":"info","message":"Starting to fetch active users from 100 subreddits","timestamp":"2025-05-28T05:20:02.203Z"}
+{"level":"info","message":"Using time period: year, sort method: top","timestamp":"2025-05-28T05:20:02.204Z"}
+{"level":"info","message":"Processing subreddit: marketing","timestamp":"2025-05-28T05:20:02.204Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from marketing for the past year","timestamp":"2025-05-28T05:20:02.204Z"}
+{"level":"info","message":"Successfully fetched 995 top posts from Showerthoughts","timestamp":"2025-05-28T05:20:06.028Z"}
+{"level":"info","message":"Processing 995 posts from Showerthoughts","timestamp":"2025-05-28T05:20:06.029Z"}
+{"level":"info","message":"Completed processing Showerthoughts. Found 15018 active users so far","timestamp":"2025-05-28T05:20:06.037Z"}
+{"level":"info","message":"Processing subreddit: shitcoinmoonshots","timestamp":"2025-05-28T05:20:10.138Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from shitcoinmoonshots for the past year","timestamp":"2025-05-28T05:20:10.139Z"}
+{"level":"info","message":"Successfully fetched 987 top posts from assholedesign","timestamp":"2025-05-28T05:20:16.354Z"}
+{"level":"info","message":"Processing 987 posts from assholedesign","timestamp":"2025-05-28T05:20:16.354Z"}
+{"level":"info","message":"Completed processing assholedesign. Found 29739 active users so far","timestamp":"2025-05-28T05:20:16.366Z"}
+{"level":"info","message":"Successfully fetched 993 top posts from marketing","timestamp":"2025-05-28T05:20:18.048Z"}
+{"level":"info","message":"Processing 993 posts from marketing","timestamp":"2025-05-28T05:20:18.048Z"}
+{"level":"info","message":"Completed processing marketing. Found 744 active users so far","timestamp":"2025-05-28T05:20:18.054Z"}
+{"level":"info","message":"Processing subreddit: atrioc","timestamp":"2025-05-28T05:20:20.978Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from atrioc for the past all","timestamp":"2025-05-28T05:20:20.981Z"}
+{"level":"info","message":"Processing subreddit: DigitalMarketing","timestamp":"2025-05-28T05:20:21.328Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from DigitalMarketing for the past year","timestamp":"2025-05-28T05:20:21.329Z"}
+{"level":"info","message":"Successfully fetched 978 top posts from DigitalMarketing","timestamp":"2025-05-28T05:20:36.549Z"}
+{"level":"info","message":"Processing 978 posts from DigitalMarketing","timestamp":"2025-05-28T05:20:36.549Z"}
+{"level":"info","message":"Completed processing DigitalMarketing. Found 1465 active users so far","timestamp":"2025-05-28T05:20:36.552Z"}
+{"level":"info","message":"Successfully fetched 999 top posts from atrioc","timestamp":"2025-05-28T05:20:37.840Z"}
+{"level":"info","message":"Processing 999 posts from atrioc","timestamp":"2025-05-28T05:20:37.841Z"}
+{"level":"info","message":"Completed processing atrioc. Found 30501 active users so far","timestamp":"2025-05-28T05:20:37.853Z"}
+{"level":"info","message":"Successfully fetched 980 top posts from shitcoinmoonshots","timestamp":"2025-05-28T05:20:37.886Z"}
+{"level":"info","message":"Processing 980 posts from shitcoinmoonshots","timestamp":"2025-05-28T05:20:37.886Z"}
+{"level":"info","message":"Completed processing shitcoinmoonshots. Found 15068 active users so far","timestamp":"2025-05-28T05:20:37.895Z"}
+{"level":"info","message":"Processing subreddit: MarketingJobs","timestamp":"2025-05-28T05:20:41.950Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from MarketingJobs for the past year","timestamp":"2025-05-28T05:20:41.951Z"}
+{"level":"info","message":"Successfully fetched 72 top posts from MarketingJobs","timestamp":"2025-05-28T05:20:42.766Z"}
+{"level":"info","message":"Processing 72 posts from MarketingJobs","timestamp":"2025-05-28T05:20:42.766Z"}
+{"level":"info","message":"Completed processing MarketingJobs. Found 15121 active users so far","timestamp":"2025-05-28T05:20:42.770Z"}
+{"level":"info","message":"Processing subreddit: digital_marketing","timestamp":"2025-05-28T05:20:43.473Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from digital_marketing for the past year","timestamp":"2025-05-28T05:20:43.474Z"}
+{"level":"info","message":"Processing subreddit: MarketingAIHub","timestamp":"2025-05-28T05:20:44.379Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from MarketingAIHub for the past all","timestamp":"2025-05-28T05:20:44.380Z"}
+{"level":"info","message":"Successfully fetched 59 top posts from MarketingAIHub","timestamp":"2025-05-28T05:20:45.775Z"}
+{"level":"info","message":"Processing 59 posts from MarketingAIHub","timestamp":"2025-05-28T05:20:45.775Z"}
+{"level":"info","message":"Completed processing MarketingAIHub. Found 30514 active users so far","timestamp":"2025-05-28T05:20:45.787Z"}
+{"level":"info","message":"Processing subreddit: InternetMarketing","timestamp":"2025-05-28T05:20:47.090Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from InternetMarketing for the past year","timestamp":"2025-05-28T05:20:47.091Z"}
+{"level":"info","message":"Successfully fetched 44 top posts from InternetMarketing","timestamp":"2025-05-28T05:20:48.156Z"}
+{"level":"info","message":"Processing 44 posts from InternetMarketing","timestamp":"2025-05-28T05:20:48.156Z"}
+{"level":"info","message":"Completed processing InternetMarketing. Found 15124 active users so far","timestamp":"2025-05-28T05:20:48.161Z"}
+{"level":"info","message":"Processing subreddit: OnlineMarketing","timestamp":"2025-05-28T05:20:48.334Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from OnlineMarketing for the past all","timestamp":"2025-05-28T05:20:48.334Z"}
+{"level":"info","message":"Successfully fetched 68 top posts from OnlineMarketing","timestamp":"2025-05-28T05:20:49.371Z"}
+{"level":"info","message":"Processing 68 posts from OnlineMarketing","timestamp":"2025-05-28T05:20:49.371Z"}
+{"level":"info","message":"Completed processing OnlineMarketing. Found 30562 active users so far","timestamp":"2025-05-28T05:20:49.381Z"}
+{"level":"info","message":"Processing subreddit: AskReddit","timestamp":"2025-05-28T05:20:51.986Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from AskReddit for the past year","timestamp":"2025-05-28T05:20:51.986Z"}
+{"level":"info","message":"Processing subreddit: forhire","timestamp":"2025-05-28T05:20:56.328Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from forhire for the past all","timestamp":"2025-05-28T05:20:56.328Z"}
+{"level":"info","message":"Successfully fetched 982 top posts from digital_marketing","timestamp":"2025-05-28T05:20:58.360Z"}
+{"level":"info","message":"Processing 982 posts from digital_marketing","timestamp":"2025-05-28T05:20:58.360Z"}
+{"level":"info","message":"Completed processing digital_marketing. Found 2108 active users so far","timestamp":"2025-05-28T05:20:58.363Z"}
+{"level":"info","message":"Successfully fetched 988 top posts from AskReddit","timestamp":"2025-05-28T05:21:02.705Z"}
+{"level":"info","message":"Processing 988 posts from AskReddit","timestamp":"2025-05-28T05:21:02.706Z"}
+{"level":"info","message":"Completed processing AskReddit. Found 15946 active users so far","timestamp":"2025-05-28T05:21:02.719Z"}
+{"level":"info","message":"Processing subreddit: Entrepreneur","timestamp":"2025-05-28T05:21:04.482Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from Entrepreneur for the past year","timestamp":"2025-05-28T05:21:04.482Z"}
+{"level":"info","message":"Processing subreddit: BSCMoonShots","timestamp":"2025-05-28T05:21:05.856Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from BSCMoonShots for the past year","timestamp":"2025-05-28T05:21:05.856Z"}
+{"level":"info","message":"Successfully fetched 996 top posts from forhire","timestamp":"2025-05-28T05:21:15.622Z"}
+{"level":"info","message":"Processing 996 posts from forhire","timestamp":"2025-05-28T05:21:15.623Z"}
+{"level":"info","message":"Completed processing forhire. Found 31256 active users so far","timestamp":"2025-05-28T05:21:15.635Z"}
+{"level":"info","message":"Processing subreddit: pics","timestamp":"2025-05-28T05:21:20.709Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from pics for the past all","timestamp":"2025-05-28T05:21:20.710Z"}
+{"level":"info","message":"Successfully fetched 984 top posts from Entrepreneur","timestamp":"2025-05-28T05:21:21.053Z"}
+{"level":"info","message":"Processing 984 posts from Entrepreneur","timestamp":"2025-05-28T05:21:21.053Z"}
+{"level":"info","message":"Completed processing Entrepreneur. Found 2841 active users so far","timestamp":"2025-05-28T05:21:21.056Z"}
+{"level":"info","message":"Successfully fetched 714 top posts from BSCMoonShots","timestamp":"2025-05-28T05:21:23.024Z"}
+{"level":"info","message":"Processing 714 posts from BSCMoonShots","timestamp":"2025-05-28T05:21:23.025Z"}
+{"level":"info","message":"Completed processing BSCMoonShots. Found 16056 active users so far","timestamp":"2025-05-28T05:21:23.034Z"}
+{"level":"info","message":"Processing subreddit: Affiliatemarketing","timestamp":"2025-05-28T05:21:24.577Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from Affiliatemarketing for the past year","timestamp":"2025-05-28T05:21:24.577Z"}
+{"level":"info","message":"Processing subreddit: marketingnews","timestamp":"2025-05-28T05:21:26.537Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from marketingnews for the past year","timestamp":"2025-05-28T05:21:26.538Z"}
+{"level":"info","message":"Successfully fetched 1 top posts from marketingnews","timestamp":"2025-05-28T05:21:26.793Z"}
+{"level":"info","message":"Processing 1 posts from marketingnews","timestamp":"2025-05-28T05:21:26.793Z"}
+{"level":"info","message":"Completed processing marketingnews. Found 16057 active users so far","timestamp":"2025-05-28T05:21:26.798Z"}
+{"level":"info","message":"Processing subreddit: Affiliate","timestamp":"2025-05-28T05:21:29.495Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from Affiliate for the past year","timestamp":"2025-05-28T05:21:29.496Z"}
+{"level":"info","message":"Successfully fetched 111 top posts from Affiliate","timestamp":"2025-05-28T05:21:31.213Z"}
+{"level":"info","message":"Processing 111 posts from Affiliate","timestamp":"2025-05-28T05:21:31.213Z"}
+{"level":"info","message":"Completed processing Affiliate. Found 16089 active users so far","timestamp":"2025-05-28T05:21:31.219Z"}
+{"level":"info","message":"Successfully fetched 994 top posts from pics","timestamp":"2025-05-28T05:21:37.056Z"}
+{"level":"info","message":"Processing 994 posts from pics","timestamp":"2025-05-28T05:21:37.057Z"}
+{"level":"info","message":"Completed processing pics. Found 31999 active users so far","timestamp":"2025-05-28T05:21:37.067Z"}
+{"level":"info","message":"Processing subreddit: CryptoMarsShots","timestamp":"2025-05-28T05:21:37.356Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from CryptoMarsShots for the past year","timestamp":"2025-05-28T05:21:37.356Z"}
+{"level":"info","message":"Successfully fetched 916 top posts from Affiliatemarketing","timestamp":"2025-05-28T05:21:37.551Z"}
+{"level":"info","message":"Processing 916 posts from Affiliatemarketing","timestamp":"2025-05-28T05:21:37.551Z"}
+{"level":"info","message":"Completed processing Affiliatemarketing. Found 3474 active users so far","timestamp":"2025-05-28T05:21:37.555Z"}
+{"level":"info","message":"Processing subreddit: AutomatedMarketing","timestamp":"2025-05-28T05:21:39.224Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from AutomatedMarketing for the past all","timestamp":"2025-05-28T05:21:39.224Z"}
+{"level":"info","message":"Processing subreddit: InstagramMarketing","timestamp":"2025-05-28T05:21:42.417Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from InstagramMarketing for the past year","timestamp":"2025-05-28T05:21:42.417Z"}
+{"level":"info","message":"Successfully fetched 970 top posts from AutomatedMarketing","timestamp":"2025-05-28T05:21:51.529Z"}
+{"level":"info","message":"Processing 970 posts from AutomatedMarketing","timestamp":"2025-05-28T05:21:51.529Z"}
+{"level":"info","message":"Completed processing AutomatedMarketing. Found 32118 active users so far","timestamp":"2025-05-28T05:21:51.540Z"}
+{"level":"info","message":"Processing subreddit: Nonprofit_Marketing","timestamp":"2025-05-28T05:21:54.558Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from Nonprofit_Marketing for the past all","timestamp":"2025-05-28T05:21:54.559Z"}
+{"level":"info","message":"Successfully fetched 987 top posts from InstagramMarketing","timestamp":"2025-05-28T05:21:57.775Z"}
+{"level":"info","message":"Processing 987 posts from InstagramMarketing","timestamp":"2025-05-28T05:21:57.775Z"}
+{"level":"info","message":"Completed processing InstagramMarketing. Found 4226 active users so far","timestamp":"2025-05-28T05:21:57.778Z"}
+{"level":"info","message":"Processing subreddit: SocialMediaMarketing","timestamp":"2025-05-28T05:22:04.023Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from SocialMediaMarketing for the past year","timestamp":"2025-05-28T05:22:04.024Z"}
+{"level":"info","message":"Successfully fetched 995 top posts from CryptoMarsShots","timestamp":"2025-05-28T05:22:04.837Z"}
+{"level":"info","message":"Processing 995 posts from CryptoMarsShots","timestamp":"2025-05-28T05:22:04.837Z"}
+{"level":"info","message":"Completed processing CryptoMarsShots. Found 16155 active users so far","timestamp":"2025-05-28T05:22:04.847Z"}
+{"level":"info","message":"Processing subreddit: boxoffice","timestamp":"2025-05-28T05:22:07.281Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from boxoffice for the past year","timestamp":"2025-05-28T05:22:07.282Z"}
+{"level":"info","message":"Successfully fetched 981 top posts from Nonprofit_Marketing","timestamp":"2025-05-28T05:22:07.762Z"}
+{"level":"info","message":"Processing 981 posts from Nonprofit_Marketing","timestamp":"2025-05-28T05:22:07.762Z"}
+{"level":"info","message":"Completed processing Nonprofit_Marketing. Found 32333 active users so far","timestamp":"2025-05-28T05:22:07.780Z"}
+{"level":"info","message":"Processing subreddit: tea","timestamp":"2025-05-28T05:22:13.607Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from tea for the past all","timestamp":"2025-05-28T05:22:13.608Z"}
+{"level":"info","message":"Successfully fetched 978 top posts from SocialMediaMarketing","timestamp":"2025-05-28T05:22:18.760Z"}
+{"level":"info","message":"Processing 978 posts from SocialMediaMarketing","timestamp":"2025-05-28T05:22:18.760Z"}
+{"level":"info","message":"Completed processing SocialMediaMarketing. Found 4897 active users so far","timestamp":"2025-05-28T05:22:18.764Z"}
+{"level":"info","message":"Processing subreddit: CryptoMoonShots","timestamp":"2025-05-28T05:22:21.392Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from CryptoMoonShots for the past year","timestamp":"2025-05-28T05:22:21.393Z"}
+{"level":"info","message":"Successfully fetched 999 top posts from boxoffice","timestamp":"2025-05-28T05:22:23.231Z"}
+{"level":"info","message":"Processing 999 posts from boxoffice","timestamp":"2025-05-28T05:22:23.232Z"}
+{"level":"info","message":"Completed processing boxoffice. Found 16333 active users so far","timestamp":"2025-05-28T05:22:23.239Z"}
+{"level":"info","message":"Processing subreddit: webmarketing","timestamp":"2025-05-28T05:22:27.600Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from webmarketing for the past year","timestamp":"2025-05-28T05:22:27.603Z"}
+{"level":"info","message":"Successfully fetched 42 top posts from webmarketing","timestamp":"2025-05-28T05:22:28.267Z"}
+{"level":"info","message":"Processing 42 posts from webmarketing","timestamp":"2025-05-28T05:22:28.267Z"}
+{"level":"info","message":"Completed processing webmarketing. Found 16346 active users so far","timestamp":"2025-05-28T05:22:28.276Z"}
+{"level":"info","message":"Processing subreddit: MarketingDigitalBR","timestamp":"2025-05-28T05:22:31.790Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from MarketingDigitalBR for the past year","timestamp":"2025-05-28T05:22:31.791Z"}
+{"level":"info","message":"Successfully fetched 997 top posts from tea","timestamp":"2025-05-28T05:22:35.360Z"}
+{"level":"info","message":"Processing 997 posts from tea","timestamp":"2025-05-28T05:22:35.360Z"}
+{"level":"info","message":"Completed processing tea. Found 33100 active users so far","timestamp":"2025-05-28T05:22:35.375Z"}
+{"level":"info","message":"Processing subreddit: Wallstreetsilver","timestamp":"2025-05-28T05:22:41.641Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from Wallstreetsilver for the past all","timestamp":"2025-05-28T05:22:41.641Z"}
+{"level":"info","message":"Successfully fetched 735 top posts from MarketingDigitalBR","timestamp":"2025-05-28T05:22:43.168Z"}
+{"level":"info","message":"Processing 735 posts from MarketingDigitalBR","timestamp":"2025-05-28T05:22:43.168Z"}
+{"level":"info","message":"Completed processing MarketingDigitalBR. Found 16782 active users so far","timestamp":"2025-05-28T05:22:43.177Z"}
+{"level":"info","message":"Successfully fetched 994 top posts from CryptoMoonShots","timestamp":"2025-05-28T05:22:46.081Z"}
+{"level":"info","message":"Processing 994 posts from CryptoMoonShots","timestamp":"2025-05-28T05:22:46.081Z"}
+{"level":"info","message":"Completed processing CryptoMoonShots. Found 5210 active users so far","timestamp":"2025-05-28T05:22:46.085Z"}
+{"level":"info","message":"Processing subreddit: todayilearned","timestamp":"2025-05-28T05:22:46.879Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from todayilearned for the past year","timestamp":"2025-05-28T05:22:46.880Z"}
+{"level":"info","message":"Processing subreddit: AskMarketing","timestamp":"2025-05-28T05:22:49.993Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from AskMarketing for the past year","timestamp":"2025-05-28T05:22:49.994Z"}
+{"level":"info","message":"Successfully fetched 996 top posts from Wallstreetsilver","timestamp":"2025-05-28T05:22:58.744Z"}
+{"level":"info","message":"Processing 996 posts from Wallstreetsilver","timestamp":"2025-05-28T05:22:58.745Z"}
+{"level":"info","message":"Completed processing Wallstreetsilver. Found 33730 active users so far","timestamp":"2025-05-28T05:22:58.758Z"}
+{"level":"info","message":"Successfully fetched 998 top posts from todayilearned","timestamp":"2025-05-28T05:22:59.938Z"}
+{"level":"info","message":"Processing 998 posts from todayilearned","timestamp":"2025-05-28T05:22:59.938Z"}
+{"level":"info","message":"Completed processing todayilearned. Found 17392 active users so far","timestamp":"2025-05-28T05:22:59.945Z"}
+{"level":"info","message":"Processing subreddit: BenefitMarketing","timestamp":"2025-05-28T05:23:00.890Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from BenefitMarketing for the past all","timestamp":"2025-05-28T05:23:00.890Z"}
+{"level":"info","message":"Processing subreddit: SaaS","timestamp":"2025-05-28T05:23:02.971Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from SaaS for the past year","timestamp":"2025-05-28T05:23:02.972Z"}
+{"level":"info","message":"Successfully fetched 991 top posts from AskMarketing","timestamp":"2025-05-28T05:23:03.669Z"}
+{"level":"info","message":"Processing 991 posts from AskMarketing","timestamp":"2025-05-28T05:23:03.670Z"}
+{"level":"info","message":"Completed processing AskMarketing. Found 5935 active users so far","timestamp":"2025-05-28T05:23:03.675Z"}
+{"level":"info","message":"Successfully fetched 195 top posts from BenefitMarketing","timestamp":"2025-05-28T05:23:04.166Z"}
+{"level":"info","message":"Processing 195 posts from BenefitMarketing","timestamp":"2025-05-28T05:23:04.166Z"}
+{"level":"info","message":"Completed processing BenefitMarketing. Found 33867 active users so far","timestamp":"2025-05-28T05:23:04.176Z"}
+{"level":"info","message":"Processing subreddit: SEO_Digital_Marketing","timestamp":"2025-05-28T05:23:06.063Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from SEO_Digital_Marketing for the past year","timestamp":"2025-05-28T05:23:06.064Z"}
+{"level":"info","message":"Processing subreddit: AffiliateMarketing_","timestamp":"2025-05-28T05:23:09.662Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from AffiliateMarketing_ for the past all","timestamp":"2025-05-28T05:23:09.662Z"}
+{"level":"info","message":"Successfully fetched 430 top posts from AffiliateMarketing_","timestamp":"2025-05-28T05:23:15.888Z"}
+{"level":"info","message":"Processing 430 posts from AffiliateMarketing_","timestamp":"2025-05-28T05:23:15.889Z"}
+{"level":"info","message":"Completed processing AffiliateMarketing_. Found 33935 active users so far","timestamp":"2025-05-28T05:23:15.899Z"}
+{"level":"info","message":"Processing subreddit: conspiracy","timestamp":"2025-05-28T05:23:19.622Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from conspiracy for the past all","timestamp":"2025-05-28T05:23:19.623Z"}
+{"level":"info","message":"Successfully fetched 993 top posts from SaaS","timestamp":"2025-05-28T05:23:20.537Z"}
+{"level":"info","message":"Processing 993 posts from SaaS","timestamp":"2025-05-28T05:23:20.537Z"}
+{"level":"info","message":"Completed processing SaaS. Found 18029 active users so far","timestamp":"2025-05-28T05:23:20.545Z"}
+{"level":"info","message":"Successfully fetched 979 top posts from SEO_Digital_Marketing","timestamp":"2025-05-28T05:23:22.150Z"}
+{"level":"info","message":"Processing 979 posts from SEO_Digital_Marketing","timestamp":"2025-05-28T05:23:22.150Z"}
+{"level":"info","message":"Completed processing SEO_Digital_Marketing. Found 6510 active users so far","timestamp":"2025-05-28T05:23:22.154Z"}
+{"level":"info","message":"Processing subreddit: b2bmarketing","timestamp":"2025-05-28T05:23:27.521Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from b2bmarketing for the past year","timestamp":"2025-05-28T05:23:27.522Z"}
+{"level":"info","message":"Processing subreddit: MarketingMentor","timestamp":"2025-05-28T05:23:28.114Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from MarketingMentor for the past year","timestamp":"2025-05-28T05:23:28.115Z"}
+{"level":"info","message":"Successfully fetched 371 top posts from b2bmarketing","timestamp":"2025-05-28T05:23:33.051Z"}
+{"level":"info","message":"Processing 371 posts from b2bmarketing","timestamp":"2025-05-28T05:23:33.051Z"}
+{"level":"info","message":"Completed processing b2bmarketing. Found 18209 active users so far","timestamp":"2025-05-28T05:23:33.057Z"}
+{"level":"info","message":"Successfully fetched 990 top posts from conspiracy","timestamp":"2025-05-28T05:23:36.337Z"}
+{"level":"info","message":"Processing 990 posts from conspiracy","timestamp":"2025-05-28T05:23:36.337Z"}
+{"level":"info","message":"Completed processing conspiracy. Found 34549 active users so far","timestamp":"2025-05-28T05:23:36.348Z"}
+{"level":"info","message":"Processing subreddit: MarketingGeek","timestamp":"2025-05-28T05:23:37.295Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from MarketingGeek for the past year","timestamp":"2025-05-28T05:23:37.295Z"}
+{"level":"info","message":"No posts found in MarketingGeek","timestamp":"2025-05-28T05:23:37.516Z"}
+{"level":"info","message":"Successfully fetched 664 top posts from MarketingMentor","timestamp":"2025-05-28T05:23:37.666Z"}
+{"level":"info","message":"Processing 664 posts from MarketingMentor","timestamp":"2025-05-28T05:23:37.666Z"}
+{"level":"info","message":"Completed processing MarketingMentor. Found 6979 active users so far","timestamp":"2025-05-28T05:23:37.670Z"}
+{"level":"info","message":"Processing subreddit: Mobile_Marketing","timestamp":"2025-05-28T05:23:41.589Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from Mobile_Marketing for the past all","timestamp":"2025-05-28T05:23:41.589Z"}
+{"level":"info","message":"Processing subreddit: startups","timestamp":"2025-05-28T05:23:41.998Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from startups for the past year","timestamp":"2025-05-28T05:23:41.999Z"}
+{"level":"info","message":"Processing subreddit: Emailmarketing","timestamp":"2025-05-28T05:23:43.360Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from Emailmarketing for the past year","timestamp":"2025-05-28T05:23:43.361Z"}
+{"level":"info","message":"Successfully fetched 784 top posts from Mobile_Marketing","timestamp":"2025-05-28T05:23:52.265Z"}
+{"level":"info","message":"Processing 784 posts from Mobile_Marketing","timestamp":"2025-05-28T05:23:52.266Z"}
+{"level":"info","message":"Completed processing Mobile_Marketing. Found 34895 active users so far","timestamp":"2025-05-28T05:23:52.277Z"}
+{"level":"info","message":"Processing subreddit: MarketingAnalytics","timestamp":"2025-05-28T05:23:55.236Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from MarketingAnalytics for the past all","timestamp":"2025-05-28T05:23:55.236Z"}
+{"level":"info","message":"Successfully fetched 984 top posts from Emailmarketing","timestamp":"2025-05-28T05:23:57.835Z"}
+{"level":"info","message":"Processing 984 posts from Emailmarketing","timestamp":"2025-05-28T05:23:57.835Z"}
+{"level":"info","message":"Completed processing Emailmarketing. Found 7690 active users so far","timestamp":"2025-05-28T05:23:57.840Z"}
+{"level":"info","message":"Successfully fetched 201 top posts from MarketingAnalytics","timestamp":"2025-05-28T05:23:57.974Z"}
+{"level":"info","message":"Processing 201 posts from MarketingAnalytics","timestamp":"2025-05-28T05:23:57.974Z"}
+{"level":"info","message":"Completed processing MarketingAnalytics. Found 35032 active users so far","timestamp":"2025-05-28T05:23:57.989Z"}
+{"level":"info","message":"Successfully fetched 978 top posts from startups","timestamp":"2025-05-28T05:23:58.662Z"}
+{"level":"info","message":"Processing 978 posts from startups","timestamp":"2025-05-28T05:23:58.662Z"}
+{"level":"info","message":"Completed processing startups. Found 18883 active users so far","timestamp":"2025-05-28T05:23:58.669Z"}
+{"level":"info","message":"Processing subreddit: smallbusiness","timestamp":"2025-05-28T05:24:01.624Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from smallbusiness for the past year","timestamp":"2025-05-28T05:24:01.624Z"}
+{"level":"info","message":"Processing subreddit: ecommerce","timestamp":"2025-05-28T05:24:04.426Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from ecommerce for the past all","timestamp":"2025-05-28T05:24:04.427Z"}
+{"level":"info","message":"Processing subreddit: socialmedia","timestamp":"2025-05-28T05:24:05.410Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from socialmedia for the past year","timestamp":"2025-05-28T05:24:05.411Z"}
+{"level":"info","message":"Successfully fetched 982 top posts from smallbusiness","timestamp":"2025-05-28T05:24:16.715Z"}
+{"level":"info","message":"Processing 982 posts from smallbusiness","timestamp":"2025-05-28T05:24:16.716Z"}
+{"level":"info","message":"Completed processing smallbusiness. Found 8481 active users so far","timestamp":"2025-05-28T05:24:16.723Z"}
+{"level":"info","message":"Successfully fetched 997 top posts from ecommerce","timestamp":"2025-05-28T05:24:20.202Z"}
+{"level":"info","message":"Processing 997 posts from ecommerce","timestamp":"2025-05-28T05:24:20.202Z"}
+{"level":"info","message":"Completed processing ecommerce. Found 35680 active users so far","timestamp":"2025-05-28T05:24:20.217Z"}
+{"level":"info","message":"Successfully fetched 993 top posts from socialmedia","timestamp":"2025-05-28T05:24:20.435Z"}
+{"level":"info","message":"Processing 993 posts from socialmedia","timestamp":"2025-05-28T05:24:20.436Z"}
+{"level":"info","message":"Completed processing socialmedia. Found 19536 active users so far","timestamp":"2025-05-28T05:24:20.445Z"}
+{"level":"info","message":"Processing subreddit: ProductMarketing","timestamp":"2025-05-28T05:24:20.998Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from ProductMarketing for the past year","timestamp":"2025-05-28T05:24:20.998Z"}
+{"level":"info","message":"Processing subreddit: CryptocurrencyICO","timestamp":"2025-05-28T05:24:23.078Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from CryptocurrencyICO for the past all","timestamp":"2025-05-28T05:24:23.079Z"}
+{"level":"info","message":"Processing subreddit: marketingagency","timestamp":"2025-05-28T05:24:26.255Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from marketingagency for the past year","timestamp":"2025-05-28T05:24:26.258Z"}
+{"level":"info","message":"Successfully fetched 137 top posts from marketingagency","timestamp":"2025-05-28T05:24:28.141Z"}
+{"level":"info","message":"Processing 137 posts from marketingagency","timestamp":"2025-05-28T05:24:28.141Z"}
+{"level":"info","message":"Completed processing marketingagency. Found 19596 active users so far","timestamp":"2025-05-28T05:24:28.149Z"}
+{"level":"info","message":"Successfully fetched 588 top posts from ProductMarketing","timestamp":"2025-05-28T05:24:30.327Z"}
+{"level":"info","message":"Processing 588 posts from ProductMarketing","timestamp":"2025-05-28T05:24:30.327Z"}
+{"level":"info","message":"Completed processing ProductMarketing. Found 8874 active users so far","timestamp":"2025-05-28T05:24:30.333Z"}
+{"level":"info","message":"Processing subreddit: ecommercemarketing","timestamp":"2025-05-28T05:24:32.586Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from ecommercemarketing for the past year","timestamp":"2025-05-28T05:24:32.587Z"}
+{"level":"info","message":"Processing subreddit: content_marketing","timestamp":"2025-05-28T05:24:35.085Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from content_marketing for the past year","timestamp":"2025-05-28T05:24:35.085Z"}
+{"level":"info","message":"Successfully fetched 165 top posts from ecommercemarketing","timestamp":"2025-05-28T05:24:35.508Z"}
+{"level":"info","message":"Processing 165 posts from ecommercemarketing","timestamp":"2025-05-28T05:24:35.509Z"}
+{"level":"info","message":"Completed processing ecommercemarketing. Found 19672 active users so far","timestamp":"2025-05-28T05:24:35.517Z"}
+{"level":"info","message":"Processing subreddit: memes","timestamp":"2025-05-28T05:24:38.469Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from memes for the past year","timestamp":"2025-05-28T05:24:38.470Z"}
+{"level":"info","message":"Successfully fetched 696 top posts from content_marketing","timestamp":"2025-05-28T05:24:45.555Z"}
+{"level":"info","message":"Processing 696 posts from content_marketing","timestamp":"2025-05-28T05:24:45.555Z"}
+{"level":"info","message":"Completed processing content_marketing. Found 9218 active users so far","timestamp":"2025-05-28T05:24:45.558Z"}
+{"level":"info","message":"Processing subreddit: funny","timestamp":"2025-05-28T05:24:49.835Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from funny for the past year","timestamp":"2025-05-28T05:24:49.836Z"}
+{"level":"info","message":"Successfully fetched 970 top posts from CryptocurrencyICO","timestamp":"2025-05-28T05:24:50.068Z"}
+{"level":"info","message":"Processing 970 posts from CryptocurrencyICO","timestamp":"2025-05-28T05:24:50.068Z"}
+{"level":"info","message":"Completed processing CryptocurrencyICO. Found 35873 active users so far","timestamp":"2025-05-28T05:24:50.086Z"}
+{"level":"info","message":"Successfully fetched 994 top posts from memes","timestamp":"2025-05-28T05:24:52.233Z"}
+{"level":"info","message":"Processing 994 posts from memes","timestamp":"2025-05-28T05:24:52.233Z"}
+{"level":"info","message":"Completed processing memes. Found 20364 active users so far","timestamp":"2025-05-28T05:24:52.243Z"}
+{"level":"info","message":"Processing subreddit: CryptoCurrencyTrading","timestamp":"2025-05-28T05:24:54.765Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from CryptoCurrencyTrading for the past year","timestamp":"2025-05-28T05:24:54.765Z"}
+{"level":"info","message":"Processing subreddit: analytics","timestamp":"2025-05-28T05:24:56.705Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from analytics for the past all","timestamp":"2025-05-28T05:24:56.705Z"}
+{"level":"info","message":"Successfully fetched 319 top posts from CryptoCurrencyTrading","timestamp":"2025-05-28T05:24:59.296Z"}
+{"level":"info","message":"Processing 319 posts from CryptoCurrencyTrading","timestamp":"2025-05-28T05:24:59.296Z"}
+{"level":"info","message":"Completed processing CryptoCurrencyTrading. Found 20429 active users so far","timestamp":"2025-05-28T05:24:59.305Z"}
+{"level":"info","message":"Processing subreddit: Marketingcurated","timestamp":"2025-05-28T05:25:01.780Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from Marketingcurated for the past year","timestamp":"2025-05-28T05:25:01.781Z"}
+{"level":"info","message":"Successfully fetched 993 top posts from funny","timestamp":"2025-05-28T05:25:04.248Z"}
+{"level":"info","message":"Processing 993 posts from funny","timestamp":"2025-05-28T05:25:04.248Z"}
+{"level":"info","message":"Completed processing funny. Found 9990 active users so far","timestamp":"2025-05-28T05:25:04.253Z"}
+{"level":"info","message":"Successfully fetched 142 top posts from Marketingcurated","timestamp":"2025-05-28T05:25:05.642Z"}
+{"level":"info","message":"Processing 142 posts from Marketingcurated","timestamp":"2025-05-28T05:25:05.642Z"}
+{"level":"info","message":"Completed processing Marketingcurated. Found 20443 active users so far","timestamp":"2025-05-28T05:25:05.649Z"}
+{"level":"info","message":"Processing subreddit: affiliate_marketing","timestamp":"2025-05-28T05:25:09.131Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from affiliate_marketing for the past year","timestamp":"2025-05-28T05:25:09.131Z"}
+{"error":{"error":403,"message":"Forbidden","reason":"private"},"level":"error","message":"Error processing subreddit affiliate_marketing: 403 - {\"reason\":\"private\",\"message\":\"Forbidden\",\"error\":403}","name":"StatusCodeError","options":{"auth":{"bearer":"eyJhbGciOiJSUzI1NiIsImtpZCI6IlNIQTI1NjpzS3dsMnlsV0VtMjVmcXhwTU40cWY4MXE2OWFFdWFyMnpLMUdhVGxjdWNZIiwidHlwIjoiSldUIn0.eyJzdWIiOiJ1c2VyIiwiZXhwIjoxNzQ4NDU0OTgzLjU0OTAwOCwiaWF0IjoxNzQ4MzY4NTgzLjU0OTAwOCwianRpIjoicGJxT3E3VVZqbmpUQ0JMV21Ma19RNlBmZG9aMTNnIiwiY2lkIjoiaEpzVnE5RGs4WFFCVnVuVVY4S0ZmdyIsImxpZCI6InQyXzE1cjJpODhkM2ciLCJhaWQiOiJ0Ml8xNXIyaTg4ZDNnIiwibGNhIjoxNzIyNTA3NjAzMjQ4LCJzY3AiOiJlSnlLVnRKU2lnVUVBQURfX3dOekFTYyIsImZsbyI6OX0.K67kGH7q1AfLqq4tN0vU6n1330pYPX-FqAj-M98ikphzJTxFCf2rpxqI5v_CeKLTJNwb6j3o5AbJzRtZegcDDx9TPhcNFpKyjrxqQBPXiDw3c2CIrrNBOqrbSYUjCodUMMeU5QhQp2rCU2A9EkB3f5RDFRExfWvR_vNLlzwVgeV95nuekiWpMt-0YSgpoQxQ9LLN-rFpfEJTN6fviycKtqyx8iRjDzavESIO8cNI-9yTYaVOFjRxrC3PTiWMzu9arEgyBU0VNmisombWMRkX761GToPscQdg_956mHIfKXT3KGH8zjYAUzmUNz2AG3PelX3qovyCIQ67QrdCLGiupA"},"baseUrl":"https://oauth.reddit.com","gzip":true,"headers":{"user-agent":"script:redditdm:v2.0 (by /u/tech_nurgaliyev)"},"json":true,"method":"GET","qs":{"count":9999,"limit":1000,"raw_json":1,"t":"year"},"resolveWithFullResponse":true,"simple":true,"timeout":30000,"transform2xxOnly":false,"uri":"r/affiliate_marketing/top"},"response":{"body":{"error":403,"message":"Forbidden","reason":"private"},"headers":{"accept-ranges":"bytes","cache-control":"private, s-maxage=0, max-age=0, must-revalidate, no-store","connection":"close","content-encoding":"gzip","content-type":"application/json; charset=UTF-8","date":"Wed, 28 May 2025 05:25:09 GMT","expires":"-1","nel":"{\"report_to\": \"w3-reporting-nel\", \"max_age\": 14400, \"include_subdomains\": false, \"success_fraction\": 1.0, \"failure_fraction\": 1.0}","report-to":"{\"group\": \"w3-reporting-nel\", \"max_age\": 14400, \"include_subdomains\": true,  \"endpoints\": [{ \"url\": \"https://w3-reporting-nel.reddit.com/reports\" }]}, {\"group\": \"w3-reporting\", \"max_age\": 14400, \"include_subdomains\": true, \"endpoints\": [{ \"url\": \"https://w3-reporting.reddit.com/reports\" }]}, {\"group\": \"w3-reporting-csp\", \"max_age\": 14400, \"include_subdomains\": true, \"endpoints\": [{ \"url\": \"https://w3-reporting-csp.reddit.com/reports\" }]}","server":"snooserv","set-cookie":["loid=0000000015r2i88d3g.2.1722507603248.Z0FBQUFBQm9OcDQxczM3cXFxZ21HMnpOVEprUlkyRGRaSDBLM0ZJdkNGYjBlTzFuY3RCLWNVVHNwVHdzdy1EXy1mMWRzMWlXWmZmcXRDMGl0WGh6VjdLMlRZcHpTaXcyOFB2ZEd3Rjk3RHl0YkhPVENZamdKV0pkMGNhUDJOM3l6WjNURjBuZEtDdFg; Domain=reddit.com; Max-Age=63071999; Path=/; expires=Fri, 28-May-2027 05:25:09 GMT; secure; SameSite=None; Secure","session_tracker=cpnldagkcihmcogqcd.0.1748409909246.Z0FBQUFBQm9OcDQxRkFKZ3pQSENMVWlCcTJjRTBnVWJmZTM5MmdNZzBGZk1fSVFOaDc3d3BLWXV2alNWeGQ2bDU0U3Vrc0JqanZfcFFsekQtZ0JQMW9YR3hKMGthNFo4VnpuRmdwcEpuaXV3SHhHc0tNVFRRNF9mYmRaclNzWlZRQnEtSHpiVkV5R1k; Domain=reddit.com; Max-Age=7199; Path=/; expires=Wed, 28-May-2025 07:25:09 GMT; secure; SameSite=None; Secure","csv=2; Max-Age=63072000; Domain=.reddit.com; Path=/; Secure; SameSite=None","edgebucket=6uNEOQ2JTtClb9U8S0; Domain=reddit.com; Max-Age=63071999; Path=/;  secure"],"strict-transport-security":"max-age=31536000; includeSubdomains","transfer-encoding":"chunked","vary":"Accept-Encoding","via":"1.1 varnish","x-content-type-options":"nosniff","x-frame-options":"SAMEORIGIN","x-ratelimit-remaining":"577.0","x-ratelimit-reset":"290","x-ratelimit-used":"423","x-ua-compatible":"IE=edge","x-xss-protection":"1; mode=block"},"request":{"headers":{"accept":"application/json","accept-encoding":"gzip, deflate","authorization":"Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IlNIQTI1NjpzS3dsMnlsV0VtMjVmcXhwTU40cWY4MXE2OWFFdWFyMnpLMUdhVGxjdWNZIiwidHlwIjoiSldUIn0.eyJzdWIiOiJ1c2VyIiwiZXhwIjoxNzQ4NDU0OTgzLjU0OTAwOCwiaWF0IjoxNzQ4MzY4NTgzLjU0OTAwOCwianRpIjoicGJxT3E3VVZqbmpUQ0JMV21Ma19RNlBmZG9aMTNnIiwiY2lkIjoiaEpzVnE5RGs4WFFCVnVuVVY4S0ZmdyIsImxpZCI6InQyXzE1cjJpODhkM2ciLCJhaWQiOiJ0Ml8xNXIyaTg4ZDNnIiwibGNhIjoxNzIyNTA3NjAzMjQ4LCJzY3AiOiJlSnlLVnRKU2lnVUVBQURfX3dOekFTYyIsImZsbyI6OX0.K67kGH7q1AfLqq4tN0vU6n1330pYPX-FqAj-M98ikphzJTxFCf2rpxqI5v_CeKLTJNwb6j3o5AbJzRtZegcDDx9TPhcNFpKyjrxqQBPXiDw3c2CIrrNBOqrbSYUjCodUMMeU5QhQp2rCU2A9EkB3f5RDFRExfWvR_vNLlzwVgeV95nuekiWpMt-0YSgpoQxQ9LLN-rFpfEJTN6fviycKtqyx8iRjDzavESIO8cNI-9yTYaVOFjRxrC3PTiWMzu9arEgyBU0VNmisombWMRkX761GToPscQdg_956mHIfKXT3KGH8zjYAUzmUNz2AG3PelX3qovyCIQ67QrdCLGiupA","content-length":0,"user-agent":"script:redditdm:v2.0 (by /u/tech_nurgaliyev)"},"method":"get","uri":{"auth":null,"hash":null,"host":"oauth.reddit.com","hostname":"oauth.reddit.com","href":"https://oauth.reddit.com/r/affiliate_marketing/top?raw_json=1&count=9999&limit=1000&t=year","path":"/r/affiliate_marketing/top?raw_json=1&count=9999&limit=1000&t=year","pathname":"/r/affiliate_marketing/top","port":null,"protocol":"https:","query":"raw_json=1&count=9999&limit=1000&t=year","search":"?raw_json=1&count=9999&limit=1000&t=year","slashes":true}},"statusCode":403},"stack":"StatusCodeError: 403 - {\"reason\":\"private\",\"message\":\"Forbidden\",\"error\":403}\n    at new StatusCodeError (/app/node_modules/request-promise/node_modules/request-promise-core/lib/errors.js:32:15)\n    at /app/node_modules/request-promise/node_modules/request-promise-core/lib/plumbing.js:97:41\n    at tryCatcher (/app/node_modules/bluebird/js/release/util.js:16:23)\n    at Promise._settlePromiseFromHandler (/app/node_modules/bluebird/js/release/promise.js:547:31)\n    at Promise._settlePromise (/app/node_modules/bluebird/js/release/promise.js:604:18)\n    at Promise._settlePromiseCtx (/app/node_modules/bluebird/js/release/promise.js:641:10)\n    at _drainQueueStep (/app/node_modules/bluebird/js/release/async.js:97:12)\n    at _drainQueue (/app/node_modules/bluebird/js/release/async.js:86:9)\n    at Async._drainQueues (/app/node_modules/bluebird/js/release/async.js:102:5)\n    at Async.drainQueues [as _onImmediate] (/app/node_modules/bluebird/js/release/async.js:15:14)\n    at process.processImmediate (node:internal/timers:476:21)","statusCode":403,"timestamp":"2025-05-28T05:25:09.354Z"}
+{"level":"info","message":"Processing subreddit: gamedev","timestamp":"2025-05-28T05:25:10.942Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from gamedev for the past year","timestamp":"2025-05-28T05:25:10.943Z"}
+{"level":"info","message":"Successfully fetched 1000 top posts from analytics","timestamp":"2025-05-28T05:25:11.110Z"}
+{"level":"info","message":"Processing 1000 posts from analytics","timestamp":"2025-05-28T05:25:11.110Z"}
+{"level":"info","message":"Completed processing analytics. Found 36564 active users so far","timestamp":"2025-05-28T05:25:11.132Z"}
+{"level":"info","message":"Processing subreddit: gaming","timestamp":"2025-05-28T05:25:12.960Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from gaming for the past year","timestamp":"2025-05-28T05:25:12.960Z"}
+{"level":"info","message":"Processing subreddit: RealEstateMarketing","timestamp":"2025-05-28T05:25:13.610Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from RealEstateMarketing for the past all","timestamp":"2025-05-28T05:25:13.611Z"}
+{"level":"info","message":"Successfully fetched 997 top posts from gamedev","timestamp":"2025-05-28T05:25:27.224Z"}
+{"level":"info","message":"Processing 997 posts from gamedev","timestamp":"2025-05-28T05:25:27.225Z"}
+{"level":"info","message":"Completed processing gamedev. Found 10813 active users so far","timestamp":"2025-05-28T05:25:27.232Z"}
+{"level":"info","message":"Successfully fetched 996 top posts from gaming","timestamp":"2025-05-28T05:25:27.724Z"}
+{"level":"info","message":"Processing 996 posts from gaming","timestamp":"2025-05-28T05:25:27.724Z"}
+{"level":"info","message":"Completed processing gaming. Found 21131 active users so far","timestamp":"2025-05-28T05:25:27.745Z"}
+{"level":"info","message":"Processing subreddit: MarketingAutomation","timestamp":"2025-05-28T05:25:30.090Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from MarketingAutomation for the past year","timestamp":"2025-05-28T05:25:30.091Z"}
+{"level":"info","message":"Processing subreddit: selfpublish","timestamp":"2025-05-28T05:25:31.289Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from selfpublish for the past year","timestamp":"2025-05-28T05:25:31.289Z"}
+{"level":"info","message":"Successfully fetched 930 top posts from RealEstateMarketing","timestamp":"2025-05-28T05:25:32.326Z"}
+{"level":"info","message":"Processing 930 posts from RealEstateMarketing","timestamp":"2025-05-28T05:25:32.327Z"}
+{"level":"info","message":"Completed processing RealEstateMarketing. Found 36886 active users so far","timestamp":"2025-05-28T05:25:32.342Z"}
+{"level":"info","message":"Processing subreddit: EntrepreneurRideAlong","timestamp":"2025-05-28T05:25:38.039Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from EntrepreneurRideAlong for the past all","timestamp":"2025-05-28T05:25:38.040Z"}
+{"level":"info","message":"Successfully fetched 620 top posts from MarketingAutomation","timestamp":"2025-05-28T05:25:40.739Z"}
+{"level":"info","message":"Processing 620 posts from MarketingAutomation","timestamp":"2025-05-28T05:25:40.739Z"}
+{"level":"info","message":"Completed processing MarketingAutomation. Found 11105 active users so far","timestamp":"2025-05-28T05:25:40.747Z"}
+{"level":"info","message":"Processing subreddit: DigitalMarketingHelp","timestamp":"2025-05-28T05:25:44.788Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from DigitalMarketingHelp for the past year","timestamp":"2025-05-28T05:25:44.790Z"}
+{"level":"info","message":"Successfully fetched 994 top posts from selfpublish","timestamp":"2025-05-28T05:25:45.776Z"}
+{"level":"info","message":"Processing 994 posts from selfpublish","timestamp":"2025-05-28T05:25:45.776Z"}
+{"level":"info","message":"Completed processing selfpublish. Found 21819 active users so far","timestamp":"2025-05-28T05:25:45.797Z"}
+{"level":"info","message":"Successfully fetched 222 top posts from DigitalMarketingHelp","timestamp":"2025-05-28T05:25:48.439Z"}
+{"level":"info","message":"Processing 222 posts from DigitalMarketingHelp","timestamp":"2025-05-28T05:25:48.439Z"}
+{"level":"info","message":"Completed processing DigitalMarketingHelp. Found 11218 active users so far","timestamp":"2025-05-28T05:25:48.445Z"}
+{"level":"info","message":"Processing subreddit: dailymarketing","timestamp":"2025-05-28T05:25:52.670Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from dailymarketing for the past year","timestamp":"2025-05-28T05:25:52.670Z"}
+{"level":"info","message":"Successfully fetched 1 top posts from dailymarketing","timestamp":"2025-05-28T05:25:52.905Z"}
+{"level":"info","message":"Processing 1 posts from dailymarketing","timestamp":"2025-05-28T05:25:52.905Z"}
+{"level":"info","message":"Completed processing dailymarketing. Found 21820 active users so far","timestamp":"2025-05-28T05:25:52.915Z"}
+{"level":"info","message":"Processing subreddit: advertising","timestamp":"2025-05-28T05:25:54.920Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from advertising for the past year","timestamp":"2025-05-28T05:25:54.921Z"}
+{"level":"info","message":"Processing subreddit: assholedesign","timestamp":"2025-05-28T05:25:56.969Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from assholedesign for the past year","timestamp":"2025-05-28T05:25:56.969Z"}
+{"level":"info","message":"Successfully fetched 993 top posts from EntrepreneurRideAlong","timestamp":"2025-05-28T05:25:59.606Z"}
+{"level":"info","message":"Processing 993 posts from EntrepreneurRideAlong","timestamp":"2025-05-28T05:25:59.606Z"}
+{"level":"info","message":"Completed processing EntrepreneurRideAlong. Found 37290 active users so far","timestamp":"2025-05-28T05:25:59.620Z"}
+{"level":"info","message":"Processing subreddit: HailCorporate","timestamp":"2025-05-28T05:26:05.488Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from HailCorporate for the past all","timestamp":"2025-05-28T05:26:05.488Z"}
+{"level":"info","message":"Successfully fetched 433 top posts from assholedesign","timestamp":"2025-05-28T05:26:06.592Z"}
+{"level":"info","message":"Processing 433 posts from assholedesign","timestamp":"2025-05-28T05:26:06.593Z"}
+{"level":"info","message":"Completed processing assholedesign. Found 22220 active users so far","timestamp":"2025-05-28T05:26:06.606Z"}
+{"level":"info","message":"Successfully fetched 976 top posts from advertising","timestamp":"2025-05-28T05:26:09.153Z"}
+{"level":"info","message":"Processing 976 posts from advertising","timestamp":"2025-05-28T05:26:09.153Z"}
+{"level":"info","message":"Completed processing advertising. Found 11875 active users so far","timestamp":"2025-05-28T05:26:09.158Z"}
+{"level":"info","message":"Processing subreddit: atrioc","timestamp":"2025-05-28T05:26:12.733Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from atrioc for the past year","timestamp":"2025-05-28T05:26:12.734Z"}
+{"level":"info","message":"Processing subreddit: antiMLM","timestamp":"2025-05-28T05:26:14.525Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from antiMLM for the past year","timestamp":"2025-05-28T05:26:14.525Z"}
+{"level":"info","message":"Successfully fetched 999 top posts from HailCorporate","timestamp":"2025-05-28T05:26:24.260Z"}
+{"level":"info","message":"Processing 999 posts from HailCorporate","timestamp":"2025-05-28T05:26:24.260Z"}
+{"level":"info","message":"Completed processing HailCorporate. Found 37976 active users so far","timestamp":"2025-05-28T05:26:24.276Z"}
+{"level":"info","message":"Processing subreddit: SEO_Marketing_Offers","timestamp":"2025-05-28T05:26:30.731Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from SEO_Marketing_Offers for the past all","timestamp":"2025-05-28T05:26:30.731Z"}
+{"level":"info","message":"Successfully fetched 88 top posts from SEO_Marketing_Offers","timestamp":"2025-05-28T05:26:31.964Z"}
+{"level":"info","message":"Processing 88 posts from SEO_Marketing_Offers","timestamp":"2025-05-28T05:26:31.965Z"}
+{"level":"info","message":"Completed processing SEO_Marketing_Offers. Found 38039 active users so far","timestamp":"2025-05-28T05:26:31.977Z"}
+{"level":"info","message":"Successfully fetched 994 top posts from atrioc","timestamp":"2025-05-28T05:26:33.148Z"}
+{"level":"info","message":"Processing 994 posts from atrioc","timestamp":"2025-05-28T05:26:33.148Z"}
+{"level":"info","message":"Completed processing atrioc. Found 22916 active users so far","timestamp":"2025-05-28T05:26:33.163Z"}
+{"level":"info","message":"Processing subreddit: VideoMarketing","timestamp":"2025-05-28T05:26:36.107Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from VideoMarketing for the past all","timestamp":"2025-05-28T05:26:36.108Z"}
+{"level":"info","message":"Successfully fetched 998 top posts from antiMLM","timestamp":"2025-05-28T05:26:36.747Z"}
+{"level":"info","message":"Processing 998 posts from antiMLM","timestamp":"2025-05-28T05:26:36.747Z"}
+{"level":"info","message":"Completed processing antiMLM. Found 12415 active users so far","timestamp":"2025-05-28T05:26:36.752Z"}
+{"level":"info","message":"Successfully fetched 101 top posts from VideoMarketing","timestamp":"2025-05-28T05:26:37.643Z"}
+{"level":"info","message":"Processing 101 posts from VideoMarketing","timestamp":"2025-05-28T05:26:37.644Z"}
+{"level":"info","message":"Completed processing VideoMarketing. Found 38106 active users so far","timestamp":"2025-05-28T05:26:37.662Z"}
+{"level":"info","message":"Processing subreddit: MarketingAIHub","timestamp":"2025-05-28T05:26:37.797Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from MarketingAIHub for the past year","timestamp":"2025-05-28T05:26:37.797Z"}
+{"level":"info","message":"Successfully fetched 28 top posts from MarketingAIHub","timestamp":"2025-05-28T05:26:38.411Z"}
+{"level":"info","message":"Processing 28 posts from MarketingAIHub","timestamp":"2025-05-28T05:26:38.411Z"}
+{"level":"info","message":"Completed processing MarketingAIHub. Found 22919 active users so far","timestamp":"2025-05-28T05:26:38.421Z"}
+{"level":"info","message":"Processing subreddit: MarketingHelp","timestamp":"2025-05-28T05:26:39.737Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from MarketingHelp for the past year","timestamp":"2025-05-28T05:26:39.738Z"}
+{"level":"info","message":"Processing subreddit: CryptoCurrency","timestamp":"2025-05-28T05:26:40.804Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from CryptoCurrency for the past all","timestamp":"2025-05-28T05:26:40.804Z"}
+{"level":"info","message":"Processing subreddit: OnlineMarketing","timestamp":"2025-05-28T05:26:41.514Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from OnlineMarketing for the past year","timestamp":"2025-05-28T05:26:41.515Z"}
+{"level":"info","message":"Successfully fetched 1 top posts from OnlineMarketing","timestamp":"2025-05-28T05:26:41.756Z"}
+{"level":"info","message":"Processing 1 posts from OnlineMarketing","timestamp":"2025-05-28T05:26:41.756Z"}
+{"level":"info","message":"Completed processing OnlineMarketing. Found 22920 active users so far","timestamp":"2025-05-28T05:26:41.768Z"}
+{"level":"info","message":"Successfully fetched 230 top posts from MarketingHelp","timestamp":"2025-05-28T05:26:43.096Z"}
+{"level":"info","message":"Processing 230 posts from MarketingHelp","timestamp":"2025-05-28T05:26:43.096Z"}
+{"level":"info","message":"Completed processing MarketingHelp. Found 12506 active users so far","timestamp":"2025-05-28T05:26:43.101Z"}
+{"level":"info","message":"Processing subreddit: forhire","timestamp":"2025-05-28T05:26:45.584Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from forhire for the past year","timestamp":"2025-05-28T05:26:45.585Z"}
+{"level":"info","message":"Processing subreddit: MarketingResearch","timestamp":"2025-05-28T05:26:47.220Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from MarketingResearch for the past year","timestamp":"2025-05-28T05:26:47.220Z"}
+{"level":"info","message":"Successfully fetched 568 top posts from MarketingResearch","timestamp":"2025-05-28T05:26:56.478Z"}
+{"level":"info","message":"Processing 568 posts from MarketingResearch","timestamp":"2025-05-28T05:26:56.480Z"}
+{"level":"info","message":"Completed processing MarketingResearch. Found 12755 active users so far","timestamp":"2025-05-28T05:26:56.486Z"}
+{"level":"info","message":"Successfully fetched 906 top posts from CryptoCurrency","timestamp":"2025-05-28T05:26:57.945Z"}
+{"level":"info","message":"Processing 906 posts from CryptoCurrency","timestamp":"2025-05-28T05:26:57.945Z"}
+{"level":"info","message":"Completed processing CryptoCurrency. Found 38685 active users so far","timestamp":"2025-05-28T05:26:57.963Z"}
+{"level":"info","message":"Processing subreddit: DispensaryMarketing","timestamp":"2025-05-28T05:27:01.963Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from DispensaryMarketing for the past all","timestamp":"2025-05-28T05:27:01.963Z"}
+{"level":"info","message":"Successfully fetched 20 top posts from DispensaryMarketing","timestamp":"2025-05-28T05:27:02.334Z"}
+{"level":"info","message":"Processing 20 posts from DispensaryMarketing","timestamp":"2025-05-28T05:27:02.334Z"}
+{"level":"info","message":"Completed processing DispensaryMarketing. Found 38698 active users so far","timestamp":"2025-05-28T05:27:02.345Z"}
+{"level":"info","message":"Processing subreddit: SampleSize","timestamp":"2025-05-28T05:27:03.117Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from SampleSize for the past year","timestamp":"2025-05-28T05:27:03.117Z"}
+{"level":"info","message":"Successfully fetched 990 top posts from forhire","timestamp":"2025-05-28T05:27:04.226Z"}
+{"level":"info","message":"Processing 990 posts from forhire","timestamp":"2025-05-28T05:27:04.227Z"}
+{"level":"info","message":"Completed processing forhire. Found 23692 active users so far","timestamp":"2025-05-28T05:27:04.239Z"}
+{"level":"info","message":"Processing subreddit: musicmarketing","timestamp":"2025-05-28T05:27:05.120Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from musicmarketing for the past all","timestamp":"2025-05-28T05:27:05.120Z"}
+{"level":"info","message":"Processing subreddit: pics","timestamp":"2025-05-28T05:27:07.585Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from pics for the past year","timestamp":"2025-05-28T05:27:07.585Z"}
+{"level":"info","message":"Successfully fetched 982 top posts from SampleSize","timestamp":"2025-05-28T05:27:21.055Z"}
+{"level":"info","message":"Processing 982 posts from SampleSize","timestamp":"2025-05-28T05:27:21.056Z"}
+{"level":"info","message":"Completed processing SampleSize. Found 13496 active users so far","timestamp":"2025-05-28T05:27:21.068Z"}
+{"level":"info","message":"Successfully fetched 1000 top posts from musicmarketing","timestamp":"2025-05-28T05:27:23.311Z"}
+{"level":"info","message":"Processing 1000 posts from musicmarketing","timestamp":"2025-05-28T05:27:23.311Z"}
+{"level":"info","message":"Completed processing musicmarketing. Found 39338 active users so far","timestamp":"2025-05-28T05:27:23.334Z"}
+{"level":"info","message":"Processing subreddit: CryptoMars","timestamp":"2025-05-28T05:27:24.891Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from CryptoMars for the past year","timestamp":"2025-05-28T05:27:24.891Z"}
+{"level":"info","message":"Successfully fetched 995 top posts from pics","timestamp":"2025-05-28T05:27:26.181Z"}
+{"level":"info","message":"Processing 995 posts from pics","timestamp":"2025-05-28T05:27:26.181Z"}
+{"level":"info","message":"Completed processing pics. Found 24341 active users so far","timestamp":"2025-05-28T05:27:26.192Z"}
+{"level":"info","message":"Processing subreddit: AwesomeMarketing","timestamp":"2025-05-28T05:27:26.266Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from AwesomeMarketing for the past all","timestamp":"2025-05-28T05:27:26.267Z"}
+{"level":"info","message":"Successfully fetched 83 top posts from AwesomeMarketing","timestamp":"2025-05-28T05:27:27.788Z"}
+{"level":"info","message":"Processing 83 posts from AwesomeMarketing","timestamp":"2025-05-28T05:27:27.788Z"}
+{"level":"info","message":"Completed processing AwesomeMarketing. Found 39356 active users so far","timestamp":"2025-05-28T05:27:27.799Z"}
+{"level":"info","message":"Processing subreddit: influencermarketing","timestamp":"2025-05-28T05:27:31.819Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from influencermarketing for the past all","timestamp":"2025-05-28T05:27:31.819Z"}
+{"level":"info","message":"Processing subreddit: AutomatedMarketing","timestamp":"2025-05-28T05:27:32.778Z"}
+{"level":"info","message":"Fetching up to 1000 top posts from AutomatedMarketing for the past year","timestamp":"2025-05-28T05:27:32.778Z"}
+{"level":"info","message":"Successfully fetched 1 top posts from AutomatedMarketing","timestamp":"2025-05-28T05:27:33.018Z"}
+{"level":"info","message":"Processing 1 posts from AutomatedMarketing","timestamp":"2025-05-28T05:27:33.019Z"}
+{"level":"info","message":"Completed processing AutomatedMarketing. Found 24342 active users so far","timestamp":"2025-05-28T05:27:33.030Z"}
