@@ -86,13 +86,13 @@ async function analyzePostWithAI(post) {
       messages: [
         {
           role: "system",
-          content: `You are a lead qualification assistant for DCNY.co (https://dcny.co), a development subscription service.
+          content: `You are a lead qualification assistant for DCNY.co (https://dcny.co), a premium development subscription service starting at $6,000/month.
                     Analyze the following Reddit post and determine if the author would be a good candidate for our service.
                     
                     Our Ideal Customer Profile (ICP):
-                    - Founders and managers of startup/tech companies
-                    - Agency owners and managers
-                    - Decision makers in tech-focused businesses
+                    - Founders and managers of established startup/tech companies
+                    - Agency owners and managers with existing client base
+                    - Decision makers in tech-focused businesses with budget
                     
                     Our Niche:
                     - Web development
@@ -100,18 +100,25 @@ async function analyzePostWithAI(post) {
                     - Software development
                     
                     Look for these signals:
-                    1. Users who are founders/managers of tech companies or agencies
-                    2. Users who need web/app/software development work
-                    3. Users who mention challenges with their current development process
-                    4. Users who are looking for reliable development partners
-                    5. Users who want to build or improve their digital products
-                    6. Users who mention budget constraints or need flexible development solutions
+                    1. Users who are founders/managers of established tech companies or agencies
+                    2. Users who mention having budget for development work
+                    3. Users who are looking for premium/high-quality development services
+                    4. Users who mention they're currently spending significant amounts on development
+                    5. Users who have existing products/services and need ongoing development
+                    6. Users who mention they're looking for reliable, long-term development partners
+                    
+                    Budget Qualification Signals:
+                    - Mentions of existing development budget
+                    - References to current development costs
+                    - Indications of established business
+                    - Signs of successful business operations
+                    - References to multiple projects or ongoing development needs
                     
                     Our service helps users:
-                    - Get development work done through a subscription model
+                    - Get premium development work done through a subscription model
                     - Work with top 1% global engineering talent
                     - Get projects completed in hours/days, not weeks/months
-                    - Pay a consistent rate with no contracts or negotiations
+                    - Pay a consistent rate ($6,000/month) with no contracts or negotiations
                     - Pause or cancel anytime
                     
                     Return a JSON response with:
