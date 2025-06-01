@@ -34,7 +34,10 @@ const logger = winston.createLogger({
     winston.format.json()
   ),
   transports: [
-    new winston.transports.File({ filename: "logs/clients/error.log", level: "error" }),
+    new winston.transports.File({
+      filename: "logs/clients/error.log",
+      level: "error",
+    }),
     new winston.transports.File({ filename: "logs/clients/combined.log" }),
   ],
 });
@@ -71,11 +74,9 @@ async function loadProcessedUsers() {
 
 async function saveProcessedPosts(posts) {
   await fs.mkdir(path.dirname(PROCESSED_POSTS_FILE), { recursive: true });
-  await fs.mkdir(path.dirname(PROCESSED_POSTS_FILE), { recursive: true });
   await fs.writeFile(PROCESSED_POSTS_FILE, JSON.stringify(posts, null, 2));
 }
 
-  await fs.mkdir(path.dirname(PROCESSED_USERS_FILE), { recursive: true });
 async function saveProcessedUsers(users) {
   await fs.mkdir(path.dirname(PROCESSED_USERS_FILE), { recursive: true });
   await fs.writeFile(PROCESSED_USERS_FILE, JSON.stringify(users, null, 2));
