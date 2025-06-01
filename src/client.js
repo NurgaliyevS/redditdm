@@ -22,7 +22,7 @@ const reddit = new Snoowrap({
 });
 
 // Initialize Telegram bot
-const telegramBot = new TelegramBot(process.env.TELEGRAM_BOT_TOKEN, {
+const telegramBot = new TelegramBot(process.env.TELEGRAM_BOT_TOKEN_CLIENT, {
   polling: false,
 });
 
