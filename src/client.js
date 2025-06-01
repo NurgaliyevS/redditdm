@@ -48,8 +48,8 @@ if (process.env.NODE_ENV !== "production") {
 }
 
 // Files to store processed data
-const PROCESSED_POSTS_FILE = "data/clients/processed_posts.json";
-const PROCESSED_USERS_FILE = "data/clients/processed_users.json";
+const PROCESSED_POSTS_FILE = "data/processed_posts_client.json";
+const PROCESSED_USERS_FILE = "data/processed_users_client.json";
 
 async function loadProcessedPosts() {
   try {
@@ -71,9 +71,11 @@ async function loadProcessedUsers() {
 
 async function saveProcessedPosts(posts) {
   await fs.mkdir(path.dirname(PROCESSED_POSTS_FILE), { recursive: true });
+  await fs.mkdir(path.dirname(PROCESSED_POSTS_FILE), { recursive: true });
   await fs.writeFile(PROCESSED_POSTS_FILE, JSON.stringify(posts, null, 2));
 }
 
+  await fs.mkdir(path.dirname(PROCESSED_USERS_FILE), { recursive: true });
 async function saveProcessedUsers(users) {
   await fs.mkdir(path.dirname(PROCESSED_USERS_FILE), { recursive: true });
   await fs.writeFile(PROCESSED_USERS_FILE, JSON.stringify(users, null, 2));
