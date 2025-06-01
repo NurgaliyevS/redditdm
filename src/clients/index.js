@@ -86,21 +86,22 @@ async function analyzePostWithAI(post) {
       messages: [
         {
           role: "system",
-          content: `You are a lead qualification assistant for Post Content, a Reddit post scheduling service. 
+          content: `You are a lead qualification assistant for DCNY.co, a development subscription service for startups, brands and agencies. 
                     Analyze the following Reddit post and determine if the author would be a good candidate for our service.
                     Look for these signals:
-                    1. Users who are actively posting on Reddit
-                    2. Users who mention struggling with time management for social media
-                    3. Users who want to grow their business or personal brand
-                    4. Users who mention needing help with content scheduling
-                    5. Users who are looking for marketing solutions
-                    6. Users who mention spending too much time on social media management
+                    1. Users who need web, app, or ecommerce development
+                    2. Users who are startups, brands, or agencies
+                    3. Users who mention needing help with software development
+                    4. Users who want to build or improve their digital products
+                    5. Users who are looking for reliable development partners
+                    6. Users who mention challenges with current development processes
                     
                     Our service helps users:
-                    - Schedule and automate Reddit posts
-                    - Save time on social media management
-                    - Grow their audience consistently
-                    - Cross-post to multiple subreddits
+                    - Get development work done through a subscription model
+                    - Work with top 1% global engineering talent
+                    - Get projects completed in hours/days, not weeks/months
+                    - Pay a consistent rate with no contracts or negotiations
+                    - Pause or cancel anytime
                     
                     Return a JSON response with:
                     {
