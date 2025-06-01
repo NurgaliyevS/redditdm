@@ -51,14 +51,56 @@ if (process.env.NODE_ENV !== "production") {
 }
 
 // Files to store processed data
-const PROCESSED_POSTS_FILE = "data/processed_posts_client.json";
-const PROCESSED_USERS_FILE = "data/processed_users_client.json";
+const PROCESSED_POSTS_FILE = path.join(__dirname, "..", "data", "processed_posts_client.json");
+const PROCESSED_USERS_FILE = path.join(__dirname, "..", "data", "processed_users_client.json");
+
+// Initialize data directory
+async function initializeDataDirectory() {
+  try {
+    const dataDir = path.join(__dirname, "..", "data");
+    await fs.mkdir(dataDir, { recursive: true });
+    logger.info(`Data directory initialized at: ${dataDir}`);
+    
+    // Initialize empty JSON files if they don't exist
+    if (!await fileExists(PROCESSED_POSTS_FILE)) {
+      await fs.writeFile(PROCESSED_POSTS_FILE, JSON.stringify([], null, 2));
+      logger.info(`Created empty processed posts file at: ${PROCESSED_POSTS_FILE}`);
+    }
+    
+    if (!await fileExists(PROCESSED_USERS_FILE)) {
+      await fs.writeFile(PROCESSED_USERS_FILE, JSON.stringify([], null, 2));
+      logger.info(`Created empty processed users file at: ${PROCESSED_USERS_FILE}`);
+    }
+  } catch (error) {
+    logger.error(`Error initializing data directory: ${error.message}`);
+    throw error;
+  }
+}
+
+// Helper function to check if file exists
+async function fileExists(filePath) {
+  try {
+    await fs.access(filePath);
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+// Initialize the application
+async function initialize() {
+  await initializeDataDirectory();
+  logger.info("Application initialized successfully");
+}
 
 async function loadProcessedPosts() {
   try {
     const data = await fs.readFile(PROCESSED_POSTS_FILE, "utf8");
+    logger.info(`Successfully loaded processed posts from: ${PROCESSED_POSTS_FILE}`);
     return JSON.parse(data);
   } catch (error) {
+    logger.info(`No existing processed posts file found at ${PROCESSED_POSTS_FILE}, creating new one`);
+    await fs.writeFile(PROCESSED_POSTS_FILE, JSON.stringify([], null, 2));
     return [];
   }
 }
@@ -66,20 +108,37 @@ async function loadProcessedPosts() {
 async function loadProcessedUsers() {
   try {
     const data = await fs.readFile(PROCESSED_USERS_FILE, "utf8");
+    logger.info(`Successfully loaded processed users from: ${PROCESSED_USERS_FILE}`);
     return JSON.parse(data);
   } catch (error) {
+    logger.info(`No existing processed users file found at ${PROCESSED_USERS_FILE}, creating new one`);
+    await fs.writeFile(PROCESSED_USERS_FILE, JSON.stringify([], null, 2));
     return [];
   }
 }
 
 async function saveProcessedPosts(posts) {
-  await fs.mkdir(path.dirname(PROCESSED_POSTS_FILE), { recursive: true });
-  await fs.writeFile(PROCESSED_POSTS_FILE, JSON.stringify(posts, null, 2));
+  try {
+    const dirPath = path.dirname(PROCESSED_POSTS_FILE);
+    await fs.mkdir(dirPath, { recursive: true });
+    await fs.writeFile(PROCESSED_POSTS_FILE, JSON.stringify(posts, null, 2));
+    logger.info(`Successfully saved ${posts.length} processed posts to: ${PROCESSED_POSTS_FILE}`);
+  } catch (error) {
+    logger.error(`Error saving processed posts: ${error.message}`);
+    throw error;
+  }
 }
 
 async function saveProcessedUsers(users) {
-  await fs.mkdir(path.dirname(PROCESSED_USERS_FILE), { recursive: true });
-  await fs.writeFile(PROCESSED_USERS_FILE, JSON.stringify(users, null, 2));
+  try {
+    const dirPath = path.dirname(PROCESSED_USERS_FILE);
+    await fs.mkdir(dirPath, { recursive: true });
+    await fs.writeFile(PROCESSED_USERS_FILE, JSON.stringify(users, null, 2));
+    logger.info(`Successfully saved ${users.length} processed users to: ${PROCESSED_USERS_FILE}`);
+  } catch (error) {
+    logger.error(`Error saving processed users: ${error.message}`);
+    throw error;
+  }
 }
 
 async function analyzePostWithAI(post) {
@@ -221,12 +280,20 @@ async function processSubreddit(subredditName) {
         await sendTelegramNotification(post);
         processedPosts.push(post.id);
         processedUsers.push(post.author.name);
+        logger.info(`Added qualified post ${post.id} from user ${post.author.name}`);
+        
+        // Save immediately after finding a qualified post
+        try {
+          await saveProcessedPosts(processedPosts);
+          await saveProcessedUsers(processedUsers);
+          logger.info(`Saved updated data: ${processedPosts.length} posts and ${processedUsers.length} users`);
+        } catch (error) {
+          logger.error(`Error saving data after finding qualified post: ${error.message}`);
+        }
       }
       await new Promise((resolve) => setTimeout(resolve, 2500));
     }
 
-    await saveProcessedPosts(processedPosts);
-    await saveProcessedUsers(processedUsers);
     logger.info(
       `Reddit API rate limit: ${reddit.ratelimitRemaining} requests remaining.`
     );
@@ -258,4 +325,9 @@ cron.schedule("* * * * *", async () => {
 });
 
 // Initial run - removed to prevent immediate execution
-logger.info("Reddit AI Analyzer started - Will run daily at 9 AM");
+initialize().then(() => {
+  logger.info("Reddit AI Analyzer started - Will run daily at 9 AM");
+}).catch(error => {
+  logger.error("Failed to initialize application:", error);
+  process.exit(1);
+});
