@@ -42,14 +42,6 @@ const logger = winston.createLogger({
   ],
 });
 
-if (process.env.NODE_ENV !== "production") {
-  logger.add(
-    new winston.transports.Console({
-      format: winston.format.simple(),
-    })
-  );
-}
-
 // Files to store processed data
 const PROCESSED_POSTS_FILE = path.join(__dirname, "..", "data", "processed_posts_client.json");
 const PROCESSED_USERS_FILE = path.join(__dirname, "..", "data", "processed_users_client.json");
