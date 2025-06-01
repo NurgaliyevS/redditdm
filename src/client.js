@@ -259,16 +259,26 @@ async function processSubreddit(subredditName) {
     }
 
     for (const post of newPosts) {
+      // Check if post is already processed
       if (processedPosts.includes(post.id)) {
+        logger.info(`Skipping already processed post ${post.id}`);
         continue;
       }
 
+      // Check if user is already processed
       if (processedUsers.includes(post.author.name)) {
+        logger.info(`Skipping post from already processed user ${post.author.name}`);
         continue;
       }
 
       const analysis = await analyzePostWithAI(post);
       if (analysis.isQualified) {
+        // Double check again before sending notification to prevent race conditions
+        if (processedPosts.includes(post.id) || processedUsers.includes(post.author.name)) {
+          logger.info(`Skipping duplicate qualified post ${post.id} from user ${post.author.name}`);
+          continue;
+        }
+
         await sendTelegramNotification(post);
         processedPosts.push(post.id);
         processedUsers.push(post.author.name);
