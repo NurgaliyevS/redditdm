@@ -34,8 +34,8 @@ const logger = winston.createLogger({
     winston.format.json()
   ),
   transports: [
-    new winston.transports.File({ filename: "logs/error.log", level: "error" }),
-    new winston.transports.File({ filename: "logs/combined.log" }),
+    new winston.transports.File({ filename: "logs/clients/error.log", level: "error" }),
+    new winston.transports.File({ filename: "logs/clients/combined.log" }),
   ],
 });
 
@@ -48,8 +48,8 @@ if (process.env.NODE_ENV !== "production") {
 }
 
 // Files to store processed data
-const PROCESSED_POSTS_FILE = "data/processed_posts.json";
-const PROCESSED_USERS_FILE = "data/processed_users.json";
+const PROCESSED_POSTS_FILE = "data/clients/processed_posts.json";
+const PROCESSED_USERS_FILE = "data/clients/processed_users.json";
 
 async function loadProcessedPosts() {
   try {
@@ -234,21 +234,18 @@ async function processSubreddit(subredditName) {
 
 // Target subreddits to monitor
 const TARGET_SUBREDDITS = [
-  "LeadGeneration",
-  "smallbusiness",
-  "GrowthHacking",
-  "Entrepreneur",
   "startups",
-  "marketing",
-  "digitalmarketing",
-  "socialmedia",
-  "content_marketing",
-  "business",
+  "entrepreneur",
+  "ycombinator",
+  "venturecapital",
+  "Entrepreneurs",
+  "Entrepreneurship",
+  "EntrepreneurRideAlong",
 ];
 
-// Schedule the job to run at 9 AM every day by Almaty time or 4 AM UTC
-cron.schedule("0 4 * * *", async () => {
-  logger.info("Starting scheduled Reddit analysis at 9 AM");
+// every minute
+cron.schedule("* * * * *", async () => {
+  logger.info("Starting scheduled Reddit analysis");
 
   for (const subreddit of TARGET_SUBREDDITS) {
     await processSubreddit(subreddit.trim());
