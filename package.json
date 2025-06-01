@@ -4,7 +4,7 @@
   "description": "Automated Reddit post analyzer and outreach tool",
   "main": "src/active-users.js",
   "scripts": {
-    "start": "node src/active-users.js",
+    "start": "node src/active-users.js && node src/clients/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
