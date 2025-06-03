@@ -5,7 +5,6 @@ const cron = require("node-cron");
 const winston = require("winston");
 const fs = require("fs").promises;
 const path = require("path");
-const TelegramBot = require("node-telegram-bot-api");
 
 // Initialize OpenAI
 const openai = new OpenAI({
@@ -19,11 +18,6 @@ const reddit = new Snoowrap({
   clientSecret: process.env.REDDIT_CLIENT_SECRET,
   username: process.env.REDDIT_USERNAME,
   password: process.env.REDDIT_PASSWORD,
-});
-
-// Initialize Telegram bot with polling enabled
-const telegramBot = new TelegramBot(process.env.TELEGRAM_BOT_TOKEN_CLIENT, {
-  polling: true, // Enable polling to receive messages
 });
 
 // Configure logger
@@ -212,20 +206,6 @@ async function analyzePostWithAI(post) {
   }
 }
 
-async function sendTelegramNotification(post) {
-  try {
-    const message =
-      `🎯 New Lead Found!\n\n` +
-      `👤 Username: ${post.author.name}\n` +
-      `🔗 Post URL: ${post.url}\n`;
-
-    await telegramBot.sendMessage(process.env.TELEGRAM_CHAT_ID, message);
-    logger.info(`Sent Telegram notification for lead ${post.author.name}`);
-  } catch (error) {
-    logger.error("Error sending Telegram notification:", error);
-  }
-}
-
 async function processSubreddit(subredditName) {
   try {
     const processedPosts = await loadProcessedPosts();
@@ -279,7 +259,6 @@ async function processSubreddit(subredditName) {
           continue;
         }
 
-        await sendTelegramNotification(post);
         processedPosts.push(post.id);
         processedUsers.push(post.author.name);
         logger.info(`Added qualified post ${post.id} from user ${post.author.name}`);
@@ -332,46 +311,4 @@ initialize().then(() => {
 }).catch(error => {
   logger.error("Failed to initialize application:", error);
   process.exit(1);
-});
-
-// Handle /start command
-telegramBot.onText(/\/start/, async (msg) => {
-  const chatId = msg.chat.id;
-  await telegramBot.sendMessage(chatId, 'Welcome! Use /leads to see all collected leads.');
-});
-
-// Handle /leads command
-telegramBot.onText(/\/leads/, async (msg) => {
-  const chatId = msg.chat.id;
-  try {
-    // Load processed posts
-    const processedPosts = await loadProcessedPosts();
-    const processedUsers = await loadProcessedUsers();
-    
-    if (processedPosts.length === 0) {
-      await telegramBot.sendMessage(chatId, 'No leads have been collected yet.');
-      return;
-    }
-
-    await telegramBot.sendMessage(chatId, 'Processing...')
-
-    // Get the latest leads (last 10)
-    const latestLeads = processedPosts;
-    
-    // Format the message
-    let message = '📊 Latest Leads:\n\n';
-    for (const postId of latestLeads) {
-      const post = await reddit.getSubmission(postId).fetch();
-      console.log(post, "post");
-      message += `👤 User: ${post.author.name}\n`;
-      message += `🔗 Post: ${post.url}\n`;
-      message += `📝 Title: ${post.title}\n\n`;
-    }
-
-    // Send the message
-    await telegramBot.sendMessage(chatId, message, { parse_mode: 'HTML' });
-  } catch (error) {
-    logger.error('Error fetching leads:', error);
-    await telegramBot.sendMessage(chatId, 'Sorry, there was an error fetching the leads.');
-  }
 });
