@@ -4,8 +4,9 @@
   "description": "Automated Reddit post analyzer and outreach tool",
   "main": "src/active-users.js",
   "scripts": {
-    "start": "node src/client.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start:finder": "node src/client-find-leads.js",
+    "start:bot": "node src/telegram-bot-client.js",
+    "start": "concurrently \"npm run start:finder\" \"npm run start:bot\""
   },
   "dependencies": {
     "dotenv": "^16.0.3",
