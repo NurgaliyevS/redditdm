@@ -8,10 +8,11 @@ RUN npm install
 
 COPY . .
 
-# Create necessary directories
-RUN mkdir -p logs data 
-RUN mkdir -p logs/clients
-RUN mkdir -p data/clients
+# Create necessary directories with proper permissions
+RUN mkdir -p logs data && \
+    mkdir -p logs/clients && \
+    mkdir -p data/clients && \
+    chown -R node:node /app
 
 # Set environment variables
 ENV NODE_ENV=production
