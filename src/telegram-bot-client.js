@@ -1,0 +1,111 @@
+require("dotenv").config();
+const TelegramBot = require("node-telegram-bot-api");
+const winston = require("winston");
+const fs = require("fs").promises;
+const path = require("path");
+const Snoowrap = require("snoowrap");
+
+// Initialize Reddit client
+const reddit = new Snoowrap({
+  userAgent: process.env.REDDIT_USER_AGENT,
+  clientId: process.env.REDDIT_CLIENT_ID,
+  clientSecret: process.env.REDDIT_CLIENT_SECRET,
+  username: process.env.REDDIT_USERNAME,
+  password: process.env.REDDIT_PASSWORD,
+});
+
+// Initialize Telegram bot
+const telegramBot = new TelegramBot(process.env.TELEGRAM_BOT_TOKEN_CLIENT, {
+  polling: {
+    interval: 300,
+    autoStart: true,
+    params: {
+      timeout: 10
+    }
+  }
+});
+
+// Configure logger
+const logger = winston.createLogger({
+  level: "info",
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.json()
+  ),
+  transports: [
+    new winston.transports.File({
+      filename: "logs/telegram-bot/error.log",
+      level: "error",
+    }),
+    new winston.transports.File({ filename: "logs/telegram-bot/combined.log" }),
+  ],
+});
+
+// Files to read processed data
+const PROCESSED_POSTS_FILE = path.join(__dirname, "..", "data", "processed_posts_client.json");
+
+async function loadProcessedPosts() {
+  try {
+    const data = await fs.readFile(PROCESSED_POSTS_FILE, "utf8");
+    return JSON.parse(data);
+  } catch (error) {
+    logger.error(`Error loading processed posts: ${error.message}`);
+    return [];
+  }
+}
+
+// Handle /start command
+telegramBot.onText(/\/start/, async (msg) => {
+  const chatId = msg.chat.id;
+  await telegramBot.sendMessage(chatId, 'Welcome! Use /leads to see all collected leads.');
+});
+
+// Handle /leads command
+telegramBot.onText(/\/leads/, async (msg) => {
+  const chatId = msg.chat.id;
+  try {
+    const processedPosts = await loadProcessedPosts();
+    
+    if (processedPosts.length === 0) {
+      await telegramBot.sendMessage(chatId, 'No leads have been collected yet.');
+      return;
+    }
+
+    await telegramBot.sendMessage(chatId, 'Processing...');
+
+    // Get the latest leads (last 10)
+    const latestLeads = processedPosts.slice(-10);
+    
+    // Format the message
+    let message = '📊 Latest Leads:\n\n';
+    for (const postId of latestLeads) {
+      try {
+        const post = await reddit.getSubmission(postId).fetch();
+        message += `👤 User: ${post.author.name}\n`;
+        message += `🔗 Post: ${post.url}\n`;
+        message += `📝 Title: ${post.title}\n\n`;
+      } catch (error) {
+        logger.error(`Error fetching post ${postId}:`, error);
+        continue;
+      }
+    }
+
+    // Send the message
+    await telegramBot.sendMessage(chatId, message, { parse_mode: 'HTML' });
+  } catch (error) {
+    logger.error('Error fetching leads:', error);
+    await telegramBot.sendMessage(chatId, 'Sorry, there was an error fetching the leads.');
+  }
+});
+
+// Error handling for the bot
+telegramBot.on('polling_error', (error) => {
+  logger.error('Polling error:', error);
+  // Attempt to restart polling after a delay
+  setTimeout(() => {
+    telegramBot.stopPolling();
+    telegramBot.startPolling();
+  }, 5000);
+});
+
+logger.info("Telegram Bot Service started");

@@ -304,11 +304,3 @@ cron.schedule("* * * * *", async () => {
 
   logger.info("Completed scheduled Reddit analysis");
 });
-
-// Initial run - removed to prevent immediate execution
-initialize().then(() => {
-  logger.info("Reddit AI Analyzer started - Will run daily at 9 AM");
-}).catch(error => {
-  logger.error("Failed to initialize application:", error);
-  process.exit(1);
-});
