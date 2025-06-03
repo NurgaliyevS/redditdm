@@ -20,7 +20,6 @@ const reddit = new Snoowrap({
   password: process.env.REDDIT_PASSWORD,
 });
 
-// Configure logger
 const logger = winston.createLogger({
   level: "info",
   format: winston.format.combine(
@@ -28,10 +27,7 @@ const logger = winston.createLogger({
     winston.format.json()
   ),
   transports: [
-    new winston.transports.File({
-      filename: "logs/clients/error.log",
-      level: "error",
-    }),
+    new winston.transports.File({ filename: "logs/clients/error.log", level: "error" }),
     new winston.transports.File({ filename: "logs/clients/combined.log" }),
   ],
 });
@@ -208,27 +204,25 @@ async function analyzePostWithAI(post) {
 
 async function processSubreddit(subredditName) {
   try {
+    logger.info(`Starting to process subreddit: r/${subredditName}`);
     const processedPosts = await loadProcessedPosts();
     const processedUsers = await loadProcessedUsers();
+    logger.info(`Loaded ${processedPosts.length} processed posts and ${processedUsers.length} processed users`);
+    
     const subreddit = await reddit.getSubreddit(subredditName);
+    logger.info(`Successfully connected to r/${subredditName}`);
 
     let newPosts;
     let attempts = 0;
     while (true) {
       try {
+        logger.info(`Fetching new posts from r/${subredditName}`);
         newPosts = await subreddit.getNew({ limit: 100 });
+        logger.info(`Retrieved ${newPosts.length} new posts from r/${subredditName}`);
         break;
       } catch (err) {
-        console.log(err, "err");
-        console.log(err.statusCode, "err.statusCode");
-        console.log(err.message, "err.message");
-        if (
-          err.statusCode === 429 ||
-          (err.message && err.message.includes("rate limit"))
-        ) {
-          logger.info(
-            "Reddit API rate limit hit. Waiting 60 seconds before retrying..."
-          );
+        if (err.statusCode === 429 || (err.message && err.message.includes("rate limit"))) {
+          logger.warn(`Rate limit hit for r/${subredditName}. Attempt ${attempts + 1}/5. Waiting 60 seconds...`);
           await new Promise((resolve) => setTimeout(resolve, 60 * 1000));
           attempts++;
           if (attempts > 5) throw new Error("Too many rate limit retries.");
@@ -238,48 +232,44 @@ async function processSubreddit(subredditName) {
       }
     }
 
+    let qualifiedCount = 0;
     for (const post of newPosts) {
-      // Check if post is already processed
       if (processedPosts.includes(post.id)) {
-        logger.info(`Skipping already processed post ${post.id}`);
+        logger.debug(`Skipping already processed post ${post.id}`);
         continue;
       }
 
-      // Check if user is already processed
       if (processedUsers.includes(post.author.name)) {
-        logger.info(`Skipping post from already processed user ${post.author.name}`);
+        logger.debug(`Skipping post from already processed user ${post.author.name}`);
         continue;
       }
 
+      logger.info(`Analyzing post: ${post.title.substring(0, 50)}...`);
       const analysis = await analyzePostWithAI(post);
+      
       if (analysis.isQualified) {
-        // Double check again before sending notification to prevent race conditions
-        if (processedPosts.includes(post.id) || processedUsers.includes(post.author.name)) {
-          logger.info(`Skipping duplicate qualified post ${post.id} from user ${post.author.name}`);
-          continue;
-        }
+        qualifiedCount++;
+        logger.info(`Found qualified lead! Post: ${post.title.substring(0, 50)}...`);
+        logger.info(`Analysis: ${analysis.analysis}`);
+        logger.info(`Reason: ${analysis.reason}`);
 
         processedPosts.push(post.id);
         processedUsers.push(post.author.name);
-        logger.info(`Added qualified post ${post.id} from user ${post.author.name}`);
         
-        // Save immediately after finding a qualified post
-        try {
-          await saveProcessedPosts(processedPosts);
-          await saveProcessedUsers(processedUsers);
-          logger.info(`Saved updated data: ${processedPosts.length} posts and ${processedUsers.length} users`);
-        } catch (error) {
-          logger.error(`Error saving data after finding qualified post: ${error.message}`);
-        }
+        await saveProcessedPosts(processedPosts);
+        await saveProcessedUsers(processedUsers);
+        logger.info(`Saved updated data: ${processedPosts.length} posts and ${processedUsers.length} users`);
+      } else {
+        logger.debug(`Post not qualified: ${post.title.substring(0, 50)}...`);
       }
+      
       await new Promise((resolve) => setTimeout(resolve, 2500));
     }
 
-    logger.info(
-      `Reddit API rate limit: ${reddit.ratelimitRemaining} requests remaining.`
-    );
+    logger.info(`Finished processing r/${subredditName}. Found ${qualifiedCount} qualified leads.`);
+    logger.info(`Reddit API rate limit: ${reddit.ratelimitRemaining} requests remaining.`);
   } catch (error) {
-    logger.error("Error processing subreddit:", error);
+    logger.error(`Error processing subreddit r/${subredditName}:`, error);
   }
 }
 
@@ -292,15 +282,17 @@ const TARGET_SUBREDDITS = [
   "Entrepreneurs",
   "Entrepreneurship",
   "EntrepreneurRideAlong",
+  "business",
 ];
 
 // every hour
 cron.schedule("0 * * * *", async () => {
-  logger.info("Starting scheduled Reddit analysis");
+  logger.info("=== Starting scheduled Reddit analysis ===");
+  logger.info(`Current time: ${new Date().toISOString()}`);
 
   for (const subreddit of TARGET_SUBREDDITS) {
     await processSubreddit(subreddit.trim());
   }
 
-  logger.info("Completed scheduled Reddit analysis");
+  logger.info("=== Completed scheduled Reddit analysis ===");
 });
