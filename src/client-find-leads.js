@@ -294,8 +294,8 @@ const TARGET_SUBREDDITS = [
   "EntrepreneurRideAlong",
 ];
 
-// every minute
-cron.schedule("* * * * *", async () => {
+// every hour
+cron.schedule("0 * * * *", async () => {
   logger.info("Starting scheduled Reddit analysis");
 
   for (const subreddit of TARGET_SUBREDDITS) {
