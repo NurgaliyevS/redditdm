@@ -217,7 +217,7 @@ async function processSubreddit(subredditName) {
     while (true) {
       try {
         logger.info(`Fetching new posts from r/${subredditName}`);
-        newPosts = await subreddit.getNew({ limit: 100 });
+        newPosts = await subreddit.getNew({ limit: 1000 });
         logger.info(`Retrieved ${newPosts.length} new posts from r/${subredditName}`);
         break;
       } catch (err) {
