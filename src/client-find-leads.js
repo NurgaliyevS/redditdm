@@ -32,6 +32,12 @@ const logger = winston.createLogger({
   ],
 });
 
+logger.add(
+  new winston.transports.Console({
+    format: winston.format.simple(),
+  })
+);
+
 // Files to store processed data
 const PROCESSED_POSTS_FILE = path.join(__dirname, "..", "data", "processed_posts_client.json");
 const PROCESSED_USERS_FILE = path.join(__dirname, "..", "data", "processed_users_client.json");
@@ -183,16 +189,21 @@ async function analyzePostWithAI(post) {
     });
 
     const result = JSON.parse(response.choices[0].message.content);
-
-    console.log(result, "result");
-    console.log(post.url, "post.url");
-
     return {
       isQualified: result.isQualified,
       analysis: result.analysis,
       reason: result.reason,
     };
   } catch (error) {
+    if (error.code === 'insufficient_quota') {
+      logger.error("OpenAI API quota exceeded. Lead finder will pause until next billing cycle.");
+      // Return a default response to prevent further processing
+      return {
+        isQualified: false,
+        analysis: "OpenAI API quota exceeded",
+        reason: "Service temporarily unavailable due to API quota limits",
+      };
+    }
     logger.error("Error analyzing post with AI:", error);
     return {
       isQualified: false,
@@ -233,6 +244,8 @@ async function processSubreddit(subredditName) {
     }
 
     let qualifiedCount = 0;
+    let openAILimitHit = false;
+
     for (const post of newPosts) {
       if (processedPosts.includes(post.id)) {
         logger.debug(`Skipping already processed post ${post.id}`);
@@ -246,6 +259,11 @@ async function processSubreddit(subredditName) {
 
       logger.info(`Analyzing post: ${post.title.substring(0, 50)}...`);
       const analysis = await analyzePostWithAI(post);
+      
+      if (analysis.reason === "Service temporarily unavailable due to API quota limits") {
+        openAILimitHit = true;
+        break;
+      }
       
       if (analysis.isQualified) {
         qualifiedCount++;
@@ -264,6 +282,11 @@ async function processSubreddit(subredditName) {
       }
       
       await new Promise((resolve) => setTimeout(resolve, 2500));
+    }
+
+    if (openAILimitHit) {
+      logger.info("Stopping further processing due to OpenAI API quota limit.");
+      return;
     }
 
     logger.info(`Finished processing r/${subredditName}. Found ${qualifiedCount} qualified leads.`);
@@ -285,8 +308,8 @@ const TARGET_SUBREDDITS = [
   "business",
 ];
 
-// every hour
-cron.schedule("0 * * * *", async () => {
+// every 6 hours
+cron.schedule("0 */6 * * *", async () => {
   logger.info("=== Starting scheduled Reddit analysis ===");
   logger.info(`Current time: ${new Date().toISOString()}`);
 
@@ -296,3 +319,6 @@ cron.schedule("0 * * * *", async () => {
 
   logger.info("=== Completed scheduled Reddit analysis ===");
 });
+
+logger.info("=== Starting manual Reddit analysis ===");
+processSubreddit("startups");

@@ -6,7 +6,8 @@
   "scripts": {
     "start:finder": "node src/client-find-leads.js",
     "start:bot": "node src/telegram-bot-client.js",
-    "start": "concurrently \"npm run start:finder\" \"npm run start:bot\""
+    "start:active-users": "node src/active-users.js",
+    "start": "concurrently \"npm run start:bot\" \"npm run start:finder\" \"npm run start:active-users\""
   },
   "dependencies": {
     "dotenv": "^16.0.3",
