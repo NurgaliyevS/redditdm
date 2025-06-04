@@ -82,7 +82,7 @@ telegramBot.onText(/\/leads/, async (msg) => {
     await telegramBot.sendMessage(chatId, 'Processing...');
 
     // Get the latest leads (last 10)
-    const latestLeads = processedPosts.slice(-10);
+    const latestLeads = processedPosts;
     
     // Format the message
     let message = '📊 Latest Leads:\n\n';

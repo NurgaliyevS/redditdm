@@ -319,6 +319,3 @@ cron.schedule("0 */6 * * *", async () => {
 
   logger.info("=== Completed scheduled Reddit analysis ===");
 });
-
-logger.info("=== Starting manual Reddit analysis ===");
-processSubreddit("startups");
