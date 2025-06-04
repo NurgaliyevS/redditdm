@@ -41,6 +41,12 @@ const logger = winston.createLogger({
   ],
 });
 
+logger.add(
+  new winston.transports.Console({
+    format: winston.format.simple(),
+  })
+);
+
 // Files to read processed data
 const PROCESSED_POSTS_FILE = path.join(__dirname, "..", "data", "processed_posts_client.json");
 
@@ -57,12 +63,14 @@ async function loadProcessedPosts() {
 // Handle /start command
 telegramBot.onText(/\/start/, async (msg) => {
   const chatId = msg.chat.id;
+  logger.info(`Received /start command from chat ID: ${chatId}`);
   await telegramBot.sendMessage(chatId, 'Welcome! Use /leads to see all collected leads.');
 });
 
 // Handle /leads command
 telegramBot.onText(/\/leads/, async (msg) => {
   const chatId = msg.chat.id;
+  logger.info(`Received /leads command from chat ID: ${chatId}`);
   try {
     const processedPosts = await loadProcessedPosts();
     
