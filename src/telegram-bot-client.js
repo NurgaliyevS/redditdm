@@ -109,11 +109,25 @@ telegramBot.onText(/\/leads/, async (msg) => {
 // Error handling for the bot
 telegramBot.on('polling_error', (error) => {
   logger.error('Polling error:', error);
-  // Attempt to restart polling after a delay
-  setTimeout(() => {
+  
+  // Check if it's a conflict error
+  if (error.code === 'ETELEGRAM' && error.response?.body?.error_code === 409) {
+    logger.info('Multiple bot instances detected. Stopping current instance...');
     telegramBot.stopPolling();
-    telegramBot.startPolling();
-  }, 5000);
+    process.exit(1); // Exit the process to prevent multiple instances
+  } else {
+    // For other errors, try to restart polling after a delay
+    logger.info('Attempting to restart polling in 5 seconds...');
+    setTimeout(() => {
+      try {
+        telegramBot.stopPolling();
+        telegramBot.startPolling();
+        logger.info('Polling restarted successfully');
+      } catch (restartError) {
+        logger.error('Failed to restart polling:', restartError);
+      }
+    }, 5000);
+  }
 });
 
 logger.info("Telegram Bot Service started");
