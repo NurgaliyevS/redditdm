@@ -79,27 +79,44 @@ telegramBot.onText(/\/leads/, async (msg) => {
       return;
     }
 
-    await telegramBot.sendMessage(chatId, 'Processing...');
+    await telegramBot.sendMessage(chatId, 'Processing... This may take a while...');
 
-    // Get the latest leads (last 10)
+    // Get all leads and split into chunks of 10
     const latestLeads = processedPosts;
+    const chunkSize = 10;
+    const chunks = [];
     
-    // Format the message
-    let message = '📊 Latest Leads:\n\n';
-    for (const postId of latestLeads) {
-      try {
-        const post = await reddit.getSubmission(postId).fetch();
-        message += `👤 User: ${post.author.name}\n`;
-        message += `🔗 Post: ${post.url}\n`;
-        message += `📝 Title: ${post.title}\n\n`;
-      } catch (error) {
-        logger.error(`Error fetching post ${postId}:`, error);
-        continue;
+    for (let i = 0; i < latestLeads.length; i += chunkSize) {
+      chunks.push(latestLeads.slice(i, i + chunkSize));
+    }
+
+    // Send each chunk as a separate message
+    for (let i = 0; i < chunks.length; i++) {
+      let message = `📊 Leads (${i * chunkSize + 1}-${Math.min((i + 1) * chunkSize, latestLeads.length)} of ${latestLeads.length}):\n\n`;
+      
+      for (const postId of chunks[i]) {
+        try {
+          const post = await reddit.getSubmission(postId).fetch();
+          message += `👤 User: ${post.author.name}\n`;
+          message += `🔗 Post: ${post.url}\n`;
+          message += `📝 Title: ${post.title}\n\n`;
+        } catch (error) {
+          logger.error(`Error fetching post ${postId}:`, error);
+          continue;
+        }
+      }
+
+      // Send the chunk message
+      await telegramBot.sendMessage(chatId, message, { parse_mode: 'HTML' });
+      
+      // Add a small delay between messages to avoid rate limiting
+      if (i < chunks.length - 1) {
+        await new Promise(resolve => setTimeout(resolve, 1000));
       }
     }
 
-    // Send the message
-    await telegramBot.sendMessage(chatId, message, { parse_mode: 'HTML' });
+    // send a message to the user that the chunk is done
+    await telegramBot.sendMessage(chatId, `All leads sent.`);
   } catch (error) {
     logger.error('Error fetching leads:', error);
     await telegramBot.sendMessage(chatId, 'Sorry, there was an error fetching the leads.');
