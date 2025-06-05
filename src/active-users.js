@@ -199,14 +199,7 @@ async function sendActiveUserNotification(user) {
       .map(([subreddit, count]) => `${subreddit}: ${count} posts`)
       .join('\n   • ');
 
-    const message = `
-    Hi ${user.username}.
-
-    I see that you post a lot in ${user.subreddits.join(", ")} ${user.subreddits.length > 1 ? "subreddits" : "subreddit"}. Ever wish that you schedule content and cross-post content on the best time ?
-
-    I developed a tool that allows you to schedule content and cross-post content on the best time.
-
-    Would you be interested in trying it out ?
+    const message = `Hi ${user.username}.\n\nI see that you post a lot in ${user.subreddits.join(", ")} ${user.subreddits.length > 1 ? "subreddits" : "subreddit"}. Ever wish that you schedule content and cross-post content on the best time ?\n\nI developed a tool that allows you to schedule content and cross-post content on the best time.\n\nWould you be interested in trying it out ?
     `
     await telegramBot.sendMessage(process.env.TELEGRAM_CHAT_ID, message);
     await telegramBot.sendMessage(process.env.TELEGRAM_CHAT_ID, profileUrl);
