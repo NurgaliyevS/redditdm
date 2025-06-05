@@ -198,20 +198,18 @@ async function sendActiveUserNotification(user) {
     const crossSubredditInfo = Object.entries(user.crossSubredditActivity)
       .map(([subreddit, count]) => `${subreddit}: ${count} posts`)
       .join('\n   • ');
-    
-    const message =
-      `🎯 New Active User Found!\n\n` +
-      `👤 Username: ${user.username}\n` +
-      `🔗 Profile: ${profileUrl}\n` +
-      `📊 Activity:\n` +
-      `   • Posts: ${user.posts}\n` +
-      `   • Total Karma: ${user.karma}\n` +
-      `   • Active in ${user.crossSubredditScore} subreddits\n` +
-      `🎯 Cross-Subreddit Activity:\n` +
-      `   • ${crossSubredditInfo}\n\n` +
-      `💡 Consider reaching out manually about Post Content!`;
 
+    const message = `
+    Hi ${user.username}.
+
+    I see that you post a lot in ${user.subreddits.join(", ")} ${user.subreddits.length > 1 ? "subreddits" : "subreddit"}. Ever wish that you schedule content and cross-post content on the best time ?
+
+    I developed a tool that allows you to schedule content and cross-post content on the best time.
+
+    Would you be interested in trying it out ?
+    `
     await telegramBot.sendMessage(process.env.TELEGRAM_CHAT_ID, message);
+    await telegramBot.sendMessage(process.env.TELEGRAM_CHAT_ID, profileUrl);
     logger.info(`Sent immediate Telegram notification for new user ${user.username}`);
   } catch (error) {
     logger.error("Error sending Telegram notification:", error);
@@ -370,7 +368,7 @@ async function main() {
     logger.info(`Found ${existingUsers.length} existing users in the database`);
 
     // Search for subreddits by keyword
-    const KEYWORD = 'startup';
+    const KEYWORD = 'business';
     const searchResults = await reddit.searchSubreddits({query: KEYWORD, limit: 100});
     const subredditsToProcess = searchResults.map(sub => sub.display_name);
 
