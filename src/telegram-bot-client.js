@@ -82,7 +82,7 @@ telegramBot.onText(/\/leads/, async (msg) => {
     await telegramBot.sendMessage(chatId, 'Processing... This may take a while...');
 
     // Get all leads and split into chunks of 10
-    const latestLeads = processedPosts;
+    const latestLeads = processedPosts.reverse(); // Reverse the array to show latest first
     const chunkSize = 10;
     const chunks = [];
     
