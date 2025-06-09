@@ -361,7 +361,7 @@ async function main() {
     logger.info(`Found ${existingUsers.length} existing users in the database`);
 
     // Search for subreddits by keyword
-    const KEYWORD = 'business';
+    const KEYWORD = 'Entrepreneur';
     const searchResults = await reddit.searchSubreddits({query: KEYWORD, limit: 100});
     const subredditsToProcess = searchResults.map(sub => sub.display_name);
 
